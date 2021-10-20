@@ -37,7 +37,6 @@ public class JLoadFrame extends JFrame {
         JButton button;
         JPanel panel;
         JLabel title;
-        JScrollPane pane;
         fileChooserButton = new JButton("Wybierz");
         //this.setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
         this.gui = gui;
