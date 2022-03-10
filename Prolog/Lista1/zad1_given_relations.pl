@@ -29,4 +29,3 @@ matka(wom5, men6).
 rodzic(X, Y) :- matka(X, Y); ojciec(X, Y).
 diff(X, Y) :- X \= Y.
 
-ok(o).
