@@ -25,7 +25,7 @@ createPrimeList(HI, List) :-
     ).
 
 prime(LO, HI, N) :-
-    NewHI is floor(sqrt(HI)),
+    NewHI is HI,
     createPrimeList(NewHI, List),
     member(N, List),
     N >= LO,

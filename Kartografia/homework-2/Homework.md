@@ -1,0 +1,3 @@
+We have to find a key K that has been used to obtain a ciphertext C from a plaintext T . We assume that there exists exactly one such a key and that each key consists of k bits. Assume that encryption rate is 10^6 ciphertexts/second. Estimate the time effort required for finding key K by a brute force attack, that is, checking the possible keys one by one. Answer this question for k = 40, 56, 90, 128, 256.
+
+Check encryption speed of AES e.g. on your laptop, estimate the energy cost (assume you have to pay 1PLN/kWh) according to the nominal (real, if you can) power consumption.

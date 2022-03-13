@@ -1,0 +1,1 @@
+Goal of this class was to create program to calculate goal function of random path using data from tsplib
