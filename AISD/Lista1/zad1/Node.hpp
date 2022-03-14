@@ -2,7 +2,7 @@
 #define NODE_HPP
 
 struct Node{
-    int val;
+    int val{};
     Node* next = nullptr;
     Node* prev = nullptr;
     Node();
