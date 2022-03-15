@@ -4,9 +4,8 @@
 struct Node{
     int val{};
     Node* next = nullptr;
-    Node* prev = nullptr;
     Node();
-    Node(int val);
+    explicit Node(int val);
     Node(int val, Node* next);
 };
 

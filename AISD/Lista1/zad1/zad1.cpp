@@ -14,7 +14,7 @@ void test_lifo(int AMOUNT_INSERT){
         std::cout << lifo -> pop() << " ";
     }
     std::cout << std::endl;
-};
+}
 void test_fifo(int AMOUNT_INSERT){
     Fifo* fifo = new Fifo();
     std::cout << "Start pushing to fifo: " << std::endl;
@@ -28,8 +28,7 @@ void test_fifo(int AMOUNT_INSERT){
         std::cout << fifo->pop() << " ";
     }
     std::cout << std::endl;
-};
-
+}
 
 int main(){
     int AMOUNT_INSERT = 10;
