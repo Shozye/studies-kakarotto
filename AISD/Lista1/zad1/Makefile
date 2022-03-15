@@ -1,5 +1,12 @@
-all: zad1
+zad1: zad1.cpp Fifo.o Lifo.o Node.o
+	g++ -o zad1 zad1.cpp Fifo.o Lifo.o Node.o
 
-zad1: zad1.cpp Fifo.cpp Lifo.cpp Node.cpp
-	g++ -o zad1 zad1.cpp Fifo.cpp Lifo.cpp Node.cpp
+Fifo.o: Fifo.cpp Fifo.hpp
+	g++ -c Fifo.cpp
+
+Lifo.o: Lifo.cpp Lifo.hpp
+	g++ -c Lifo.cpp
+
+Node.o: Node.cpp Node.hpp
+	g++ -c Node.cpp
 

@@ -1,1 +1,5 @@
 ./zad1
+*.o
+/Node.o
+/Lifo.o
+/Fifo.o

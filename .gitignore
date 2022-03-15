@@ -10,5 +10,6 @@
 .vscode
 */a.out
 /ignored/*
-/ignored/*
 /MetaMeta/class1/ALL_tsp.tar.gz
+*.idea*
+AISD/Lista1/zad1/zad1
