@@ -29,7 +29,7 @@ def main():
     lengths = [40, 56, 90, 128, 256]
     pad = 40
     print("Times to bruteforce key of some length in seconds")
-    print("on my pc calculated with 16bit key")
+    print("on my pc calculated with 16byte key")
     print("Key Length".ljust(pad), "time 10**6".ljust(pad), "time MyPC".ljust(pad), "PLNs".ljust(pad))
     for length in lengths:
         key_len = length
