@@ -6,5 +6,10 @@
 /MPIS-lista7/zad1/average_data_test.json
 /MPIS-lista7/zad3/logs/*
 /MPIS-lista7/zad2/logs/*
+/AISD/.vscode
+.vscode
+*/a.out
 /ignored/*
 /MetaMeta/class1/ALL_tsp.tar.gz
+*.idea*
+AISD/Lista1/zad1/zad1
