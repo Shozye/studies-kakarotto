@@ -11,5 +11,7 @@
 */a.out
 /ignored/*
 /MetaMeta/class1/ALL_tsp.tar.gz
+/Kartografia/homework-1/homework_1.zip
+*/__pycache__
 *.idea*
 AISD/Lista1/zad1/zad1

@@ -29,7 +29,7 @@ class DataHandler:
         copied_list.append(copied_list[0])
         return self.getListWeight(copied_list)
 
-    def get_dimensions(self):
+    def get_dimension(self):
         """:return: Amount of Nodes in problem """
         return self.__problem.dimension
 
@@ -38,7 +38,7 @@ class DataHandler:
         :param node: node of which we want closest neigbour
         :return: closest neighbour
         """
-        all_nodes = list(range(self.get_dimensions()))
+        all_nodes = list(range(self.get_dimension()))
         all_nodes.remove(node)
         return self.get_closest_neighbour(node, all_nodes)
 
