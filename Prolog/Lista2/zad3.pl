@@ -9,6 +9,7 @@ arc(6,7).
 arc(7,5).
 arc(10,11).
 arc(11,12).
+arc(11,10).
 
 %% 1 ----> 2 ----> 3        10
 %% |       |       |        |
@@ -18,11 +19,32 @@ arc(11,12).
 %%         \/      |        \/
 %%         6 ----> 7        12
 
-osiagalny_mem(Begin, PreviousVisited):-
-    
+member(X, Lista) :-
+    Lista = [H|T],
+    (H = X; member(X, T)).
 
-osiagalny_mem(Begin, List) :-
-    arc(Begin, X),
-    osiagalny_mem(X, List2),
-    member(Member, List2),
-    member(Member, List).
+znajdz_zasieg(X, Visited, Lista) :- 
+    arc(X, Y),
+    \+ ( member(Y, Visited) ),
+    VisitedY = [X|Visited],
+    znajdz_zasieg(Y, VisitedY, Lista).
+
+znajdz_zasieg(X, Visited, Lista) :-
+    arc(X, Y),
+    member(Y, Visited),
+    Lista = Visited.
+
+znajdz_zasieg(X, Visited, Lista) :-
+    \+(arc(X,_)),
+    Lista = [X|Visited].
+
+
+zasieg(X, Lista) :-
+    znajdz_zasieg(X, [], Lista).
+
+osiagalnyBase(X,Y) :- 
+    zasieg(X, Lista),
+    member(Y, Lista).
+
+osiagalny(X, Y) :-
+    distinct(osiagalnyBase(X, Y)).
