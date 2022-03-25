@@ -70,8 +70,8 @@ findOne(N, Lista, Output, Tail) :-
 %% o nieparzysta ilosc
 listaPowtarzana(N, X) :-
     range(1, N, Range),
-    join(Range, Range, Base),
-    permutation(Base, PossibleX),
+    join(Range, Range, Base), % dla range = [1,2,3] to Base = [1,2,3,1,2,3]
+    permutation(Base, PossibleX), % PossibleX to dowolna permutacja Base
     \+ ( member(Num, Range),
     findOne(Num, PossibleX, IndexOfNum, Tail),
     findOne(Num, Tail, IndexOf2ndNum, _),
