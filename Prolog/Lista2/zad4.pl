@@ -41,7 +41,7 @@ findOne(N, Lista, Output, Tail) :-
     find(N, Lista, Output, Tail),!.
 
 
-lista(N, X) :-
+listaPowtarzana(N, X) :-
     range(1, N, Range),
     join(Range, Range, Base),
     permutation(Base, PossibleX),
@@ -52,7 +52,8 @@ lista(N, X) :-
     Diff mod 2 =:= 1 ),
     X = PossibleX.
     
-
+lista(N, X) :-
+    distinct(listaPowtarzana(N, X)).
     
 
 
