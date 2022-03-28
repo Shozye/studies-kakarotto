@@ -6,14 +6,14 @@ import matplotlib.pyplot as plt
 import networkx as nx
 import two_opt_neighbourings
 from FileGenerator import FileGenerator
+from utils import *
 
 
 def main():
-    generator = FileGenerator()
-    #generator.create_symmetric_dataset("vsmall", 2)
-    #generator.create_asymmetric_dataset("Gangi", 96)
-    problem = "vsmall2"
-    analyze_file(f"datasets/{problem}/{problem}.tsp", verbose=True)
+    filename = f"datasets/bays29/bays29.tsp"
+    problem = tsplib95.load(filename)
+    print(get_best_solution(problem))
+    pass
 
 
 def test_hardcoded_solutions(solution: list, filename: str):

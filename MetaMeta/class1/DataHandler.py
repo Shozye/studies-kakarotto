@@ -2,8 +2,13 @@ import tsplib95
 
 
 class DataHandler:
-    def __init__(self, filename: str):
-        self.__problem = tsplib95.read(open(filename))
+    def __init__(self, filename):
+        if type(filename) == str:
+            self.__problem = tsplib95.read(open(filename))
+        elif type(filename) == tsplib95.models.StandardProblem:
+            self.__problem = filename
+        else:
+            raise Exception("Wrong argument to constructor")
 
     def getWeight(self, node1: int, node2: int) -> int:
         """
@@ -11,8 +16,7 @@ class DataHandler:
         :param node2: integer
         :return: weight of edge from node1 to node2
         """
-        print((node1, node2))
-        return self.__problem.get_weight(*(node1, node2))
+        return self.__problem.get_weight(*(node1+1, node2+1))
 
     def getListWeight(self, nodes: list) -> int:
         """Function to calculate sum of weights in list between all list members in order

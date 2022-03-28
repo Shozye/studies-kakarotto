@@ -1,12 +1,21 @@
+import tsplib95.models
+
 from DataHandler import DataHandler
-from utils import *
 import random
 from two_opt_neighbourings import *
+import numpy as np
+
+
+def get_random_solution(max_incl: int) -> list:
+    return list(np.random.permutation(max_incl))
 
 
 class TSPAlgorithms:
-    def __init__(self, filename: str):
-        self.data = DataHandler(filename)
+    def __init__(self, problem_init):
+        if type(problem_init) in [str, tsplib95.models.StandardProblem]:
+            self.data = DataHandler(problem_init)
+        else:
+            raise Exception("u freaking fucking bitch intilaized with not str or StandardProblem")
 
     def k_random(self, k: int):
         dimension = self.data.dimension()
@@ -21,7 +30,7 @@ class TSPAlgorithms:
     def closest_neighbour(self, start=None):
         dimension = self.data.dimension()
         not_visited = list(range(0, dimension))
-        start_index = random.randint(0, dimension-1) if start is None else start
+        start_index = random.randint(0, dimension - 1) if start is None else start
         node_id = not_visited[start_index]
         visited = [node_id]
         not_visited.remove(node_id)

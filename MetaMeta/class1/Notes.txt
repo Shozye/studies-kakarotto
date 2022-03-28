@@ -1,0 +1,14 @@
+Celem kolejnego zadania jest zrobienie badań na temat jakości algorytmów
+
+Zależności jakie możemy badać
+
+1. ilość użytego czasu / jakość algorytmu { algorytmy k_random, two_opt }
+    Można na jednym wykresie umieścić ilość czasu do jakości przy czym
+2. ilość miast / jakość algorytmu { algorytmy wszystkie}
+3. Wykres k-randoma dla różnych wielkości problemu, który mówi dla jakiego k oplaca sie to robic
+
+TODO:
+1. Sposób na znalezienie najlepszego rozwiązania - puszczanie algorytmów wszystkich przez odpowiednią ilość czasu
+2. Faktyczne badania. czyli zaczynając od:
+a) k-random od k dla jakości, następnie na jednym wykresie umiescic kilka takich wykresów
+b) Trzeba zrobic coś żeby po puszczeniu algorytmu na powiedzmy minute, dostać jakie wyniki miał w timestampach co sekunde

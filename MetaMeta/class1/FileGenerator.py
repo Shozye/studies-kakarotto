@@ -46,8 +46,10 @@ class FileGenerator:
         problem.edge_weight_format = "FULL_MATRIX"
         problem.display_data_type = "TWOD_DISPLAY"
         problem.edge_weights = full_matrix
-        problem.save(os.path.join(os.getcwd(), self.DATASET_DIR_NAME, fullname, f"{fullname}.tsp"))
-        pass
+        path = os.path.join(os.getcwd(), self.DATASET_DIR_NAME, fullname, f"{fullname}.tsp")
+        problem.save(path)
+        with open(path, 'a+') as file:
+            file.write("\n")
 
     def create_dataset_directory(self):
         if self.DATASET_DIR_NAME not in os.listdir(os.getcwd()):
