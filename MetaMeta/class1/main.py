@@ -10,10 +10,11 @@ from utils import *
 
 
 def main():
-    filename = f"datasets/bays29/bays29.tsp"
+    filename = f"tsplib_problems/bays29/bays29.tsp"
     algos = TSPAlgorithms(filename)
     for i in range(20):
         print(algos.two_opt(invert))
+
 
 def test_hardcoded_solutions(solution: list, filename: str):
     data = DataHandler(filename)

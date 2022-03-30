@@ -26,9 +26,9 @@ class FileGenerator:
         matrix = np.random.randint(0, max_num + 1, (dimension, dimension))
         for i in range(dimension):
             matrix[i][i] = 0
-        self.create_dataset(name, list(matrix))
+        self.create_dataset(name, list(matrix), ".atsp")
 
-    def create_dataset(self, name, full_matrix: list):
+    def create_dataset(self, name, full_matrix: list, file_suffix=".tsp"):
         self.create_dataset_directory()
         dimension = len(full_matrix)
         fullname = f"{name}{dimension}"
@@ -46,7 +46,7 @@ class FileGenerator:
         problem.edge_weight_format = "FULL_MATRIX"
         problem.display_data_type = "TWOD_DISPLAY"
         problem.edge_weights = full_matrix
-        path = os.path.join(os.getcwd(), self.DATASET_DIR_NAME, fullname, f"{fullname}.tsp")
+        path = os.path.join(os.getcwd(), self.DATASET_DIR_NAME, fullname, f"{fullname}{file_suffix}")
         problem.save(path)
         with open(path, 'a+') as file:
             file.write("\n")
@@ -55,10 +55,13 @@ class FileGenerator:
         if self.DATASET_DIR_NAME not in os.listdir(os.getcwd()):
             os.mkdir(self.DATASET_DIR_NAME)
 
+    def rm_dataset_directory(self):
+        if self.DATASET_DIR_NAME in os.listdir(os.getcwd()):
+            shutil.rmtree(self.DATASET_DIR_NAME)
+
 
 if __name__ == "__main__":
-    ### CLEAN DATASETS
-
     generator = FileGenerator()
+    generator.rm_dataset_directory()
     generator.create_symmetric_dataset("adis", 69)
     generator.create_asymmetric_dataset("babus", 3)

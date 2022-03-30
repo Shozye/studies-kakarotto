@@ -15,7 +15,7 @@ class TSPAlgorithms:
         if type(problem_init) in [str, tsplib95.models.StandardProblem]:
             self.data = DataHandler(problem_init)
         else:
-            raise Exception("u freaking fucking bitch intilaized with not str or StandardProblem")
+            raise Exception("Not str or StandardProblem")
 
     def k_random(self, k: int):
         dimension = self.data.dimension()

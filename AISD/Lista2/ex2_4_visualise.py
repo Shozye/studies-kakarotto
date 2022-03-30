@@ -27,7 +27,7 @@ def main():
         fig.suptitle(f"Plots of {main_title} per different sort")
         subplot_index = 0
         for k, gen_type in itertools.product(['1', '10', '100'], ['gen_asc', 'gen_rand', 'gen_desc']):
-            for sort_type in ['insert_sort', 'merge_sort', 'quick_sort', "hybrid_sort"]:
+            for sort_type in ['merge_sort', 'quick_sort', "hybrid_sort"]:
                 # tutaj tworzymy 3 wykresy na jednym subplocie
                 ys = list(map(lambda x: data[sort_type][gen_type][str(x)][k][value_type], xs))
                 if divide:
