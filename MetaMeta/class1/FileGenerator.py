@@ -58,10 +58,7 @@ class FileGenerator:
 
 if __name__ == "__main__":
     ### CLEAN DATASETS
-    shutil.rmtree("datasets")
 
     generator = FileGenerator()
-    generator.create_dataset("test"+str(math.floor(time.time()%3600)), [[0,1], [1,0]])
-
-    generator.create_symmetric_dataset("shozy", 4)
+    generator.create_symmetric_dataset("adis", 69)
     generator.create_asymmetric_dataset("babus", 3)
