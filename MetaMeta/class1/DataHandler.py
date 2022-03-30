@@ -16,7 +16,7 @@ class DataHandler:
         :param node2: integer
         :return: weight of edge from node1 to node2
         """
-        return self.__problem.get_weight(*(node1+1, node2+1))
+        return self.__problem.get_weight(*(node1, node2))
 
     def getListWeight(self, nodes: list) -> int:
         """Function to calculate sum of weights in list between all list members in order

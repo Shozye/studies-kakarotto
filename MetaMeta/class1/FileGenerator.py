@@ -63,5 +63,3 @@ class FileGenerator:
 if __name__ == "__main__":
     generator = FileGenerator()
     generator.rm_dataset_directory()
-    generator.create_symmetric_dataset("adis", 69)
-    generator.create_asymmetric_dataset("babus", 3)

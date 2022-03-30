@@ -7,13 +7,38 @@ import networkx as nx
 import two_opt_neighbourings
 from FileGenerator import FileGenerator
 from utils import *
-
+import time
 
 def main():
-    filename = f"tsplib_problems/bays29/bays29.tsp"
-    algos = TSPAlgorithms(filename)
-    for i in range(20):
-        print(algos.two_opt(invert))
+    generator = FileGenerator()
+    for i in range(5,100):
+        for index in range(1,6):
+            generator.create_symmetric_dataset("CHUJ"+str(index)+"cokolwiek", i)
+    return 0
+    data_for_k_random_10000 = []
+    data_for_k_random_100 = []
+    data_for_2_opt = []
+
+    start = time.time()
+    for i in range(2,30):
+        print(i)
+        algos = TSPAlgorithms(f"datasets/GANGI{i}/GANGI{i}.tsp")
+        data_for_k_random_10000.append(algos.k_random(10000)[1])
+        data_for_k_random_100.append(algos.k_random(10000)[1])
+        data_for_2_opt.append(algos.two_opt()[1])
+    print(f"Zajelo {time.time() - start}")
+
+    Xs = range(2,30)
+    plt.plot(Xs, data_for_k_random_10000, color='blue', label='k_random_1000')
+    plt.plot(Xs, data_for_k_random_100, color='red', label='random100000')
+    plt.plot(Xs, data_for_2_opt, color='yellow', label='twoopt')
+    plt.legend()
+    plt.tight_layout()
+
+    plt.show()
+
+
+
 
 
 def test_hardcoded_solutions(solution: list, filename: str):
