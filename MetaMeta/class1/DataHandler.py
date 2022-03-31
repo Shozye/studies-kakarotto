@@ -54,3 +54,9 @@ class DataHandler:
         lengths = list(map(lambda x: [x, self.getWeight(node, x)], neighbours))
         return min(lengths, key=lambda x: x[1])
 
+
+
+
+
+
+
