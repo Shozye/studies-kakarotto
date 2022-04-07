@@ -2,13 +2,15 @@ from numba import jit
 import numpy as np
 
 
+#@jit(nopython=True)
 def invert(solution: np.array):
     for i in range(len(solution)):
         for j in range(i + 1, len(solution)):
             neighbour = solution[:i] + solution[i:j + 1][::-1] + solution[j + 1:]
-            yield neighbour
+            yield
 
 
+#@jit(nopython=True)
 def swap(solution: np.array):
     for i in range(len(solution)):
         for j in range(i + 1, len(solution)):

@@ -1,1 +1,4032 @@
-{"insert_sort": {"gen_asc": {"100": {"1": {"avg_displacements": 198.0, "avg_comparisons": 99.0}, "10": {"avg_displacements": 198.0, "avg_comparisons": 99.0}, "100": {"avg_displacements": 198.0, "avg_comparisons": 99.0}}, "150": {"1": {"avg_displacements": 298.0, "avg_comparisons": 149.0}, "10": {"avg_displacements": 298.0, "avg_comparisons": 149.0}, "100": {"avg_displacements": 298.0, "avg_comparisons": 149.0}}, "200": {"1": {"avg_displacements": 398.0, "avg_comparisons": 199.0}, "10": {"avg_displacements": 398.0, "avg_comparisons": 199.0}, "100": {"avg_displacements": 398.0, "avg_comparisons": 199.0}}, "250": {"1": {"avg_displacements": 498.0, "avg_comparisons": 249.0}, "10": {"avg_displacements": 498.0, "avg_comparisons": 249.0}, "100": {"avg_displacements": 498.0, "avg_comparisons": 249.0}}, "300": {"1": {"avg_displacements": 598.0, "avg_comparisons": 299.0}, "10": {"avg_displacements": 598.0, "avg_comparisons": 299.0}, "100": {"avg_displacements": 598.0, "avg_comparisons": 299.0}}, "350": {"1": {"avg_displacements": 698.0, "avg_comparisons": 349.0}, "10": {"avg_displacements": 698.0, "avg_comparisons": 349.0}, "100": {"avg_displacements": 698.0, "avg_comparisons": 349.0}}, "400": {"1": {"avg_displacements": 798.0, "avg_comparisons": 399.0}, "10": {"avg_displacements": 798.0, "avg_comparisons": 399.0}, "100": {"avg_displacements": 798.0, "avg_comparisons": 399.0}}, "450": {"1": {"avg_displacements": 898.0, "avg_comparisons": 449.0}, "10": {"avg_displacements": 898.0, "avg_comparisons": 449.0}, "100": {"avg_displacements": 898.0, "avg_comparisons": 449.0}}, "500": {"1": {"avg_displacements": 998.0, "avg_comparisons": 499.0}, "10": {"avg_displacements": 998.0, "avg_comparisons": 499.0}, "100": {"avg_displacements": 998.0, "avg_comparisons": 499.0}}, "550": {"1": {"avg_displacements": 1098.0, "avg_comparisons": 549.0}, "10": {"avg_displacements": 1098.0, "avg_comparisons": 549.0}, "100": {"avg_displacements": 1098.0, "avg_comparisons": 549.0}}, "600": {"1": {"avg_displacements": 1198.0, "avg_comparisons": 599.0}, "10": {"avg_displacements": 1198.0, "avg_comparisons": 599.0}, "100": {"avg_displacements": 1198.0, "avg_comparisons": 599.0}}, "650": {"1": {"avg_displacements": 1298.0, "avg_comparisons": 649.0}, "10": {"avg_displacements": 1298.0, "avg_comparisons": 649.0}, "100": {"avg_displacements": 1298.0, "avg_comparisons": 649.0}}, "700": {"1": {"avg_displacements": 1398.0, "avg_comparisons": 699.0}, "10": {"avg_displacements": 1398.0, "avg_comparisons": 699.0}, "100": {"avg_displacements": 1398.0, "avg_comparisons": 699.0}}, "750": {"1": {"avg_displacements": 1498.0, "avg_comparisons": 749.0}, "10": {"avg_displacements": 1498.0, "avg_comparisons": 749.0}, "100": {"avg_displacements": 1498.0, "avg_comparisons": 749.0}}, "800": {"1": {"avg_displacements": 1598.0, "avg_comparisons": 799.0}, "10": {"avg_displacements": 1598.0, "avg_comparisons": 799.0}, "100": {"avg_displacements": 1598.0, "avg_comparisons": 799.0}}, "850": {"1": {"avg_displacements": 1698.0, "avg_comparisons": 849.0}, "10": {"avg_displacements": 1698.0, "avg_comparisons": 849.0}, "100": {"avg_displacements": 1698.0, "avg_comparisons": 849.0}}, "900": {"1": {"avg_displacements": 1798.0, "avg_comparisons": 899.0}, "10": {"avg_displacements": 1798.0, "avg_comparisons": 899.0}, "100": {"avg_displacements": 1798.0, "avg_comparisons": 899.0}}, "950": {"1": {"avg_displacements": 1898.0, "avg_comparisons": 949.0}, "10": {"avg_displacements": 1898.0, "avg_comparisons": 949.0}, "100": {"avg_displacements": 1898.0, "avg_comparisons": 949.0}}, "1000": {"1": {"avg_displacements": 1998.0, "avg_comparisons": 999.0}, "10": {"avg_displacements": 1998.0, "avg_comparisons": 999.0}, "100": {"avg_displacements": 1998.0, "avg_comparisons": 999.0}}}, "gen_desc": {"100": {"1": {"avg_displacements": 5120.0, "avg_comparisons": 9943.0}, "10": {"avg_displacements": 5121.6, "avg_comparisons": 9946.2}, "100": {"avg_displacements": 5123.21, "avg_comparisons": 9949.42}}, "150": {"1": {"avg_displacements": 11440.0, "avg_comparisons": 22433.0}, "10": {"avg_displacements": 11434.6, "avg_comparisons": 22422.2}, "100": {"avg_displacements": 11435.2, "avg_comparisons": 22423.4}}, "200": {"1": {"avg_displacements": 20251.0, "avg_comparisons": 39905.0}, "10": {"avg_displacements": 20249.0, "avg_comparisons": 39901.0}, "100": {"avg_displacements": 20249.19, "avg_comparisons": 39901.38}}, "250": {"1": {"avg_displacements": 31568.0, "avg_comparisons": 62389.0}, "10": {"avg_displacements": 31561.2, "avg_comparisons": 62375.4}, "100": {"avg_displacements": 31560.06, "avg_comparisons": 62373.12}}, "300": {"1": {"avg_displacements": 45378.0, "avg_comparisons": 89859.0}, "10": {"avg_displacements": 45371.3, "avg_comparisons": 89845.6}, "100": {"avg_displacements": 45373.66, "avg_comparisons": 89850.32}}, "350": {"1": {"avg_displacements": 61659.0, "avg_comparisons": 122271.0}, "10": {"avg_displacements": 61682.1, "avg_comparisons": 122317.2}, "100": {"avg_displacements": 61685.75, "avg_comparisons": 122324.5}}, "400": {"1": {"avg_displacements": 80492.0, "avg_comparisons": 159787.0}, "10": {"avg_displacements": 80500.7, "avg_comparisons": 159804.4}, "100": {"avg_displacements": 80498.89, "avg_comparisons": 159800.78}}, "450": {"1": {"avg_displacements": 101802.0, "avg_comparisons": 202257.0}, "10": {"avg_displacements": 101811.9, "avg_comparisons": 202276.8}, "100": {"avg_displacements": 101810.78, "avg_comparisons": 202274.56}}, "500": {"1": {"avg_displacements": 125609.0, "avg_comparisons": 249721.0}, "10": {"avg_displacements": 125616.6, "avg_comparisons": 249736.2}, "100": {"avg_displacements": 125621.8, "avg_comparisons": 249746.6}}, "550": {"1": {"avg_displacements": 151935.0, "avg_comparisons": 302223.0}, "10": {"avg_displacements": 151937.3, "avg_comparisons": 302227.6}, "100": {"avg_displacements": 151935.99, "avg_comparisons": 302224.98}}, "600": {"1": {"avg_displacements": 180725.0, "avg_comparisons": 359653.0}, "10": {"avg_displacements": 180747.2, "avg_comparisons": 359697.4}, "100": {"avg_displacements": 180748.78, "avg_comparisons": 359700.56}}, "650": {"1": {"avg_displacements": 212075.0, "avg_comparisons": 422203.0}, "10": {"avg_displacements": 212059.7, "avg_comparisons": 422172.4}, "100": {"avg_displacements": 212064.07, "avg_comparisons": 422181.14}}, "700": {"1": {"avg_displacements": 245868.0, "avg_comparisons": 489639.0}, "10": {"avg_displacements": 245874.2, "avg_comparisons": 489651.4}, "100": {"avg_displacements": 245873.35, "avg_comparisons": 489649.7}}, "750": {"1": {"avg_displacements": 282175.0, "avg_comparisons": 562103.0}, "10": {"avg_displacements": 282180.0, "avg_comparisons": 562113.0}, "100": {"avg_displacements": 282188.22, "avg_comparisons": 562129.44}}, "800": {"1": {"avg_displacements": 320981.0, "avg_comparisons": 639565.0}, "10": {"avg_displacements": 321004.4, "avg_comparisons": 639611.8}, "100": {"avg_displacements": 320998.35, "avg_comparisons": 639599.7}}, "850": {"1": {"avg_displacements": 362327.0, "avg_comparisons": 722107.0}, "10": {"avg_displacements": 362308.8, "avg_comparisons": 722070.6}, "100": {"avg_displacements": 362310.97, "avg_comparisons": 722074.94}}, "900": {"1": {"avg_displacements": 406117.0, "avg_comparisons": 809537.0}, "10": {"avg_displacements": 406119.0, "avg_comparisons": 809541.0}, "100": {"avg_displacements": 406124.58, "avg_comparisons": 809552.16}}, "950": {"1": {"avg_displacements": 452445.0, "avg_comparisons": 902043.0}, "10": {"avg_displacements": 452436.5, "avg_comparisons": 902026.0}, "100": {"avg_displacements": 452435.89, "avg_comparisons": 902024.78}}, "1000": {"1": {"avg_displacements": 501264.0, "avg_comparisons": 999531.0}, "10": {"avg_displacements": 501249.3, "avg_comparisons": 999501.6}, "100": {"avg_displacements": 501247.92, "avg_comparisons": 999498.84}}}, "gen_rand": {"100": {"1": {"avg_displacements": 2757.0, "avg_comparisons": 5217.0}, "10": {"avg_displacements": 2659.9, "avg_comparisons": 5022.8}, "100": {"avg_displacements": 2676.6, "avg_comparisons": 5056.2}}, "150": {"1": {"avg_displacements": 6417.0, "avg_comparisons": 12387.0}, "10": {"avg_displacements": 5739.1, "avg_comparisons": 11031.2}, "100": {"avg_displacements": 5849.18, "avg_comparisons": 11251.36}}, "200": {"1": {"avg_displacements": 9760.0, "avg_comparisons": 18923.0}, "10": {"avg_displacements": 10573.0, "avg_comparisons": 20549.0}, "100": {"avg_displacements": 10341.22, "avg_comparisons": 20085.44}}, "250": {"1": {"avg_displacements": 15439.0, "avg_comparisons": 30131.0}, "10": {"avg_displacements": 16081.7, "avg_comparisons": 31416.4}, "100": {"avg_displacements": 15981.69, "avg_comparisons": 31216.38}}, "300": {"1": {"avg_displacements": 22362.0, "avg_comparisons": 43827.0}, "10": {"avg_displacements": 22747.5, "avg_comparisons": 44598.0}, "100": {"avg_displacements": 22842.91, "avg_comparisons": 44788.82}}, "350": {"1": {"avg_displacements": 31094.0, "avg_comparisons": 61141.0}, "10": {"avg_displacements": 31452.9, "avg_comparisons": 61858.8}, "100": {"avg_displacements": 31179.46, "avg_comparisons": 61311.92}}, "400": {"1": {"avg_displacements": 40339.0, "avg_comparisons": 79481.0}, "10": {"avg_displacements": 40353.3, "avg_comparisons": 79509.6}, "100": {"avg_displacements": 40600.89, "avg_comparisons": 80004.78}}, "450": {"1": {"avg_displacements": 50793.0, "avg_comparisons": 100239.0}, "10": {"avg_displacements": 50830.4, "avg_comparisons": 100313.8}, "100": {"avg_displacements": 51390.95, "avg_comparisons": 101434.9}}, "500": {"1": {"avg_displacements": 65140.0, "avg_comparisons": 128783.0}, "10": {"avg_displacements": 62311.7, "avg_comparisons": 123126.4}, "100": {"avg_displacements": 63317.83, "avg_comparisons": 125138.66}}, "550": {"1": {"avg_displacements": 76301.0, "avg_comparisons": 150955.0}, "10": {"avg_displacements": 75911.9, "avg_comparisons": 150176.8}, "100": {"avg_displacements": 76774.92, "avg_comparisons": 151902.84}}, "600": {"1": {"avg_displacements": 89795.0, "avg_comparisons": 177793.0}, "10": {"avg_displacements": 91993.4, "avg_comparisons": 182189.8}, "100": {"avg_displacements": 90894.18, "avg_comparisons": 179991.36}}, "650": {"1": {"avg_displacements": 104985.0, "avg_comparisons": 208023.0}, "10": {"avg_displacements": 106349.0, "avg_comparisons": 210751.0}, "100": {"avg_displacements": 106377.93, "avg_comparisons": 210808.86}}, "700": {"1": {"avg_displacements": 128584.0, "avg_comparisons": 255071.0}, "10": {"avg_displacements": 124899.3, "avg_comparisons": 247701.6}, "100": {"avg_displacements": 123579.33, "avg_comparisons": 245061.66}}, "750": {"1": {"avg_displacements": 136151.0, "avg_comparisons": 270055.0}, "10": {"avg_displacements": 141616.6, "avg_comparisons": 280986.2}, "100": {"avg_displacements": 142210.49, "avg_comparisons": 282173.98}}, "800": {"1": {"avg_displacements": 162717.0, "avg_comparisons": 323037.0}, "10": {"avg_displacements": 161850.6, "avg_comparisons": 321304.2}, "100": {"avg_displacements": 160884.88, "avg_comparisons": 319372.76}}, "850": {"1": {"avg_displacements": 181084.0, "avg_comparisons": 359621.0}, "10": {"avg_displacements": 181398.3, "avg_comparisons": 360249.6}, "100": {"avg_displacements": 181508.54, "avg_comparisons": 360470.08}}, "900": {"1": {"avg_displacements": 211554.0, "avg_comparisons": 420411.0}, "10": {"avg_displacements": 205228.4, "avg_comparisons": 407759.8}, "100": {"avg_displacements": 204236.71, "avg_comparisons": 405776.42}}, "950": {"1": {"avg_displacements": 231161.0, "avg_comparisons": 459475.0}, "10": {"avg_displacements": 227580.5, "avg_comparisons": 452314.0}, "100": {"avg_displacements": 227586.95, "avg_comparisons": 452326.9}}, "1000": {"1": {"avg_displacements": 251620.0, "avg_comparisons": 500243.0}, "10": {"avg_displacements": 252446.1, "avg_comparisons": 501895.2}, "100": {"avg_displacements": 250477.84, "avg_comparisons": 497958.68}}}}, "merge_sort": {"gen_asc": {"100": {"1": {"avg_displacements": 1344.0, "avg_comparisons": 1582.0}, "10": {"avg_displacements": 1344.0, "avg_comparisons": 1582.0}, "100": {"avg_displacements": 1344.0, "avg_comparisons": 1582.0}}, "150": {"1": {"avg_displacements": 2188.0, "avg_comparisons": 2550.0}, "10": {"avg_displacements": 2188.0, "avg_comparisons": 2550.0}, "100": {"avg_displacements": 2188.0, "avg_comparisons": 2550.0}}, "200": {"1": {"avg_displacements": 3088.0, "avg_comparisons": 3566.0}, "10": {"avg_displacements": 3088.0, "avg_comparisons": 3566.0}, "100": {"avg_displacements": 3088.0, "avg_comparisons": 3566.0}}, "250": {"1": {"avg_displacements": 3988.0, "avg_comparisons": 4514.0}, "10": {"avg_displacements": 3988.0, "avg_comparisons": 4514.0}, "100": {"avg_displacements": 3988.0, "avg_comparisons": 4514.0}}, "300": {"1": {"avg_displacements": 4976.0, "avg_comparisons": 5702.0}, "10": {"avg_displacements": 4976.0, "avg_comparisons": 5702.0}, "100": {"avg_displacements": 4976.0, "avg_comparisons": 5702.0}}, "350": {"1": {"avg_displacements": 5976.0, "avg_comparisons": 6840.0}, "10": {"avg_displacements": 5976.0, "avg_comparisons": 6840.0}, "100": {"avg_displacements": 5976.0, "avg_comparisons": 6840.0}}, "400": {"1": {"avg_displacements": 6976.0, "avg_comparisons": 7934.0}, "10": {"avg_displacements": 6976.0, "avg_comparisons": 7934.0}, "100": {"avg_displacements": 6976.0, "avg_comparisons": 7934.0}}, "450": {"1": {"avg_displacements": 7976.0, "avg_comparisons": 9008.0}, "10": {"avg_displacements": 7976.0, "avg_comparisons": 9008.0}, "100": {"avg_displacements": 7976.0, "avg_comparisons": 9008.0}}, "500": {"1": {"avg_displacements": 8976.0, "avg_comparisons": 10030.0}, "10": {"avg_displacements": 8976.0, "avg_comparisons": 10030.0}, "100": {"avg_displacements": 8976.0, "avg_comparisons": 10030.0}}, "550": {"1": {"avg_displacements": 10052.0, "avg_comparisons": 11306.0}, "10": {"avg_displacements": 10052.0, "avg_comparisons": 11306.0}, "100": {"avg_displacements": 10052.0, "avg_comparisons": 11306.0}}, "600": {"1": {"avg_displacements": 11152.0, "avg_comparisons": 12606.0}, "10": {"avg_displacements": 11152.0, "avg_comparisons": 12606.0}, "100": {"avg_displacements": 11152.0, "avg_comparisons": 12606.0}}, "650": {"1": {"avg_displacements": 12252.0, "avg_comparisons": 13846.0}, "10": {"avg_displacements": 12252.0, "avg_comparisons": 13846.0}, "100": {"avg_displacements": 12252.0, "avg_comparisons": 13846.0}}, "700": {"1": {"avg_displacements": 13352.0, "avg_comparisons": 15082.0}, "10": {"avg_displacements": 13352.0, "avg_comparisons": 15082.0}, "100": {"avg_displacements": 13352.0, "avg_comparisons": 15082.0}}, "750": {"1": {"avg_displacements": 14452.0, "avg_comparisons": 16262.0}, "10": {"avg_displacements": 14452.0, "avg_comparisons": 16262.0}, "100": {"avg_displacements": 14452.0, "avg_comparisons": 16262.0}}, "800": {"1": {"avg_displacements": 15552.0, "avg_comparisons": 17470.0}, "10": {"avg_displacements": 15552.0, "avg_comparisons": 17470.0}, "100": {"avg_displacements": 15552.0, "avg_comparisons": 17470.0}}, "850": {"1": {"avg_displacements": 16652.0, "avg_comparisons": 18690.0}, "10": {"avg_displacements": 16652.0, "avg_comparisons": 18690.0}, "100": {"avg_displacements": 16652.0, "avg_comparisons": 18690.0}}, "900": {"1": {"avg_displacements": 17752.0, "avg_comparisons": 19818.0}, "10": {"avg_displacements": 17752.0, "avg_comparisons": 19818.0}, "100": {"avg_displacements": 17752.0, "avg_comparisons": 19818.0}}, "950": {"1": {"avg_displacements": 18852.0, "avg_comparisons": 20982.0}, "10": {"avg_displacements": 18852.0, "avg_comparisons": 20982.0}, "100": {"avg_displacements": 18852.0, "avg_comparisons": 20982.0}}, "1000": {"1": {"avg_displacements": 19952.0, "avg_comparisons": 22062.0}, "10": {"avg_displacements": 19952.0, "avg_comparisons": 22062.0}, "100": {"avg_displacements": 19952.0, "avg_comparisons": 22062.0}}}, "gen_desc": {"100": {"1": {"avg_displacements": 1344.0, "avg_comparisons": 1526.0}, "10": {"avg_displacements": 1344.0, "avg_comparisons": 1527.4}, "100": {"avg_displacements": 1344.0, "avg_comparisons": 1530.54}}, "150": {"1": {"avg_displacements": 2188.0, "avg_comparisons": 2458.0}, "10": {"avg_displacements": 2188.0, "avg_comparisons": 2458.4}, "100": {"avg_displacements": 2188.0, "avg_comparisons": 2462.26}}, "200": {"1": {"avg_displacements": 3088.0, "avg_comparisons": 3484.0}, "10": {"avg_displacements": 3088.0, "avg_comparisons": 3466.6}, "100": {"avg_displacements": 3088.0, "avg_comparisons": 3462.76}}, "250": {"1": {"avg_displacements": 3988.0, "avg_comparisons": 4550.0}, "10": {"avg_displacements": 3988.0, "avg_comparisons": 4512.0}, "100": {"avg_displacements": 3988.0, "avg_comparisons": 4516.16}}, "300": {"1": {"avg_displacements": 4976.0, "avg_comparisons": 5540.0}, "10": {"avg_displacements": 4976.0, "avg_comparisons": 5525.6}, "100": {"avg_displacements": 4976.0, "avg_comparisons": 5527.66}}, "350": {"1": {"avg_displacements": 5976.0, "avg_comparisons": 6608.0}, "10": {"avg_displacements": 5976.0, "avg_comparisons": 6613.0}, "100": {"avg_displacements": 5976.0, "avg_comparisons": 6613.38}}, "400": {"1": {"avg_displacements": 6976.0, "avg_comparisons": 7728.0}, "10": {"avg_displacements": 6976.0, "avg_comparisons": 7729.8}, "100": {"avg_displacements": 6976.0, "avg_comparisons": 7728.84}}, "450": {"1": {"avg_displacements": 7976.0, "avg_comparisons": 8834.0}, "10": {"avg_displacements": 7976.0, "avg_comparisons": 8857.2}, "100": {"avg_displacements": 7976.0, "avg_comparisons": 8857.14}}, "500": {"1": {"avg_displacements": 8976.0, "avg_comparisons": 10028.0}, "10": {"avg_displacements": 8976.0, "avg_comparisons": 10036.4}, "100": {"avg_displacements": 8976.0, "avg_comparisons": 10035.08}}, "550": {"1": {"avg_displacements": 10052.0, "avg_comparisons": 11144.0}, "10": {"avg_displacements": 10052.0, "avg_comparisons": 11135.0}, "100": {"avg_displacements": 10052.0, "avg_comparisons": 11131.32}}, "600": {"1": {"avg_displacements": 11152.0, "avg_comparisons": 12284.0}, "10": {"avg_displacements": 11152.0, "avg_comparisons": 12268.8}, "100": {"avg_displacements": 11152.0, "avg_comparisons": 12251.06}}, "650": {"1": {"avg_displacements": 12252.0, "avg_comparisons": 13456.0}, "10": {"avg_displacements": 12252.0, "avg_comparisons": 13438.4}, "100": {"avg_displacements": 12252.0, "avg_comparisons": 13439.74}}, "700": {"1": {"avg_displacements": 13352.0, "avg_comparisons": 14622.0}, "10": {"avg_displacements": 13352.0, "avg_comparisons": 14622.0}, "100": {"avg_displacements": 13352.0, "avg_comparisons": 14621.9}}, "750": {"1": {"avg_displacements": 14452.0, "avg_comparisons": 15844.0}, "10": {"avg_displacements": 14452.0, "avg_comparisons": 15856.8}, "100": {"avg_displacements": 14452.0, "avg_comparisons": 15863.96}}, "800": {"1": {"avg_displacements": 15552.0, "avg_comparisons": 17056.0}, "10": {"avg_displacements": 15552.0, "avg_comparisons": 17081.0}, "100": {"avg_displacements": 15552.0, "avg_comparisons": 17067.12}}, "850": {"1": {"avg_displacements": 16652.0, "avg_comparisons": 18240.0}, "10": {"avg_displacements": 16652.0, "avg_comparisons": 18241.0}, "100": {"avg_displacements": 16652.0, "avg_comparisons": 18246.52}}, "900": {"1": {"avg_displacements": 17752.0, "avg_comparisons": 19514.0}, "10": {"avg_displacements": 17752.0, "avg_comparisons": 19522.0}, "100": {"avg_displacements": 17752.0, "avg_comparisons": 19517.52}}, "950": {"1": {"avg_displacements": 18852.0, "avg_comparisons": 20726.0}, "10": {"avg_displacements": 18852.0, "avg_comparisons": 20760.0}, "100": {"avg_displacements": 18852.0, "avg_comparisons": 20753.78}}, "1000": {"1": {"avg_displacements": 19952.0, "avg_comparisons": 22068.0}, "10": {"avg_displacements": 19952.0, "avg_comparisons": 22059.2}, "100": {"avg_displacements": 19952.0, "avg_comparisons": 22073.82}}}, "gen_rand": {"100": {"1": {"avg_displacements": 1344.0, "avg_comparisons": 1944.0}, "10": {"avg_displacements": 1344.0, "avg_comparisons": 1957.8}, "100": {"avg_displacements": 1344.0, "avg_comparisons": 1954.0}}, "150": {"1": {"avg_displacements": 2188.0, "avg_comparisons": 3182.0}, "10": {"avg_displacements": 2188.0, "avg_comparisons": 3187.6}, "100": {"avg_displacements": 2188.0, "avg_comparisons": 3188.84}}, "200": {"1": {"avg_displacements": 3088.0, "avg_comparisons": 4528.0}, "10": {"avg_displacements": 3088.0, "avg_comparisons": 4498.4}, "100": {"avg_displacements": 3088.0, "avg_comparisons": 4505.0}}, "250": {"1": {"avg_displacements": 3988.0, "avg_comparisons": 5882.0}, "10": {"avg_displacements": 3988.0, "avg_comparisons": 5848.6}, "100": {"avg_displacements": 3988.0, "avg_comparisons": 5845.26}}, "300": {"1": {"avg_displacements": 4976.0, "avg_comparisons": 7308.0}, "10": {"avg_displacements": 4976.0, "avg_comparisons": 7284.2}, "100": {"avg_displacements": 4976.0, "avg_comparisons": 7278.94}}, "350": {"1": {"avg_displacements": 5976.0, "avg_comparisons": 8728.0}, "10": {"avg_displacements": 5976.0, "avg_comparisons": 8742.4}, "100": {"avg_displacements": 5976.0, "avg_comparisons": 8738.84}}, "400": {"1": {"avg_displacements": 6976.0, "avg_comparisons": 10200.0}, "10": {"avg_displacements": 6976.0, "avg_comparisons": 10204.0}, "100": {"avg_displacements": 6976.0, "avg_comparisons": 10204.88}}, "450": {"1": {"avg_displacements": 7976.0, "avg_comparisons": 11696.0}, "10": {"avg_displacements": 7976.0, "avg_comparisons": 11700.6}, "100": {"avg_displacements": 7976.0, "avg_comparisons": 11696.58}}, "500": {"1": {"avg_displacements": 8976.0, "avg_comparisons": 13182.0}, "10": {"avg_displacements": 8976.0, "avg_comparisons": 13202.8}, "100": {"avg_displacements": 8976.0, "avg_comparisons": 13192.88}}, "550": {"1": {"avg_displacements": 10052.0, "avg_comparisons": 14738.0}, "10": {"avg_displacements": 10052.0, "avg_comparisons": 14754.4}, "100": {"avg_displacements": 10052.0, "avg_comparisons": 14768.1}}, "600": {"1": {"avg_displacements": 11152.0, "avg_comparisons": 16380.0}, "10": {"avg_displacements": 11152.0, "avg_comparisons": 16362.4}, "100": {"avg_displacements": 11152.0, "avg_comparisons": 16358.88}}, "650": {"1": {"avg_displacements": 12252.0, "avg_comparisons": 17960.0}, "10": {"avg_displacements": 12252.0, "avg_comparisons": 17959.0}, "100": {"avg_displacements": 12252.0, "avg_comparisons": 17965.6}}, "700": {"1": {"avg_displacements": 13352.0, "avg_comparisons": 19596.0}, "10": {"avg_displacements": 13352.0, "avg_comparisons": 19583.2}, "100": {"avg_displacements": 13352.0, "avg_comparisons": 19573.68}}, "750": {"1": {"avg_displacements": 14452.0, "avg_comparisons": 21188.0}, "10": {"avg_displacements": 14452.0, "avg_comparisons": 21173.8}, "100": {"avg_displacements": 14452.0, "avg_comparisons": 21190.78}}, "800": {"1": {"avg_displacements": 15552.0, "avg_comparisons": 22810.0}, "10": {"avg_displacements": 15552.0, "avg_comparisons": 22810.4}, "100": {"avg_displacements": 15552.0, "avg_comparisons": 22816.16}}, "850": {"1": {"avg_displacements": 16652.0, "avg_comparisons": 24404.0}, "10": {"avg_displacements": 16652.0, "avg_comparisons": 24456.4}, "100": {"avg_displacements": 16652.0, "avg_comparisons": 24450.92}}, "900": {"1": {"avg_displacements": 17752.0, "avg_comparisons": 26054.0}, "10": {"avg_displacements": 17752.0, "avg_comparisons": 26092.4}, "100": {"avg_displacements": 17752.0, "avg_comparisons": 26094.16}}, "950": {"1": {"avg_displacements": 18852.0, "avg_comparisons": 27764.0}, "10": {"avg_displacements": 18852.0, "avg_comparisons": 27730.0}, "100": {"avg_displacements": 18852.0, "avg_comparisons": 27736.56}}, "1000": {"1": {"avg_displacements": 19952.0, "avg_comparisons": 29298.0}, "10": {"avg_displacements": 19952.0, "avg_comparisons": 29382.2}, "100": {"avg_displacements": 19952.0, "avg_comparisons": 29391.28}}}}, "quick_sort": {"gen_asc": {"100": {"1": {"avg_displacements": 297.0, "avg_comparisons": 5149.0}, "10": {"avg_displacements": 297.0, "avg_comparisons": 5149.0}, "100": {"avg_displacements": 297.0, "avg_comparisons": 5149.0}}, "150": {"1": {"avg_displacements": 447.0, "avg_comparisons": 11474.0}, "10": {"avg_displacements": 447.0, "avg_comparisons": 11474.0}, "100": {"avg_displacements": 447.0, "avg_comparisons": 11474.0}}, "200": {"1": {"avg_displacements": 597.0, "avg_comparisons": 20299.0}, "10": {"avg_displacements": 597.0, "avg_comparisons": 20299.0}, "100": {"avg_displacements": 597.0, "avg_comparisons": 20299.0}}, "250": {"1": {"avg_displacements": 747.0, "avg_comparisons": 31624.0}, "10": {"avg_displacements": 747.0, "avg_comparisons": 31624.0}, "100": {"avg_displacements": 747.0, "avg_comparisons": 31624.0}}, "300": {"1": {"avg_displacements": 897.0, "avg_comparisons": 45449.0}, "10": {"avg_displacements": 897.0, "avg_comparisons": 45449.0}, "100": {"avg_displacements": 897.0, "avg_comparisons": 45449.0}}, "350": {"1": {"avg_displacements": 1047.0, "avg_comparisons": 61774.0}, "10": {"avg_displacements": 1047.0, "avg_comparisons": 61774.0}, "100": {"avg_displacements": 1047.0, "avg_comparisons": 61774.0}}, "400": {"1": {"avg_displacements": 1197.0, "avg_comparisons": 80599.0}, "10": {"avg_displacements": 1197.0, "avg_comparisons": 80599.0}, "100": {"avg_displacements": 1197.0, "avg_comparisons": 80599.0}}, "450": {"1": {"avg_displacements": 1347.0, "avg_comparisons": 101924.0}, "10": {"avg_displacements": 1347.0, "avg_comparisons": 101924.0}, "100": {"avg_displacements": 1347.0, "avg_comparisons": 101924.0}}, "500": {"1": {"avg_displacements": 1497.0, "avg_comparisons": 125749.0}, "10": {"avg_displacements": 1497.0, "avg_comparisons": 125749.0}, "100": {"avg_displacements": 1497.0, "avg_comparisons": 125749.0}}, "550": {"1": {"avg_displacements": 1647.0, "avg_comparisons": 152074.0}, "10": {"avg_displacements": 1647.0, "avg_comparisons": 152074.0}, "100": {"avg_displacements": 1647.0, "avg_comparisons": 152074.0}}, "600": {"1": {"avg_displacements": 1797.0, "avg_comparisons": 180899.0}, "10": {"avg_displacements": 1797.0, "avg_comparisons": 180899.0}, "100": {"avg_displacements": 1797.0, "avg_comparisons": 180899.0}}, "650": {"1": {"avg_displacements": 1947.0, "avg_comparisons": 212224.0}, "10": {"avg_displacements": 1947.0, "avg_comparisons": 212224.0}, "100": {"avg_displacements": 1947.0, "avg_comparisons": 212224.0}}, "700": {"1": {"avg_displacements": 2097.0, "avg_comparisons": 246049.0}, "10": {"avg_displacements": 2097.0, "avg_comparisons": 246049.0}, "100": {"avg_displacements": 2097.0, "avg_comparisons": 246049.0}}, "750": {"1": {"avg_displacements": 2247.0, "avg_comparisons": 282374.0}, "10": {"avg_displacements": 2247.0, "avg_comparisons": 282374.0}, "100": {"avg_displacements": 2247.0, "avg_comparisons": 282374.0}}, "800": {"1": {"avg_displacements": 2397.0, "avg_comparisons": 321199.0}, "10": {"avg_displacements": 2397.0, "avg_comparisons": 321199.0}, "100": {"avg_displacements": 2397.0, "avg_comparisons": 321199.0}}, "850": {"1": {"avg_displacements": 2547.0, "avg_comparisons": 362524.0}, "10": {"avg_displacements": 2547.0, "avg_comparisons": 362524.0}, "100": {"avg_displacements": 2547.0, "avg_comparisons": 362524.0}}, "900": {"1": {"avg_displacements": 2697.0, "avg_comparisons": 406349.0}, "10": {"avg_displacements": 2697.0, "avg_comparisons": 406349.0}, "100": {"avg_displacements": 2697.0, "avg_comparisons": 406349.0}}, "950": {"1": {"avg_displacements": 2847.0, "avg_comparisons": 452674.0}, "10": {"avg_displacements": 2847.0, "avg_comparisons": 452674.0}, "100": {"avg_displacements": 2847.0, "avg_comparisons": 452674.0}}, "1000": {"1": {"avg_displacements": 2997.0, "avg_comparisons": 501499.0}, "10": {"avg_displacements": 2997.0, "avg_comparisons": 501499.0}, "100": {"avg_displacements": 2997.0, "avg_comparisons": 501499.0}}}, "gen_desc": {"100": {"1": {"avg_displacements": 4621.0, "avg_comparisons": 6759.0}, "10": {"avg_displacements": 4757.3, "avg_comparisons": 6954.8}, "100": {"avg_displacements": 4676.52, "avg_comparisons": 6835.72}}, "150": {"1": {"avg_displacements": 10837.0, "avg_comparisons": 15988.0}, "10": {"avg_displacements": 10370.3, "avg_comparisons": 15284.1}, "100": {"avg_displacements": 10317.46, "avg_comparisons": 15206.87}}, "200": {"1": {"avg_displacements": 18586.0, "avg_comparisons": 27509.0}, "10": {"avg_displacements": 18130.6, "avg_comparisons": 26838.7}, "100": {"avg_displacements": 18169.73, "avg_comparisons": 26895.02}}, "250": {"1": {"avg_displacements": 28238.0, "avg_comparisons": 41908.0}, "10": {"avg_displacements": 28436.3, "avg_comparisons": 42204.9}, "100": {"avg_displacements": 28282.34, "avg_comparisons": 41973.41}}, "300": {"1": {"avg_displacements": 40996.0, "avg_comparisons": 60946.0}, "10": {"avg_displacements": 40421.0, "avg_comparisons": 60094.7}, "100": {"avg_displacements": 40411.96, "avg_comparisons": 60078.82}}, "350": {"1": {"avg_displacements": 57166.0, "avg_comparisons": 85098.0}, "10": {"avg_displacements": 54833.6, "avg_comparisons": 81619.9}, "100": {"avg_displacements": 54962.66, "avg_comparisons": 81814.75}}, "400": {"1": {"avg_displacements": 75244.0, "avg_comparisons": 112122.0}, "10": {"avg_displacements": 72137.0, "avg_comparisons": 107483.6}, "100": {"avg_displacements": 71665.41, "avg_comparisons": 106777.43}}, "450": {"1": {"avg_displacements": 90828.0, "avg_comparisons": 135432.0}, "10": {"avg_displacements": 90378.9, "avg_comparisons": 134759.6}, "100": {"avg_displacements": 90200.43, "avg_comparisons": 134492.91}}, "500": {"1": {"avg_displacements": 111428.0, "avg_comparisons": 166239.0}, "10": {"avg_displacements": 112614.4, "avg_comparisons": 168015.8}, "100": {"avg_displacements": 111899.07, "avg_comparisons": 166946.95}}, "550": {"1": {"avg_displacements": 132914.0, "avg_comparisons": 198402.0}, "10": {"avg_displacements": 134267.3, "avg_comparisons": 200413.6}, "100": {"avg_displacements": 134891.97, "avg_comparisons": 201348.19}}, "600": {"1": {"avg_displacements": 159386.0, "avg_comparisons": 238016.0}, "10": {"avg_displacements": 161415.5, "avg_comparisons": 241038.6}, "100": {"avg_displacements": 160346.69, "avg_comparisons": 239439.51}}, "650": {"1": {"avg_displacements": 187539.0, "avg_comparisons": 280140.0}, "10": {"avg_displacements": 186266.6, "avg_comparisons": 278238.4}, "100": {"avg_displacements": 187835.68, "avg_comparisons": 280584.96}}, "700": {"1": {"avg_displacements": 221954.0, "avg_comparisons": 331661.0}, "10": {"avg_displacements": 217071.8, "avg_comparisons": 324348.7}, "100": {"avg_displacements": 217487.41, "avg_comparisons": 324973.14}}, "750": {"1": {"avg_displacements": 247436.0, "avg_comparisons": 369812.0}, "10": {"avg_displacements": 249354.7, "avg_comparisons": 372682.0}, "100": {"avg_displacements": 249128.83, "avg_comparisons": 372346.91}}, "800": {"1": {"avg_displacements": 288610.0, "avg_comparisons": 431472.0}, "10": {"avg_displacements": 284360.3, "avg_comparisons": 425100.0}, "100": {"avg_displacements": 283986.66, "avg_comparisons": 424542.37}}, "850": {"1": {"avg_displacements": 322846.0, "avg_comparisons": 482734.0}, "10": {"avg_displacements": 318485.3, "avg_comparisons": 476200.4}, "100": {"avg_displacements": 320842.25, "avg_comparisons": 479731.78}}, "900": {"1": {"avg_displacements": 370090.0, "avg_comparisons": 553484.0}, "10": {"avg_displacements": 358240.0, "avg_comparisons": 535741.8}, "100": {"avg_displacements": 358873.39, "avg_comparisons": 536688.76}}, "950": {"1": {"avg_displacements": 396714.0, "avg_comparisons": 593355.0}, "10": {"avg_displacements": 401410.6, "avg_comparisons": 600403.0}, "100": {"avg_displacements": 399751.62, "avg_comparisons": 597918.6}}, "1000": {"1": {"avg_displacements": 447568.0, "avg_comparisons": 669543.0}, "10": {"avg_displacements": 441199.9, "avg_comparisons": 660006.0}, "100": {"avg_displacements": 444598.24, "avg_comparisons": 665093.64}}}, "gen_rand": {"100": {"1": {"avg_displacements": 1013.0, "avg_comparisons": 1374.0}, "10": {"avg_displacements": 959.3, "avg_comparisons": 1282.6}, "100": {"avg_displacements": 924.68, "avg_comparisons": 1255.79}}, "150": {"1": {"avg_displacements": 1435.0, "avg_comparisons": 2061.0}, "10": {"avg_displacements": 1452.0, "avg_comparisons": 2020.4}, "100": {"avg_displacements": 1493.58, "avg_comparisons": 2045.81}}, "200": {"1": {"avg_displacements": 2265.0, "avg_comparisons": 3189.0}, "10": {"avg_displacements": 2011.2, "avg_comparisons": 2797.0}, "100": {"avg_displacements": 2115.06, "avg_comparisons": 2943.3}}, "250": {"1": {"avg_displacements": 2702.0, "avg_comparisons": 3588.0}, "10": {"avg_displacements": 2716.6, "avg_comparisons": 3777.3}, "100": {"avg_displacements": 2762.77, "avg_comparisons": 3812.15}}, "300": {"1": {"avg_displacements": 3766.0, "avg_comparisons": 4975.0}, "10": {"avg_displacements": 3320.2, "avg_comparisons": 4691.4}, "100": {"avg_displacements": 3397.29, "avg_comparisons": 4722.5}}, "350": {"1": {"avg_displacements": 3971.0, "avg_comparisons": 5714.0}, "10": {"avg_displacements": 3966.0, "avg_comparisons": 5652.2}, "100": {"avg_displacements": 4059.63, "avg_comparisons": 5679.33}}, "400": {"1": {"avg_displacements": 4517.0, "avg_comparisons": 6405.0}, "10": {"avg_displacements": 5000.4, "avg_comparisons": 6860.7}, "100": {"avg_displacements": 4698.46, "avg_comparisons": 6577.63}}, "450": {"1": {"avg_displacements": 5200.0, "avg_comparisons": 7669.0}, "10": {"avg_displacements": 5383.6, "avg_comparisons": 7538.9}, "100": {"avg_displacements": 5449.94, "avg_comparisons": 7600.48}}, "500": {"1": {"avg_displacements": 5876.0, "avg_comparisons": 8116.0}, "10": {"avg_displacements": 6335.4, "avg_comparisons": 8691.7}, "100": {"avg_displacements": 6206.65, "avg_comparisons": 8636.59}}, "550": {"1": {"avg_displacements": 7356.0, "avg_comparisons": 9821.0}, "10": {"avg_displacements": 6967.6, "avg_comparisons": 9703.8}, "100": {"avg_displacements": 6996.12, "avg_comparisons": 9746.19}}, "600": {"1": {"avg_displacements": 7513.0, "avg_comparisons": 10955.0}, "10": {"avg_displacements": 7666.0, "avg_comparisons": 10715.6}, "100": {"avg_displacements": 7688.33, "avg_comparisons": 10747.37}}, "650": {"1": {"avg_displacements": 8174.0, "avg_comparisons": 11784.0}, "10": {"avg_displacements": 8972.3, "avg_comparisons": 11945.2}, "100": {"avg_displacements": 8566.88, "avg_comparisons": 11945.94}}, "700": {"1": {"avg_displacements": 9762.0, "avg_comparisons": 13130.0}, "10": {"avg_displacements": 8919.1, "avg_comparisons": 12618.3}, "100": {"avg_displacements": 9123.18, "avg_comparisons": 12796.23}}, "750": {"1": {"avg_displacements": 9074.0, "avg_comparisons": 13560.0}, "10": {"avg_displacements": 10013.0, "avg_comparisons": 13986.9}, "100": {"avg_displacements": 9978.89, "avg_comparisons": 13972.46}}, "800": {"1": {"avg_displacements": 10932.0, "avg_comparisons": 14645.0}, "10": {"avg_displacements": 10734.0, "avg_comparisons": 15172.7}, "100": {"avg_displacements": 10751.65, "avg_comparisons": 14970.79}}, "850": {"1": {"avg_displacements": 11354.0, "avg_comparisons": 15966.0}, "10": {"avg_displacements": 11344.5, "avg_comparisons": 15915.4}, "100": {"avg_displacements": 11462.52, "avg_comparisons": 16095.66}}, "900": {"1": {"avg_displacements": 12163.0, "avg_comparisons": 16690.0}, "10": {"avg_displacements": 12357.2, "avg_comparisons": 17303.8}, "100": {"avg_displacements": 12173.89, "avg_comparisons": 17163.26}}, "950": {"1": {"avg_displacements": 13141.0, "avg_comparisons": 19084.0}, "10": {"avg_displacements": 12865.9, "avg_comparisons": 18014.2}, "100": {"avg_displacements": 12969.8, "avg_comparisons": 18330.62}}, "1000": {"1": {"avg_displacements": 13147.0, "avg_comparisons": 18896.0}, "10": {"avg_displacements": 13623.3, "avg_comparisons": 19267.1}, "100": {"avg_displacements": 13830.68, "avg_comparisons": 19386.09}}}}, "dual_pivot_quick_sort": {"gen_asc": {"100": {"1": {"avg_displacements": 300.0, "avg_comparisons": 2193.0}, "10": {"avg_displacements": 299.1, "avg_comparisons": 2295.8}, "100": {"avg_displacements": 300.0, "avg_comparisons": 2254.26}}, "150": {"1": {"avg_displacements": 450.0, "avg_comparisons": 5295.0}, "10": {"avg_displacements": 448.5, "avg_comparisons": 5023.6}, "100": {"avg_displacements": 449.85, "avg_comparisons": 5074.47}}, "200": {"1": {"avg_displacements": 600.0, "avg_comparisons": 9096.0}, "10": {"avg_displacements": 600.3, "avg_comparisons": 9046.8}, "100": {"avg_displacements": 601.17, "avg_comparisons": 8991.3}}, "250": {"1": {"avg_displacements": 756.0, "avg_comparisons": 14264.0}, "10": {"avg_displacements": 749.1, "avg_comparisons": 14024.8}, "100": {"avg_displacements": 751.59, "avg_comparisons": 14078.65}}, "300": {"1": {"avg_displacements": 900.0, "avg_comparisons": 20373.0}, "10": {"avg_displacements": 903.9, "avg_comparisons": 20263.8}, "100": {"avg_displacements": 901.92, "avg_comparisons": 20288.39}}, "350": {"1": {"avg_displacements": 1053.0, "avg_comparisons": 27927.0}, "10": {"avg_displacements": 1052.4, "avg_comparisons": 27584.0}, "100": {"avg_displacements": 1052.37, "avg_comparisons": 27572.55}}, "400": {"1": {"avg_displacements": 1200.0, "avg_comparisons": 35851.0}, "10": {"avg_displacements": 1201.5, "avg_comparisons": 36031.5}, "100": {"avg_displacements": 1202.64, "avg_comparisons": 36019.7}}, "450": {"1": {"avg_displacements": 1347.0, "avg_comparisons": 45849.0}, "10": {"avg_displacements": 1353.6, "avg_comparisons": 45602.1}, "100": {"avg_displacements": 1354.14, "avg_comparisons": 45555.2}}, "500": {"1": {"avg_displacements": 1500.0, "avg_comparisons": 55654.0}, "10": {"avg_displacements": 1505.7, "avg_comparisons": 56379.6}, "100": {"avg_displacements": 1504.5, "avg_comparisons": 56217.92}}, "550": {"1": {"avg_displacements": 1647.0, "avg_comparisons": 67477.0}, "10": {"avg_displacements": 1656.0, "avg_comparisons": 67931.2}, "100": {"avg_displacements": 1655.67, "avg_comparisons": 68006.13}}, "600": {"1": {"avg_displacements": 1818.0, "avg_comparisons": 80853.0}, "10": {"avg_displacements": 1805.1, "avg_comparisons": 80663.6}, "100": {"avg_displacements": 1804.98, "avg_comparisons": 80852.77}}, "650": {"1": {"avg_displacements": 1968.0, "avg_comparisons": 95449.0}, "10": {"avg_displacements": 1953.9, "avg_comparisons": 95493.4}, "100": {"avg_displacements": 1956.03, "avg_comparisons": 95018.73}}, "700": {"1": {"avg_displacements": 2100.0, "avg_comparisons": 112011.0}, "10": {"avg_displacements": 2106.0, "avg_comparisons": 109781.9}, "100": {"avg_displacements": 2106.84, "avg_comparisons": 110090.3}}, "750": {"1": {"avg_displacements": 2250.0, "avg_comparisons": 124468.0}, "10": {"avg_displacements": 2256.0, "avg_comparisons": 126213.0}, "100": {"avg_displacements": 2257.41, "avg_comparisons": 126445.24}}, "800": {"1": {"avg_displacements": 2424.0, "avg_comparisons": 146247.0}, "10": {"avg_displacements": 2407.8, "avg_comparisons": 144063.1}, "100": {"avg_displacements": 2408.55, "avg_comparisons": 143883.02}}, "850": {"1": {"avg_displacements": 2550.0, "avg_comparisons": 162334.0}, "10": {"avg_displacements": 2555.7, "avg_comparisons": 162730.5}, "100": {"avg_displacements": 2558.1, "avg_comparisons": 162587.54}}, "900": {"1": {"avg_displacements": 2706.0, "avg_comparisons": 179530.0}, "10": {"avg_displacements": 2705.4, "avg_comparisons": 182886.7}, "100": {"avg_displacements": 2709.09, "avg_comparisons": 181930.22}}, "950": {"1": {"avg_displacements": 2877.0, "avg_comparisons": 202108.0}, "10": {"avg_displacements": 2858.4, "avg_comparisons": 202237.9}, "100": {"avg_displacements": 2861.4, "avg_comparisons": 202495.14}}, "1000": {"1": {"avg_displacements": 3009.0, "avg_comparisons": 223560.0}, "10": {"avg_displacements": 3010.8, "avg_comparisons": 224841.3}, "100": {"avg_displacements": 3011.43, "avg_comparisons": 224576.37}}}, "gen_desc": {"100": {"1": {"avg_displacements": 849.0, "avg_comparisons": 2612.0}, "10": {"avg_displacements": 2468.7, "avg_comparisons": 2901.5}, "100": {"avg_displacements": 2820.15, "avg_comparisons": 2966.64}}, "150": {"1": {"avg_displacements": 7566.0, "avg_comparisons": 7650.0}, "10": {"avg_displacements": 6705.0, "avg_comparisons": 6770.0}, "100": {"avg_displacements": 6625.86, "avg_comparisons": 6830.92}}, "200": {"1": {"avg_displacements": 10872.0, "avg_comparisons": 11774.0}, "10": {"avg_displacements": 12059.7, "avg_comparisons": 12428.6}, "100": {"avg_displacements": 11717.25, "avg_comparisons": 12168.84}}, "250": {"1": {"avg_displacements": 18954.0, "avg_comparisons": 19603.0}, "10": {"avg_displacements": 18215.4, "avg_comparisons": 18709.2}, "100": {"avg_displacements": 18509.07, "avg_comparisons": 19082.82}}, "300": {"1": {"avg_displacements": 25398.0, "avg_comparisons": 27153.0}, "10": {"avg_displacements": 26197.2, "avg_comparisons": 27147.8}, "100": {"avg_displacements": 26791.14, "avg_comparisons": 27486.7}}, "350": {"1": {"avg_displacements": 36768.0, "avg_comparisons": 37356.0}, "10": {"avg_displacements": 36825.6, "avg_comparisons": 37585.3}, "100": {"avg_displacements": 37271.52, "avg_comparisons": 37843.96}}, "400": {"1": {"avg_displacements": 48984.0, "avg_comparisons": 49687.0}, "10": {"avg_displacements": 49092.6, "avg_comparisons": 50150.5}, "100": {"avg_displacements": 48152.61, "avg_comparisons": 49251.99}}, "450": {"1": {"avg_displacements": 60678.0, "avg_comparisons": 65262.0}, "10": {"avg_displacements": 61776.3, "avg_comparisons": 63305.9}, "100": {"avg_displacements": 61041.42, "avg_comparisons": 62166.11}}, "500": {"1": {"avg_displacements": 79551.0, "avg_comparisons": 79408.0}, "10": {"avg_displacements": 74862.0, "avg_comparisons": 76245.9}, "100": {"avg_displacements": 76178.01, "avg_comparisons": 77684.12}}, "550": {"1": {"avg_displacements": 93453.0, "avg_comparisons": 92772.0}, "10": {"avg_displacements": 89903.1, "avg_comparisons": 93119.6}, "100": {"avg_displacements": 92072.25, "avg_comparisons": 93651.58}}, "600": {"1": {"avg_displacements": 108567.0, "avg_comparisons": 109627.0}, "10": {"avg_displacements": 108643.5, "avg_comparisons": 109775.6}, "100": {"avg_displacements": 109687.08, "avg_comparisons": 111419.65}}, "650": {"1": {"avg_displacements": 117873.0, "avg_comparisons": 126469.0}, "10": {"avg_displacements": 127679.7, "avg_comparisons": 130659.1}, "100": {"avg_displacements": 129330.63, "avg_comparisons": 131088.69}}, "700": {"1": {"avg_displacements": 138882.0, "avg_comparisons": 148978.0}, "10": {"avg_displacements": 149628.3, "avg_comparisons": 151574.7}, "100": {"avg_displacements": 150006.63, "avg_comparisons": 151824.34}}, "750": {"1": {"avg_displacements": 176832.0, "avg_comparisons": 176671.0}, "10": {"avg_displacements": 171835.2, "avg_comparisons": 174938.7}, "100": {"avg_displacements": 172651.05, "avg_comparisons": 174403.88}}, "800": {"1": {"avg_displacements": 184422.0, "avg_comparisons": 194289.0}, "10": {"avg_displacements": 195987.0, "avg_comparisons": 197236.3}, "100": {"avg_displacements": 197479.8, "avg_comparisons": 199584.77}}, "850": {"1": {"avg_displacements": 224790.0, "avg_comparisons": 226280.0}, "10": {"avg_displacements": 223203.6, "avg_comparisons": 225026.2}, "100": {"avg_displacements": 223705.2, "avg_comparisons": 225450.9}}, "900": {"1": {"avg_displacements": 253650.0, "avg_comparisons": 253413.0}, "10": {"avg_displacements": 251261.7, "avg_comparisons": 255776.2}, "100": {"avg_displacements": 249321.03, "avg_comparisons": 251917.52}}, "950": {"1": {"avg_displacements": 279633.0, "avg_comparisons": 281249.0}, "10": {"avg_displacements": 280738.5, "avg_comparisons": 283127.5}, "100": {"avg_displacements": 277591.59, "avg_comparisons": 280075.54}}, "1000": {"1": {"avg_displacements": 315519.0, "avg_comparisons": 316241.0}, "10": {"avg_displacements": 310619.1, "avg_comparisons": 311287.6}, "100": {"avg_displacements": 307746.09, "avg_comparisons": 310517.31}}}, "gen_rand": {"100": {"1": {"avg_displacements": 996.0, "avg_comparisons": 637.0}, "10": {"avg_displacements": 826.8, "avg_comparisons": 546.7}, "100": {"avg_displacements": 832.2, "avg_comparisons": 535.94}}, "150": {"1": {"avg_displacements": 1713.0, "avg_comparisons": 1111.0}, "10": {"avg_displacements": 1390.5, "avg_comparisons": 920.3}, "100": {"avg_displacements": 1401.9, "avg_comparisons": 918.62}}, "200": {"1": {"avg_displacements": 1992.0, "avg_comparisons": 1311.0}, "10": {"avg_displacements": 1953.6, "avg_comparisons": 1334.3}, "100": {"avg_displacements": 1921.11, "avg_comparisons": 1300.63}}, "250": {"1": {"avg_displacements": 2490.0, "avg_comparisons": 1677.0}, "10": {"avg_displacements": 2531.4, "avg_comparisons": 1773.5}, "100": {"avg_displacements": 2518.65, "avg_comparisons": 1716.39}}, "300": {"1": {"avg_displacements": 3168.0, "avg_comparisons": 2120.0}, "10": {"avg_displacements": 3246.6, "avg_comparisons": 2213.9}, "100": {"avg_displacements": 3161.16, "avg_comparisons": 2169.5}}, "350": {"1": {"avg_displacements": 3606.0, "avg_comparisons": 2703.0}, "10": {"avg_displacements": 3934.5, "avg_comparisons": 2668.3}, "100": {"avg_displacements": 3696.57, "avg_comparisons": 2584.26}}, "400": {"1": {"avg_displacements": 3972.0, "avg_comparisons": 2882.0}, "10": {"avg_displacements": 4567.5, "avg_comparisons": 3165.0}, "100": {"avg_displacements": 4295.88, "avg_comparisons": 3032.15}}, "450": {"1": {"avg_displacements": 4551.0, "avg_comparisons": 3207.0}, "10": {"avg_displacements": 5136.9, "avg_comparisons": 3648.2}, "100": {"avg_displacements": 5056.38, "avg_comparisons": 3542.24}}, "500": {"1": {"avg_displacements": 6012.0, "avg_comparisons": 5024.0}, "10": {"avg_displacements": 5514.9, "avg_comparisons": 3901.8}, "100": {"avg_displacements": 5623.08, "avg_comparisons": 3991.39}}, "550": {"1": {"avg_displacements": 5985.0, "avg_comparisons": 4039.0}, "10": {"avg_displacements": 6240.6, "avg_comparisons": 4430.4}, "100": {"avg_displacements": 6342.66, "avg_comparisons": 4475.71}}, "600": {"1": {"avg_displacements": 7632.0, "avg_comparisons": 5310.0}, "10": {"avg_displacements": 7226.1, "avg_comparisons": 5065.7}, "100": {"avg_displacements": 6966.33, "avg_comparisons": 4964.15}}, "650": {"1": {"avg_displacements": 6720.0, "avg_comparisons": 5011.0}, "10": {"avg_displacements": 7930.8, "avg_comparisons": 5615.0}, "100": {"avg_displacements": 7657.8, "avg_comparisons": 5451.24}}, "700": {"1": {"avg_displacements": 8691.0, "avg_comparisons": 6171.0}, "10": {"avg_displacements": 8529.6, "avg_comparisons": 6096.8}, "100": {"avg_displacements": 8255.55, "avg_comparisons": 5918.96}}, "750": {"1": {"avg_displacements": 8676.0, "avg_comparisons": 6464.0}, "10": {"avg_displacements": 8878.8, "avg_comparisons": 6421.5}, "100": {"avg_displacements": 9090.99, "avg_comparisons": 6475.81}}, "800": {"1": {"avg_displacements": 10920.0, "avg_comparisons": 7435.0}, "10": {"avg_displacements": 9743.7, "avg_comparisons": 7033.2}, "100": {"avg_displacements": 9623.34, "avg_comparisons": 6931.92}}, "850": {"1": {"avg_displacements": 9726.0, "avg_comparisons": 6873.0}, "10": {"avg_displacements": 10529.1, "avg_comparisons": 7331.2}, "100": {"avg_displacements": 10394.01, "avg_comparisons": 7508.83}}, "900": {"1": {"avg_displacements": 10947.0, "avg_comparisons": 8012.0}, "10": {"avg_displacements": 10664.1, "avg_comparisons": 7737.3}, "100": {"avg_displacements": 11142.33, "avg_comparisons": 8076.0}}, "950": {"1": {"avg_displacements": 12585.0, "avg_comparisons": 9304.0}, "10": {"avg_displacements": 11822.7, "avg_comparisons": 8788.3}, "100": {"avg_displacements": 11817.15, "avg_comparisons": 8513.49}}, "1000": {"1": {"avg_displacements": 12585.0, "avg_comparisons": 9342.0}, "10": {"avg_displacements": 12978.3, "avg_comparisons": 9179.5}, "100": {"avg_displacements": 12548.94, "avg_comparisons": 9091.75}}}}, "hybrid_sort": {"gen_asc": {"100": {"1": {"avg_displacements": 283.0, "avg_comparisons": 5030.0}, "10": {"avg_displacements": 283.0, "avg_comparisons": 5030.0}, "100": {"avg_displacements": 283.0, "avg_comparisons": 5030.0}}, "150": {"1": {"avg_displacements": 433.0, "avg_comparisons": 11355.0}, "10": {"avg_displacements": 433.0, "avg_comparisons": 11355.0}, "100": {"avg_displacements": 433.0, "avg_comparisons": 11355.0}}, "200": {"1": {"avg_displacements": 583.0, "avg_comparisons": 20180.0}, "10": {"avg_displacements": 583.0, "avg_comparisons": 20180.0}, "100": {"avg_displacements": 583.0, "avg_comparisons": 20180.0}}, "250": {"1": {"avg_displacements": 733.0, "avg_comparisons": 31505.0}, "10": {"avg_displacements": 733.0, "avg_comparisons": 31505.0}, "100": {"avg_displacements": 733.0, "avg_comparisons": 31505.0}}, "300": {"1": {"avg_displacements": 883.0, "avg_comparisons": 45330.0}, "10": {"avg_displacements": 883.0, "avg_comparisons": 45330.0}, "100": {"avg_displacements": 883.0, "avg_comparisons": 45330.0}}, "350": {"1": {"avg_displacements": 1033.0, "avg_comparisons": 61655.0}, "10": {"avg_displacements": 1033.0, "avg_comparisons": 61655.0}, "100": {"avg_displacements": 1033.0, "avg_comparisons": 61655.0}}, "400": {"1": {"avg_displacements": 1183.0, "avg_comparisons": 80480.0}, "10": {"avg_displacements": 1183.0, "avg_comparisons": 80480.0}, "100": {"avg_displacements": 1183.0, "avg_comparisons": 80480.0}}, "450": {"1": {"avg_displacements": 1333.0, "avg_comparisons": 101805.0}, "10": {"avg_displacements": 1333.0, "avg_comparisons": 101805.0}, "100": {"avg_displacements": 1333.0, "avg_comparisons": 101805.0}}, "500": {"1": {"avg_displacements": 1483.0, "avg_comparisons": 125630.0}, "10": {"avg_displacements": 1483.0, "avg_comparisons": 125630.0}, "100": {"avg_displacements": 1483.0, "avg_comparisons": 125630.0}}, "550": {"1": {"avg_displacements": 1633.0, "avg_comparisons": 151955.0}, "10": {"avg_displacements": 1633.0, "avg_comparisons": 151955.0}, "100": {"avg_displacements": 1633.0, "avg_comparisons": 151955.0}}, "600": {"1": {"avg_displacements": 1783.0, "avg_comparisons": 180780.0}, "10": {"avg_displacements": 1783.0, "avg_comparisons": 180780.0}, "100": {"avg_displacements": 1783.0, "avg_comparisons": 180780.0}}, "650": {"1": {"avg_displacements": 1933.0, "avg_comparisons": 212105.0}, "10": {"avg_displacements": 1933.0, "avg_comparisons": 212105.0}, "100": {"avg_displacements": 1933.0, "avg_comparisons": 212105.0}}, "700": {"1": {"avg_displacements": 2083.0, "avg_comparisons": 245930.0}, "10": {"avg_displacements": 2083.0, "avg_comparisons": 245930.0}, "100": {"avg_displacements": 2083.0, "avg_comparisons": 245930.0}}, "750": {"1": {"avg_displacements": 2233.0, "avg_comparisons": 282255.0}, "10": {"avg_displacements": 2233.0, "avg_comparisons": 282255.0}, "100": {"avg_displacements": 2233.0, "avg_comparisons": 282255.0}}, "800": {"1": {"avg_displacements": 2383.0, "avg_comparisons": 321080.0}, "10": {"avg_displacements": 2383.0, "avg_comparisons": 321080.0}, "100": {"avg_displacements": 2383.0, "avg_comparisons": 321080.0}}, "850": {"1": {"avg_displacements": 2533.0, "avg_comparisons": 362405.0}, "10": {"avg_displacements": 2533.0, "avg_comparisons": 362405.0}, "100": {"avg_displacements": 2533.0, "avg_comparisons": 362405.0}}, "900": {"1": {"avg_displacements": 2683.0, "avg_comparisons": 406230.0}, "10": {"avg_displacements": 2683.0, "avg_comparisons": 406230.0}, "100": {"avg_displacements": 2683.0, "avg_comparisons": 406230.0}}, "950": {"1": {"avg_displacements": 2833.0, "avg_comparisons": 452555.0}, "10": {"avg_displacements": 2833.0, "avg_comparisons": 452555.0}, "100": {"avg_displacements": 2833.0, "avg_comparisons": 452555.0}}, "1000": {"1": {"avg_displacements": 2983.0, "avg_comparisons": 501380.0}, "10": {"avg_displacements": 2983.0, "avg_comparisons": 501380.0}, "100": {"avg_displacements": 2983.0, "avg_comparisons": 501380.0}}}, "gen_desc": {"100": {"1": {"avg_displacements": 4670.0, "avg_comparisons": 6835.0}, "10": {"avg_displacements": 4664.9, "avg_comparisons": 6842.6}, "100": {"avg_displacements": 4691.09, "avg_comparisons": 6879.88}}, "150": {"1": {"avg_displacements": 10422.0, "avg_comparisons": 15394.0}, "10": {"avg_displacements": 10401.8, "avg_comparisons": 15355.0}, "100": {"avg_displacements": 10331.39, "avg_comparisons": 15248.55}}, "200": {"1": {"avg_displacements": 18149.0, "avg_comparisons": 26872.0}, "10": {"avg_displacements": 18340.7, "avg_comparisons": 27166.8}, "100": {"avg_displacements": 18233.32, "avg_comparisons": 27004.39}}, "250": {"1": {"avg_displacements": 28121.0, "avg_comparisons": 41737.0}, "10": {"avg_displacements": 27749.1, "avg_comparisons": 41185.6}, "100": {"avg_displacements": 28220.36, "avg_comparisons": 41892.27}}, "300": {"1": {"avg_displacements": 38534.0, "avg_comparisons": 57290.0}, "10": {"avg_displacements": 40484.9, "avg_comparisons": 60197.1}, "100": {"avg_displacements": 40445.28, "avg_comparisons": 60135.48}}, "350": {"1": {"avg_displacements": 55451.0, "avg_comparisons": 82557.0}, "10": {"avg_displacements": 54252.2, "avg_comparisons": 80755.0}, "100": {"avg_displacements": 55060.16, "avg_comparisons": 81961.7}}, "400": {"1": {"avg_displacements": 71615.0, "avg_comparisons": 106694.0}, "10": {"avg_displacements": 70612.9, "avg_comparisons": 105200.2}, "100": {"avg_displacements": 71531.27, "avg_comparisons": 106575.14}}, "450": {"1": {"avg_displacements": 89581.0, "avg_comparisons": 133548.0}, "10": {"avg_displacements": 90777.3, "avg_comparisons": 135349.8}, "100": {"avg_displacements": 90419.22, "avg_comparisons": 134813.96}}, "500": {"1": {"avg_displacements": 109461.0, "avg_comparisons": 163277.0}, "10": {"avg_displacements": 111360.6, "avg_comparisons": 166130.5}, "100": {"avg_displacements": 111217.53, "avg_comparisons": 165917.94}}, "550": {"1": {"avg_displacements": 131483.0, "avg_comparisons": 196220.0}, "10": {"avg_displacements": 134997.4, "avg_comparisons": 201497.1}, "100": {"avg_displacements": 134959.35, "avg_comparisons": 201436.86}}, "600": {"1": {"avg_displacements": 165201.0, "avg_comparisons": 246706.0}, "10": {"avg_displacements": 160279.9, "avg_comparisons": 239315.6}, "100": {"avg_displacements": 160373.67, "avg_comparisons": 239463.19}}, "650": {"1": {"avg_displacements": 181283.0, "avg_comparisons": 270758.0}, "10": {"avg_displacements": 188779.0, "avg_comparisons": 281975.2}, "100": {"avg_displacements": 187722.25, "avg_comparisons": 280393.12}}, "700": {"1": {"avg_displacements": 215827.0, "avg_comparisons": 322469.0}, "10": {"avg_displacements": 218867.0, "avg_comparisons": 327009.7}, "100": {"avg_displacements": 217659.54, "avg_comparisons": 325205.84}}, "750": {"1": {"avg_displacements": 247377.0, "avg_comparisons": 369685.0}, "10": {"avg_displacements": 250128.3, "avg_comparisons": 373815.6}, "100": {"avg_displacements": 249562.44, "avg_comparisons": 372965.38}}, "800": {"1": {"avg_displacements": 279411.0, "avg_comparisons": 417643.0}, "10": {"avg_displacements": 284448.9, "avg_comparisons": 425200.0}, "100": {"avg_displacements": 284281.2, "avg_comparisons": 424946.98}}, "850": {"1": {"avg_displacements": 322205.0, "avg_comparisons": 481746.0}, "10": {"avg_displacements": 320437.8, "avg_comparisons": 479088.2}, "100": {"avg_displacements": 320890.3, "avg_comparisons": 479767.17}}, "900": {"1": {"avg_displacements": 362474.0, "avg_comparisons": 542058.0}, "10": {"avg_displacements": 359871.2, "avg_comparisons": 538138.8}, "100": {"avg_displacements": 360107.98, "avg_comparisons": 538497.89}}, "950": {"1": {"avg_displacements": 394151.0, "avg_comparisons": 589479.0}, "10": {"avg_displacements": 399949.5, "avg_comparisons": 598161.9}, "100": {"avg_displacements": 400631.16, "avg_comparisons": 599190.29}}, "1000": {"1": {"avg_displacements": 439093.0, "avg_comparisons": 656787.0}, "10": {"avg_displacements": 445165.6, "avg_comparisons": 665898.7}, "100": {"avg_displacements": 442966.62, "avg_comparisons": 662604.34}}}, "gen_rand": {"100": {"1": {"avg_displacements": 852.0, "avg_comparisons": 1155.0}, "10": {"avg_displacements": 885.8, "avg_comparisons": 1214.1}, "100": {"avg_displacements": 829.26, "avg_comparisons": 1147.33}}, "150": {"1": {"avg_displacements": 1791.0, "avg_comparisons": 2386.0}, "10": {"avg_displacements": 1530.6, "avg_comparisons": 2076.9}, "100": {"avg_displacements": 1354.03, "avg_comparisons": 1878.09}}, "200": {"1": {"avg_displacements": 1865.0, "avg_comparisons": 2627.0}, "10": {"avg_displacements": 1901.9, "avg_comparisons": 2673.3}, "100": {"avg_displacements": 1952.87, "avg_comparisons": 2698.83}}, "250": {"1": {"avg_displacements": 2213.0, "avg_comparisons": 3261.0}, "10": {"avg_displacements": 2579.0, "avg_comparisons": 3573.2}, "100": {"avg_displacements": 2545.87, "avg_comparisons": 3583.54}}, "300": {"1": {"avg_displacements": 3503.0, "avg_comparisons": 4901.0}, "10": {"avg_displacements": 3204.5, "avg_comparisons": 4499.7}, "100": {"avg_displacements": 3226.47, "avg_comparisons": 4479.56}}, "350": {"1": {"avg_displacements": 4132.0, "avg_comparisons": 5997.0}, "10": {"avg_displacements": 3709.0, "avg_comparisons": 5230.6}, "100": {"avg_displacements": 3715.79, "avg_comparisons": 5254.13}}, "400": {"1": {"avg_displacements": 4865.0, "avg_comparisons": 6428.0}, "10": {"avg_displacements": 4237.1, "avg_comparisons": 6015.9}, "100": {"avg_displacements": 4338.96, "avg_comparisons": 6197.8}}, "450": {"1": {"avg_displacements": 4889.0, "avg_comparisons": 6984.0}, "10": {"avg_displacements": 5516.0, "avg_comparisons": 7511.0}, "100": {"avg_displacements": 5109.86, "avg_comparisons": 7172.12}}, "500": {"1": {"avg_displacements": 6166.0, "avg_comparisons": 8197.0}, "10": {"avg_displacements": 5792.7, "avg_comparisons": 8239.2}, "100": {"avg_displacements": 5731.23, "avg_comparisons": 8116.67}}, "550": {"1": {"avg_displacements": 6291.0, "avg_comparisons": 8835.0}, "10": {"avg_displacements": 6556.6, "avg_comparisons": 9129.2}, "100": {"avg_displacements": 6501.39, "avg_comparisons": 9128.58}}, "600": {"1": {"avg_displacements": 7665.0, "avg_comparisons": 10552.0}, "10": {"avg_displacements": 6916.7, "avg_comparisons": 9840.0}, "100": {"avg_displacements": 7131.76, "avg_comparisons": 10148.42}}, "650": {"1": {"avg_displacements": 7047.0, "avg_comparisons": 10191.0}, "10": {"avg_displacements": 7799.2, "avg_comparisons": 11243.3}, "100": {"avg_displacements": 7803.83, "avg_comparisons": 10971.31}}, "700": {"1": {"avg_displacements": 9180.0, "avg_comparisons": 12788.0}, "10": {"avg_displacements": 8346.6, "avg_comparisons": 12183.2}, "100": {"avg_displacements": 8390.54, "avg_comparisons": 11935.99}}, "750": {"1": {"avg_displacements": 8292.0, "avg_comparisons": 12437.0}, "10": {"avg_displacements": 9058.5, "avg_comparisons": 13096.4}, "100": {"avg_displacements": 9130.16, "avg_comparisons": 13004.66}}, "800": {"1": {"avg_displacements": 10095.0, "avg_comparisons": 14655.0}, "10": {"avg_displacements": 9324.1, "avg_comparisons": 13802.0}, "100": {"avg_displacements": 9967.55, "avg_comparisons": 14029.72}}, "850": {"1": {"avg_displacements": 11242.0, "avg_comparisons": 15147.0}, "10": {"avg_displacements": 10590.9, "avg_comparisons": 15176.8}, "100": {"avg_displacements": 10831.49, "avg_comparisons": 15307.78}}, "900": {"1": {"avg_displacements": 15473.0, "avg_comparisons": 20496.0}, "10": {"avg_displacements": 11225.7, "avg_comparisons": 16083.8}, "100": {"avg_displacements": 11415.18, "avg_comparisons": 16166.71}}, "950": {"1": {"avg_displacements": 11257.0, "avg_comparisons": 16525.0}, "10": {"avg_displacements": 11890.1, "avg_comparisons": 17094.2}, "100": {"avg_displacements": 12052.84, "avg_comparisons": 17240.15}}, "1000": {"1": {"avg_displacements": 12681.0, "avg_comparisons": 17583.0}, "10": {"avg_displacements": 12565.4, "avg_comparisons": 17963.9}, "100": {"avg_displacements": 12993.22, "avg_comparisons": 18375.73}}}}}
+{
+  "insert_sort": {
+    "gen_asc": {
+      "100": {
+        "1": {
+          "avg_displacements": 198.0,
+          "avg_comparisons": 99.0
+        },
+        "10": {
+          "avg_displacements": 198.0,
+          "avg_comparisons": 99.0
+        },
+        "100": {
+          "avg_displacements": 198.0,
+          "avg_comparisons": 99.0
+        }
+      },
+      "150": {
+        "1": {
+          "avg_displacements": 298.0,
+          "avg_comparisons": 149.0
+        },
+        "10": {
+          "avg_displacements": 298.0,
+          "avg_comparisons": 149.0
+        },
+        "100": {
+          "avg_displacements": 298.0,
+          "avg_comparisons": 149.0
+        }
+      },
+      "200": {
+        "1": {
+          "avg_displacements": 398.0,
+          "avg_comparisons": 199.0
+        },
+        "10": {
+          "avg_displacements": 398.0,
+          "avg_comparisons": 199.0
+        },
+        "100": {
+          "avg_displacements": 398.0,
+          "avg_comparisons": 199.0
+        }
+      },
+      "250": {
+        "1": {
+          "avg_displacements": 498.0,
+          "avg_comparisons": 249.0
+        },
+        "10": {
+          "avg_displacements": 498.0,
+          "avg_comparisons": 249.0
+        },
+        "100": {
+          "avg_displacements": 498.0,
+          "avg_comparisons": 249.0
+        }
+      },
+      "300": {
+        "1": {
+          "avg_displacements": 598.0,
+          "avg_comparisons": 299.0
+        },
+        "10": {
+          "avg_displacements": 598.0,
+          "avg_comparisons": 299.0
+        },
+        "100": {
+          "avg_displacements": 598.0,
+          "avg_comparisons": 299.0
+        }
+      },
+      "350": {
+        "1": {
+          "avg_displacements": 698.0,
+          "avg_comparisons": 349.0
+        },
+        "10": {
+          "avg_displacements": 698.0,
+          "avg_comparisons": 349.0
+        },
+        "100": {
+          "avg_displacements": 698.0,
+          "avg_comparisons": 349.0
+        }
+      },
+      "400": {
+        "1": {
+          "avg_displacements": 798.0,
+          "avg_comparisons": 399.0
+        },
+        "10": {
+          "avg_displacements": 798.0,
+          "avg_comparisons": 399.0
+        },
+        "100": {
+          "avg_displacements": 798.0,
+          "avg_comparisons": 399.0
+        }
+      },
+      "450": {
+        "1": {
+          "avg_displacements": 898.0,
+          "avg_comparisons": 449.0
+        },
+        "10": {
+          "avg_displacements": 898.0,
+          "avg_comparisons": 449.0
+        },
+        "100": {
+          "avg_displacements": 898.0,
+          "avg_comparisons": 449.0
+        }
+      },
+      "500": {
+        "1": {
+          "avg_displacements": 998.0,
+          "avg_comparisons": 499.0
+        },
+        "10": {
+          "avg_displacements": 998.0,
+          "avg_comparisons": 499.0
+        },
+        "100": {
+          "avg_displacements": 998.0,
+          "avg_comparisons": 499.0
+        }
+      },
+      "550": {
+        "1": {
+          "avg_displacements": 1098.0,
+          "avg_comparisons": 549.0
+        },
+        "10": {
+          "avg_displacements": 1098.0,
+          "avg_comparisons": 549.0
+        },
+        "100": {
+          "avg_displacements": 1098.0,
+          "avg_comparisons": 549.0
+        }
+      },
+      "600": {
+        "1": {
+          "avg_displacements": 1198.0,
+          "avg_comparisons": 599.0
+        },
+        "10": {
+          "avg_displacements": 1198.0,
+          "avg_comparisons": 599.0
+        },
+        "100": {
+          "avg_displacements": 1198.0,
+          "avg_comparisons": 599.0
+        }
+      },
+      "650": {
+        "1": {
+          "avg_displacements": 1298.0,
+          "avg_comparisons": 649.0
+        },
+        "10": {
+          "avg_displacements": 1298.0,
+          "avg_comparisons": 649.0
+        },
+        "100": {
+          "avg_displacements": 1298.0,
+          "avg_comparisons": 649.0
+        }
+      },
+      "700": {
+        "1": {
+          "avg_displacements": 1398.0,
+          "avg_comparisons": 699.0
+        },
+        "10": {
+          "avg_displacements": 1398.0,
+          "avg_comparisons": 699.0
+        },
+        "100": {
+          "avg_displacements": 1398.0,
+          "avg_comparisons": 699.0
+        }
+      },
+      "750": {
+        "1": {
+          "avg_displacements": 1498.0,
+          "avg_comparisons": 749.0
+        },
+        "10": {
+          "avg_displacements": 1498.0,
+          "avg_comparisons": 749.0
+        },
+        "100": {
+          "avg_displacements": 1498.0,
+          "avg_comparisons": 749.0
+        }
+      },
+      "800": {
+        "1": {
+          "avg_displacements": 1598.0,
+          "avg_comparisons": 799.0
+        },
+        "10": {
+          "avg_displacements": 1598.0,
+          "avg_comparisons": 799.0
+        },
+        "100": {
+          "avg_displacements": 1598.0,
+          "avg_comparisons": 799.0
+        }
+      },
+      "850": {
+        "1": {
+          "avg_displacements": 1698.0,
+          "avg_comparisons": 849.0
+        },
+        "10": {
+          "avg_displacements": 1698.0,
+          "avg_comparisons": 849.0
+        },
+        "100": {
+          "avg_displacements": 1698.0,
+          "avg_comparisons": 849.0
+        }
+      },
+      "900": {
+        "1": {
+          "avg_displacements": 1798.0,
+          "avg_comparisons": 899.0
+        },
+        "10": {
+          "avg_displacements": 1798.0,
+          "avg_comparisons": 899.0
+        },
+        "100": {
+          "avg_displacements": 1798.0,
+          "avg_comparisons": 899.0
+        }
+      },
+      "950": {
+        "1": {
+          "avg_displacements": 1898.0,
+          "avg_comparisons": 949.0
+        },
+        "10": {
+          "avg_displacements": 1898.0,
+          "avg_comparisons": 949.0
+        },
+        "100": {
+          "avg_displacements": 1898.0,
+          "avg_comparisons": 949.0
+        }
+      },
+      "1000": {
+        "1": {
+          "avg_displacements": 1998.0,
+          "avg_comparisons": 999.0
+        },
+        "10": {
+          "avg_displacements": 1998.0,
+          "avg_comparisons": 999.0
+        },
+        "100": {
+          "avg_displacements": 1998.0,
+          "avg_comparisons": 999.0
+        }
+      }
+    },
+    "gen_desc": {
+      "100": {
+        "1": {
+          "avg_displacements": 5120.0,
+          "avg_comparisons": 9943.0
+        },
+        "10": {
+          "avg_displacements": 5121.6,
+          "avg_comparisons": 9946.2
+        },
+        "100": {
+          "avg_displacements": 5123.21,
+          "avg_comparisons": 9949.42
+        }
+      },
+      "150": {
+        "1": {
+          "avg_displacements": 11440.0,
+          "avg_comparisons": 22433.0
+        },
+        "10": {
+          "avg_displacements": 11434.6,
+          "avg_comparisons": 22422.2
+        },
+        "100": {
+          "avg_displacements": 11435.2,
+          "avg_comparisons": 22423.4
+        }
+      },
+      "200": {
+        "1": {
+          "avg_displacements": 20251.0,
+          "avg_comparisons": 39905.0
+        },
+        "10": {
+          "avg_displacements": 20249.0,
+          "avg_comparisons": 39901.0
+        },
+        "100": {
+          "avg_displacements": 20249.19,
+          "avg_comparisons": 39901.38
+        }
+      },
+      "250": {
+        "1": {
+          "avg_displacements": 31568.0,
+          "avg_comparisons": 62389.0
+        },
+        "10": {
+          "avg_displacements": 31561.2,
+          "avg_comparisons": 62375.4
+        },
+        "100": {
+          "avg_displacements": 31560.06,
+          "avg_comparisons": 62373.12
+        }
+      },
+      "300": {
+        "1": {
+          "avg_displacements": 45378.0,
+          "avg_comparisons": 89859.0
+        },
+        "10": {
+          "avg_displacements": 45371.3,
+          "avg_comparisons": 89845.6
+        },
+        "100": {
+          "avg_displacements": 45373.66,
+          "avg_comparisons": 89850.32
+        }
+      },
+      "350": {
+        "1": {
+          "avg_displacements": 61659.0,
+          "avg_comparisons": 122271.0
+        },
+        "10": {
+          "avg_displacements": 61682.1,
+          "avg_comparisons": 122317.2
+        },
+        "100": {
+          "avg_displacements": 61685.75,
+          "avg_comparisons": 122324.5
+        }
+      },
+      "400": {
+        "1": {
+          "avg_displacements": 80492.0,
+          "avg_comparisons": 159787.0
+        },
+        "10": {
+          "avg_displacements": 80500.7,
+          "avg_comparisons": 159804.4
+        },
+        "100": {
+          "avg_displacements": 80498.89,
+          "avg_comparisons": 159800.78
+        }
+      },
+      "450": {
+        "1": {
+          "avg_displacements": 101802.0,
+          "avg_comparisons": 202257.0
+        },
+        "10": {
+          "avg_displacements": 101811.9,
+          "avg_comparisons": 202276.8
+        },
+        "100": {
+          "avg_displacements": 101810.78,
+          "avg_comparisons": 202274.56
+        }
+      },
+      "500": {
+        "1": {
+          "avg_displacements": 125609.0,
+          "avg_comparisons": 249721.0
+        },
+        "10": {
+          "avg_displacements": 125616.6,
+          "avg_comparisons": 249736.2
+        },
+        "100": {
+          "avg_displacements": 125621.8,
+          "avg_comparisons": 249746.6
+        }
+      },
+      "550": {
+        "1": {
+          "avg_displacements": 151935.0,
+          "avg_comparisons": 302223.0
+        },
+        "10": {
+          "avg_displacements": 151937.3,
+          "avg_comparisons": 302227.6
+        },
+        "100": {
+          "avg_displacements": 151935.99,
+          "avg_comparisons": 302224.98
+        }
+      },
+      "600": {
+        "1": {
+          "avg_displacements": 180725.0,
+          "avg_comparisons": 359653.0
+        },
+        "10": {
+          "avg_displacements": 180747.2,
+          "avg_comparisons": 359697.4
+        },
+        "100": {
+          "avg_displacements": 180748.78,
+          "avg_comparisons": 359700.56
+        }
+      },
+      "650": {
+        "1": {
+          "avg_displacements": 212075.0,
+          "avg_comparisons": 422203.0
+        },
+        "10": {
+          "avg_displacements": 212059.7,
+          "avg_comparisons": 422172.4
+        },
+        "100": {
+          "avg_displacements": 212064.07,
+          "avg_comparisons": 422181.14
+        }
+      },
+      "700": {
+        "1": {
+          "avg_displacements": 245868.0,
+          "avg_comparisons": 489639.0
+        },
+        "10": {
+          "avg_displacements": 245874.2,
+          "avg_comparisons": 489651.4
+        },
+        "100": {
+          "avg_displacements": 245873.35,
+          "avg_comparisons": 489649.7
+        }
+      },
+      "750": {
+        "1": {
+          "avg_displacements": 282175.0,
+          "avg_comparisons": 562103.0
+        },
+        "10": {
+          "avg_displacements": 282180.0,
+          "avg_comparisons": 562113.0
+        },
+        "100": {
+          "avg_displacements": 282188.22,
+          "avg_comparisons": 562129.44
+        }
+      },
+      "800": {
+        "1": {
+          "avg_displacements": 320981.0,
+          "avg_comparisons": 639565.0
+        },
+        "10": {
+          "avg_displacements": 321004.4,
+          "avg_comparisons": 639611.8
+        },
+        "100": {
+          "avg_displacements": 320998.35,
+          "avg_comparisons": 639599.7
+        }
+      },
+      "850": {
+        "1": {
+          "avg_displacements": 362327.0,
+          "avg_comparisons": 722107.0
+        },
+        "10": {
+          "avg_displacements": 362308.8,
+          "avg_comparisons": 722070.6
+        },
+        "100": {
+          "avg_displacements": 362310.97,
+          "avg_comparisons": 722074.94
+        }
+      },
+      "900": {
+        "1": {
+          "avg_displacements": 406117.0,
+          "avg_comparisons": 809537.0
+        },
+        "10": {
+          "avg_displacements": 406119.0,
+          "avg_comparisons": 809541.0
+        },
+        "100": {
+          "avg_displacements": 406124.58,
+          "avg_comparisons": 809552.16
+        }
+      },
+      "950": {
+        "1": {
+          "avg_displacements": 452445.0,
+          "avg_comparisons": 902043.0
+        },
+        "10": {
+          "avg_displacements": 452436.5,
+          "avg_comparisons": 902026.0
+        },
+        "100": {
+          "avg_displacements": 452435.89,
+          "avg_comparisons": 902024.78
+        }
+      },
+      "1000": {
+        "1": {
+          "avg_displacements": 501264.0,
+          "avg_comparisons": 999531.0
+        },
+        "10": {
+          "avg_displacements": 501249.3,
+          "avg_comparisons": 999501.6
+        },
+        "100": {
+          "avg_displacements": 501247.92,
+          "avg_comparisons": 999498.84
+        }
+      }
+    },
+    "gen_rand": {
+      "100": {
+        "1": {
+          "avg_displacements": 2757.0,
+          "avg_comparisons": 5217.0
+        },
+        "10": {
+          "avg_displacements": 2659.9,
+          "avg_comparisons": 5022.8
+        },
+        "100": {
+          "avg_displacements": 2676.6,
+          "avg_comparisons": 5056.2
+        }
+      },
+      "150": {
+        "1": {
+          "avg_displacements": 6417.0,
+          "avg_comparisons": 12387.0
+        },
+        "10": {
+          "avg_displacements": 5739.1,
+          "avg_comparisons": 11031.2
+        },
+        "100": {
+          "avg_displacements": 5849.18,
+          "avg_comparisons": 11251.36
+        }
+      },
+      "200": {
+        "1": {
+          "avg_displacements": 9760.0,
+          "avg_comparisons": 18923.0
+        },
+        "10": {
+          "avg_displacements": 10573.0,
+          "avg_comparisons": 20549.0
+        },
+        "100": {
+          "avg_displacements": 10341.22,
+          "avg_comparisons": 20085.44
+        }
+      },
+      "250": {
+        "1": {
+          "avg_displacements": 15439.0,
+          "avg_comparisons": 30131.0
+        },
+        "10": {
+          "avg_displacements": 16081.7,
+          "avg_comparisons": 31416.4
+        },
+        "100": {
+          "avg_displacements": 15981.69,
+          "avg_comparisons": 31216.38
+        }
+      },
+      "300": {
+        "1": {
+          "avg_displacements": 22362.0,
+          "avg_comparisons": 43827.0
+        },
+        "10": {
+          "avg_displacements": 22747.5,
+          "avg_comparisons": 44598.0
+        },
+        "100": {
+          "avg_displacements": 22842.91,
+          "avg_comparisons": 44788.82
+        }
+      },
+      "350": {
+        "1": {
+          "avg_displacements": 31094.0,
+          "avg_comparisons": 61141.0
+        },
+        "10": {
+          "avg_displacements": 31452.9,
+          "avg_comparisons": 61858.8
+        },
+        "100": {
+          "avg_displacements": 31179.46,
+          "avg_comparisons": 61311.92
+        }
+      },
+      "400": {
+        "1": {
+          "avg_displacements": 40339.0,
+          "avg_comparisons": 79481.0
+        },
+        "10": {
+          "avg_displacements": 40353.3,
+          "avg_comparisons": 79509.6
+        },
+        "100": {
+          "avg_displacements": 40600.89,
+          "avg_comparisons": 80004.78
+        }
+      },
+      "450": {
+        "1": {
+          "avg_displacements": 50793.0,
+          "avg_comparisons": 100239.0
+        },
+        "10": {
+          "avg_displacements": 50830.4,
+          "avg_comparisons": 100313.8
+        },
+        "100": {
+          "avg_displacements": 51390.95,
+          "avg_comparisons": 101434.9
+        }
+      },
+      "500": {
+        "1": {
+          "avg_displacements": 65140.0,
+          "avg_comparisons": 128783.0
+        },
+        "10": {
+          "avg_displacements": 62311.7,
+          "avg_comparisons": 123126.4
+        },
+        "100": {
+          "avg_displacements": 63317.83,
+          "avg_comparisons": 125138.66
+        }
+      },
+      "550": {
+        "1": {
+          "avg_displacements": 76301.0,
+          "avg_comparisons": 150955.0
+        },
+        "10": {
+          "avg_displacements": 75911.9,
+          "avg_comparisons": 150176.8
+        },
+        "100": {
+          "avg_displacements": 76774.92,
+          "avg_comparisons": 151902.84
+        }
+      },
+      "600": {
+        "1": {
+          "avg_displacements": 89795.0,
+          "avg_comparisons": 177793.0
+        },
+        "10": {
+          "avg_displacements": 91993.4,
+          "avg_comparisons": 182189.8
+        },
+        "100": {
+          "avg_displacements": 90894.18,
+          "avg_comparisons": 179991.36
+        }
+      },
+      "650": {
+        "1": {
+          "avg_displacements": 104985.0,
+          "avg_comparisons": 208023.0
+        },
+        "10": {
+          "avg_displacements": 106349.0,
+          "avg_comparisons": 210751.0
+        },
+        "100": {
+          "avg_displacements": 106377.93,
+          "avg_comparisons": 210808.86
+        }
+      },
+      "700": {
+        "1": {
+          "avg_displacements": 128584.0,
+          "avg_comparisons": 255071.0
+        },
+        "10": {
+          "avg_displacements": 124899.3,
+          "avg_comparisons": 247701.6
+        },
+        "100": {
+          "avg_displacements": 123579.33,
+          "avg_comparisons": 245061.66
+        }
+      },
+      "750": {
+        "1": {
+          "avg_displacements": 136151.0,
+          "avg_comparisons": 270055.0
+        },
+        "10": {
+          "avg_displacements": 141616.6,
+          "avg_comparisons": 280986.2
+        },
+        "100": {
+          "avg_displacements": 142210.49,
+          "avg_comparisons": 282173.98
+        }
+      },
+      "800": {
+        "1": {
+          "avg_displacements": 162717.0,
+          "avg_comparisons": 323037.0
+        },
+        "10": {
+          "avg_displacements": 161850.6,
+          "avg_comparisons": 321304.2
+        },
+        "100": {
+          "avg_displacements": 160884.88,
+          "avg_comparisons": 319372.76
+        }
+      },
+      "850": {
+        "1": {
+          "avg_displacements": 181084.0,
+          "avg_comparisons": 359621.0
+        },
+        "10": {
+          "avg_displacements": 181398.3,
+          "avg_comparisons": 360249.6
+        },
+        "100": {
+          "avg_displacements": 181508.54,
+          "avg_comparisons": 360470.08
+        }
+      },
+      "900": {
+        "1": {
+          "avg_displacements": 211554.0,
+          "avg_comparisons": 420411.0
+        },
+        "10": {
+          "avg_displacements": 205228.4,
+          "avg_comparisons": 407759.8
+        },
+        "100": {
+          "avg_displacements": 204236.71,
+          "avg_comparisons": 405776.42
+        }
+      },
+      "950": {
+        "1": {
+          "avg_displacements": 231161.0,
+          "avg_comparisons": 459475.0
+        },
+        "10": {
+          "avg_displacements": 227580.5,
+          "avg_comparisons": 452314.0
+        },
+        "100": {
+          "avg_displacements": 227586.95,
+          "avg_comparisons": 452326.9
+        }
+      },
+      "1000": {
+        "1": {
+          "avg_displacements": 251620.0,
+          "avg_comparisons": 500243.0
+        },
+        "10": {
+          "avg_displacements": 252446.1,
+          "avg_comparisons": 501895.2
+        },
+        "100": {
+          "avg_displacements": 250477.84,
+          "avg_comparisons": 497958.68
+        }
+      }
+    }
+  },
+  "merge_sort": {
+    "gen_asc": {
+      "100": {
+        "1": {
+          "avg_displacements": 1344.0,
+          "avg_comparisons": 1582.0
+        },
+        "10": {
+          "avg_displacements": 1344.0,
+          "avg_comparisons": 1582.0
+        },
+        "100": {
+          "avg_displacements": 1344.0,
+          "avg_comparisons": 1582.0
+        }
+      },
+      "150": {
+        "1": {
+          "avg_displacements": 2188.0,
+          "avg_comparisons": 2550.0
+        },
+        "10": {
+          "avg_displacements": 2188.0,
+          "avg_comparisons": 2550.0
+        },
+        "100": {
+          "avg_displacements": 2188.0,
+          "avg_comparisons": 2550.0
+        }
+      },
+      "200": {
+        "1": {
+          "avg_displacements": 3088.0,
+          "avg_comparisons": 3566.0
+        },
+        "10": {
+          "avg_displacements": 3088.0,
+          "avg_comparisons": 3566.0
+        },
+        "100": {
+          "avg_displacements": 3088.0,
+          "avg_comparisons": 3566.0
+        }
+      },
+      "250": {
+        "1": {
+          "avg_displacements": 3988.0,
+          "avg_comparisons": 4514.0
+        },
+        "10": {
+          "avg_displacements": 3988.0,
+          "avg_comparisons": 4514.0
+        },
+        "100": {
+          "avg_displacements": 3988.0,
+          "avg_comparisons": 4514.0
+        }
+      },
+      "300": {
+        "1": {
+          "avg_displacements": 4976.0,
+          "avg_comparisons": 5702.0
+        },
+        "10": {
+          "avg_displacements": 4976.0,
+          "avg_comparisons": 5702.0
+        },
+        "100": {
+          "avg_displacements": 4976.0,
+          "avg_comparisons": 5702.0
+        }
+      },
+      "350": {
+        "1": {
+          "avg_displacements": 5976.0,
+          "avg_comparisons": 6840.0
+        },
+        "10": {
+          "avg_displacements": 5976.0,
+          "avg_comparisons": 6840.0
+        },
+        "100": {
+          "avg_displacements": 5976.0,
+          "avg_comparisons": 6840.0
+        }
+      },
+      "400": {
+        "1": {
+          "avg_displacements": 6976.0,
+          "avg_comparisons": 7934.0
+        },
+        "10": {
+          "avg_displacements": 6976.0,
+          "avg_comparisons": 7934.0
+        },
+        "100": {
+          "avg_displacements": 6976.0,
+          "avg_comparisons": 7934.0
+        }
+      },
+      "450": {
+        "1": {
+          "avg_displacements": 7976.0,
+          "avg_comparisons": 9008.0
+        },
+        "10": {
+          "avg_displacements": 7976.0,
+          "avg_comparisons": 9008.0
+        },
+        "100": {
+          "avg_displacements": 7976.0,
+          "avg_comparisons": 9008.0
+        }
+      },
+      "500": {
+        "1": {
+          "avg_displacements": 8976.0,
+          "avg_comparisons": 10030.0
+        },
+        "10": {
+          "avg_displacements": 8976.0,
+          "avg_comparisons": 10030.0
+        },
+        "100": {
+          "avg_displacements": 8976.0,
+          "avg_comparisons": 10030.0
+        }
+      },
+      "550": {
+        "1": {
+          "avg_displacements": 10052.0,
+          "avg_comparisons": 11306.0
+        },
+        "10": {
+          "avg_displacements": 10052.0,
+          "avg_comparisons": 11306.0
+        },
+        "100": {
+          "avg_displacements": 10052.0,
+          "avg_comparisons": 11306.0
+        }
+      },
+      "600": {
+        "1": {
+          "avg_displacements": 11152.0,
+          "avg_comparisons": 12606.0
+        },
+        "10": {
+          "avg_displacements": 11152.0,
+          "avg_comparisons": 12606.0
+        },
+        "100": {
+          "avg_displacements": 11152.0,
+          "avg_comparisons": 12606.0
+        }
+      },
+      "650": {
+        "1": {
+          "avg_displacements": 12252.0,
+          "avg_comparisons": 13846.0
+        },
+        "10": {
+          "avg_displacements": 12252.0,
+          "avg_comparisons": 13846.0
+        },
+        "100": {
+          "avg_displacements": 12252.0,
+          "avg_comparisons": 13846.0
+        }
+      },
+      "700": {
+        "1": {
+          "avg_displacements": 13352.0,
+          "avg_comparisons": 15082.0
+        },
+        "10": {
+          "avg_displacements": 13352.0,
+          "avg_comparisons": 15082.0
+        },
+        "100": {
+          "avg_displacements": 13352.0,
+          "avg_comparisons": 15082.0
+        }
+      },
+      "750": {
+        "1": {
+          "avg_displacements": 14452.0,
+          "avg_comparisons": 16262.0
+        },
+        "10": {
+          "avg_displacements": 14452.0,
+          "avg_comparisons": 16262.0
+        },
+        "100": {
+          "avg_displacements": 14452.0,
+          "avg_comparisons": 16262.0
+        }
+      },
+      "800": {
+        "1": {
+          "avg_displacements": 15552.0,
+          "avg_comparisons": 17470.0
+        },
+        "10": {
+          "avg_displacements": 15552.0,
+          "avg_comparisons": 17470.0
+        },
+        "100": {
+          "avg_displacements": 15552.0,
+          "avg_comparisons": 17470.0
+        }
+      },
+      "850": {
+        "1": {
+          "avg_displacements": 16652.0,
+          "avg_comparisons": 18690.0
+        },
+        "10": {
+          "avg_displacements": 16652.0,
+          "avg_comparisons": 18690.0
+        },
+        "100": {
+          "avg_displacements": 16652.0,
+          "avg_comparisons": 18690.0
+        }
+      },
+      "900": {
+        "1": {
+          "avg_displacements": 17752.0,
+          "avg_comparisons": 19818.0
+        },
+        "10": {
+          "avg_displacements": 17752.0,
+          "avg_comparisons": 19818.0
+        },
+        "100": {
+          "avg_displacements": 17752.0,
+          "avg_comparisons": 19818.0
+        }
+      },
+      "950": {
+        "1": {
+          "avg_displacements": 18852.0,
+          "avg_comparisons": 20982.0
+        },
+        "10": {
+          "avg_displacements": 18852.0,
+          "avg_comparisons": 20982.0
+        },
+        "100": {
+          "avg_displacements": 18852.0,
+          "avg_comparisons": 20982.0
+        }
+      },
+      "1000": {
+        "1": {
+          "avg_displacements": 19952.0,
+          "avg_comparisons": 22062.0
+        },
+        "10": {
+          "avg_displacements": 19952.0,
+          "avg_comparisons": 22062.0
+        },
+        "100": {
+          "avg_displacements": 19952.0,
+          "avg_comparisons": 22062.0
+        }
+      }
+    },
+    "gen_desc": {
+      "100": {
+        "1": {
+          "avg_displacements": 1344.0,
+          "avg_comparisons": 1526.0
+        },
+        "10": {
+          "avg_displacements": 1344.0,
+          "avg_comparisons": 1527.4
+        },
+        "100": {
+          "avg_displacements": 1344.0,
+          "avg_comparisons": 1530.54
+        }
+      },
+      "150": {
+        "1": {
+          "avg_displacements": 2188.0,
+          "avg_comparisons": 2458.0
+        },
+        "10": {
+          "avg_displacements": 2188.0,
+          "avg_comparisons": 2458.4
+        },
+        "100": {
+          "avg_displacements": 2188.0,
+          "avg_comparisons": 2462.26
+        }
+      },
+      "200": {
+        "1": {
+          "avg_displacements": 3088.0,
+          "avg_comparisons": 3484.0
+        },
+        "10": {
+          "avg_displacements": 3088.0,
+          "avg_comparisons": 3466.6
+        },
+        "100": {
+          "avg_displacements": 3088.0,
+          "avg_comparisons": 3462.76
+        }
+      },
+      "250": {
+        "1": {
+          "avg_displacements": 3988.0,
+          "avg_comparisons": 4550.0
+        },
+        "10": {
+          "avg_displacements": 3988.0,
+          "avg_comparisons": 4512.0
+        },
+        "100": {
+          "avg_displacements": 3988.0,
+          "avg_comparisons": 4516.16
+        }
+      },
+      "300": {
+        "1": {
+          "avg_displacements": 4976.0,
+          "avg_comparisons": 5540.0
+        },
+        "10": {
+          "avg_displacements": 4976.0,
+          "avg_comparisons": 5525.6
+        },
+        "100": {
+          "avg_displacements": 4976.0,
+          "avg_comparisons": 5527.66
+        }
+      },
+      "350": {
+        "1": {
+          "avg_displacements": 5976.0,
+          "avg_comparisons": 6608.0
+        },
+        "10": {
+          "avg_displacements": 5976.0,
+          "avg_comparisons": 6613.0
+        },
+        "100": {
+          "avg_displacements": 5976.0,
+          "avg_comparisons": 6613.38
+        }
+      },
+      "400": {
+        "1": {
+          "avg_displacements": 6976.0,
+          "avg_comparisons": 7728.0
+        },
+        "10": {
+          "avg_displacements": 6976.0,
+          "avg_comparisons": 7729.8
+        },
+        "100": {
+          "avg_displacements": 6976.0,
+          "avg_comparisons": 7728.84
+        }
+      },
+      "450": {
+        "1": {
+          "avg_displacements": 7976.0,
+          "avg_comparisons": 8834.0
+        },
+        "10": {
+          "avg_displacements": 7976.0,
+          "avg_comparisons": 8857.2
+        },
+        "100": {
+          "avg_displacements": 7976.0,
+          "avg_comparisons": 8857.14
+        }
+      },
+      "500": {
+        "1": {
+          "avg_displacements": 8976.0,
+          "avg_comparisons": 10028.0
+        },
+        "10": {
+          "avg_displacements": 8976.0,
+          "avg_comparisons": 10036.4
+        },
+        "100": {
+          "avg_displacements": 8976.0,
+          "avg_comparisons": 10035.08
+        }
+      },
+      "550": {
+        "1": {
+          "avg_displacements": 10052.0,
+          "avg_comparisons": 11144.0
+        },
+        "10": {
+          "avg_displacements": 10052.0,
+          "avg_comparisons": 11135.0
+        },
+        "100": {
+          "avg_displacements": 10052.0,
+          "avg_comparisons": 11131.32
+        }
+      },
+      "600": {
+        "1": {
+          "avg_displacements": 11152.0,
+          "avg_comparisons": 12284.0
+        },
+        "10": {
+          "avg_displacements": 11152.0,
+          "avg_comparisons": 12268.8
+        },
+        "100": {
+          "avg_displacements": 11152.0,
+          "avg_comparisons": 12251.06
+        }
+      },
+      "650": {
+        "1": {
+          "avg_displacements": 12252.0,
+          "avg_comparisons": 13456.0
+        },
+        "10": {
+          "avg_displacements": 12252.0,
+          "avg_comparisons": 13438.4
+        },
+        "100": {
+          "avg_displacements": 12252.0,
+          "avg_comparisons": 13439.74
+        }
+      },
+      "700": {
+        "1": {
+          "avg_displacements": 13352.0,
+          "avg_comparisons": 14622.0
+        },
+        "10": {
+          "avg_displacements": 13352.0,
+          "avg_comparisons": 14622.0
+        },
+        "100": {
+          "avg_displacements": 13352.0,
+          "avg_comparisons": 14621.9
+        }
+      },
+      "750": {
+        "1": {
+          "avg_displacements": 14452.0,
+          "avg_comparisons": 15844.0
+        },
+        "10": {
+          "avg_displacements": 14452.0,
+          "avg_comparisons": 15856.8
+        },
+        "100": {
+          "avg_displacements": 14452.0,
+          "avg_comparisons": 15863.96
+        }
+      },
+      "800": {
+        "1": {
+          "avg_displacements": 15552.0,
+          "avg_comparisons": 17056.0
+        },
+        "10": {
+          "avg_displacements": 15552.0,
+          "avg_comparisons": 17081.0
+        },
+        "100": {
+          "avg_displacements": 15552.0,
+          "avg_comparisons": 17067.12
+        }
+      },
+      "850": {
+        "1": {
+          "avg_displacements": 16652.0,
+          "avg_comparisons": 18240.0
+        },
+        "10": {
+          "avg_displacements": 16652.0,
+          "avg_comparisons": 18241.0
+        },
+        "100": {
+          "avg_displacements": 16652.0,
+          "avg_comparisons": 18246.52
+        }
+      },
+      "900": {
+        "1": {
+          "avg_displacements": 17752.0,
+          "avg_comparisons": 19514.0
+        },
+        "10": {
+          "avg_displacements": 17752.0,
+          "avg_comparisons": 19522.0
+        },
+        "100": {
+          "avg_displacements": 17752.0,
+          "avg_comparisons": 19517.52
+        }
+      },
+      "950": {
+        "1": {
+          "avg_displacements": 18852.0,
+          "avg_comparisons": 20726.0
+        },
+        "10": {
+          "avg_displacements": 18852.0,
+          "avg_comparisons": 20760.0
+        },
+        "100": {
+          "avg_displacements": 18852.0,
+          "avg_comparisons": 20753.78
+        }
+      },
+      "1000": {
+        "1": {
+          "avg_displacements": 19952.0,
+          "avg_comparisons": 22068.0
+        },
+        "10": {
+          "avg_displacements": 19952.0,
+          "avg_comparisons": 22059.2
+        },
+        "100": {
+          "avg_displacements": 19952.0,
+          "avg_comparisons": 22073.82
+        }
+      }
+    },
+    "gen_rand": {
+      "100": {
+        "1": {
+          "avg_displacements": 1344.0,
+          "avg_comparisons": 1944.0
+        },
+        "10": {
+          "avg_displacements": 1344.0,
+          "avg_comparisons": 1957.8
+        },
+        "100": {
+          "avg_displacements": 1344.0,
+          "avg_comparisons": 1954.0
+        }
+      },
+      "150": {
+        "1": {
+          "avg_displacements": 2188.0,
+          "avg_comparisons": 3182.0
+        },
+        "10": {
+          "avg_displacements": 2188.0,
+          "avg_comparisons": 3187.6
+        },
+        "100": {
+          "avg_displacements": 2188.0,
+          "avg_comparisons": 3188.84
+        }
+      },
+      "200": {
+        "1": {
+          "avg_displacements": 3088.0,
+          "avg_comparisons": 4528.0
+        },
+        "10": {
+          "avg_displacements": 3088.0,
+          "avg_comparisons": 4498.4
+        },
+        "100": {
+          "avg_displacements": 3088.0,
+          "avg_comparisons": 4505.0
+        }
+      },
+      "250": {
+        "1": {
+          "avg_displacements": 3988.0,
+          "avg_comparisons": 5882.0
+        },
+        "10": {
+          "avg_displacements": 3988.0,
+          "avg_comparisons": 5848.6
+        },
+        "100": {
+          "avg_displacements": 3988.0,
+          "avg_comparisons": 5845.26
+        }
+      },
+      "300": {
+        "1": {
+          "avg_displacements": 4976.0,
+          "avg_comparisons": 7308.0
+        },
+        "10": {
+          "avg_displacements": 4976.0,
+          "avg_comparisons": 7284.2
+        },
+        "100": {
+          "avg_displacements": 4976.0,
+          "avg_comparisons": 7278.94
+        }
+      },
+      "350": {
+        "1": {
+          "avg_displacements": 5976.0,
+          "avg_comparisons": 8728.0
+        },
+        "10": {
+          "avg_displacements": 5976.0,
+          "avg_comparisons": 8742.4
+        },
+        "100": {
+          "avg_displacements": 5976.0,
+          "avg_comparisons": 8738.84
+        }
+      },
+      "400": {
+        "1": {
+          "avg_displacements": 6976.0,
+          "avg_comparisons": 10200.0
+        },
+        "10": {
+          "avg_displacements": 6976.0,
+          "avg_comparisons": 10204.0
+        },
+        "100": {
+          "avg_displacements": 6976.0,
+          "avg_comparisons": 10204.88
+        }
+      },
+      "450": {
+        "1": {
+          "avg_displacements": 7976.0,
+          "avg_comparisons": 11696.0
+        },
+        "10": {
+          "avg_displacements": 7976.0,
+          "avg_comparisons": 11700.6
+        },
+        "100": {
+          "avg_displacements": 7976.0,
+          "avg_comparisons": 11696.58
+        }
+      },
+      "500": {
+        "1": {
+          "avg_displacements": 8976.0,
+          "avg_comparisons": 13182.0
+        },
+        "10": {
+          "avg_displacements": 8976.0,
+          "avg_comparisons": 13202.8
+        },
+        "100": {
+          "avg_displacements": 8976.0,
+          "avg_comparisons": 13192.88
+        }
+      },
+      "550": {
+        "1": {
+          "avg_displacements": 10052.0,
+          "avg_comparisons": 14738.0
+        },
+        "10": {
+          "avg_displacements": 10052.0,
+          "avg_comparisons": 14754.4
+        },
+        "100": {
+          "avg_displacements": 10052.0,
+          "avg_comparisons": 14768.1
+        }
+      },
+      "600": {
+        "1": {
+          "avg_displacements": 11152.0,
+          "avg_comparisons": 16380.0
+        },
+        "10": {
+          "avg_displacements": 11152.0,
+          "avg_comparisons": 16362.4
+        },
+        "100": {
+          "avg_displacements": 11152.0,
+          "avg_comparisons": 16358.88
+        }
+      },
+      "650": {
+        "1": {
+          "avg_displacements": 12252.0,
+          "avg_comparisons": 17960.0
+        },
+        "10": {
+          "avg_displacements": 12252.0,
+          "avg_comparisons": 17959.0
+        },
+        "100": {
+          "avg_displacements": 12252.0,
+          "avg_comparisons": 17965.6
+        }
+      },
+      "700": {
+        "1": {
+          "avg_displacements": 13352.0,
+          "avg_comparisons": 19596.0
+        },
+        "10": {
+          "avg_displacements": 13352.0,
+          "avg_comparisons": 19583.2
+        },
+        "100": {
+          "avg_displacements": 13352.0,
+          "avg_comparisons": 19573.68
+        }
+      },
+      "750": {
+        "1": {
+          "avg_displacements": 14452.0,
+          "avg_comparisons": 21188.0
+        },
+        "10": {
+          "avg_displacements": 14452.0,
+          "avg_comparisons": 21173.8
+        },
+        "100": {
+          "avg_displacements": 14452.0,
+          "avg_comparisons": 21190.78
+        }
+      },
+      "800": {
+        "1": {
+          "avg_displacements": 15552.0,
+          "avg_comparisons": 22810.0
+        },
+        "10": {
+          "avg_displacements": 15552.0,
+          "avg_comparisons": 22810.4
+        },
+        "100": {
+          "avg_displacements": 15552.0,
+          "avg_comparisons": 22816.16
+        }
+      },
+      "850": {
+        "1": {
+          "avg_displacements": 16652.0,
+          "avg_comparisons": 24404.0
+        },
+        "10": {
+          "avg_displacements": 16652.0,
+          "avg_comparisons": 24456.4
+        },
+        "100": {
+          "avg_displacements": 16652.0,
+          "avg_comparisons": 24450.92
+        }
+      },
+      "900": {
+        "1": {
+          "avg_displacements": 17752.0,
+          "avg_comparisons": 26054.0
+        },
+        "10": {
+          "avg_displacements": 17752.0,
+          "avg_comparisons": 26092.4
+        },
+        "100": {
+          "avg_displacements": 17752.0,
+          "avg_comparisons": 26094.16
+        }
+      },
+      "950": {
+        "1": {
+          "avg_displacements": 18852.0,
+          "avg_comparisons": 27764.0
+        },
+        "10": {
+          "avg_displacements": 18852.0,
+          "avg_comparisons": 27730.0
+        },
+        "100": {
+          "avg_displacements": 18852.0,
+          "avg_comparisons": 27736.56
+        }
+      },
+      "1000": {
+        "1": {
+          "avg_displacements": 19952.0,
+          "avg_comparisons": 29298.0
+        },
+        "10": {
+          "avg_displacements": 19952.0,
+          "avg_comparisons": 29382.2
+        },
+        "100": {
+          "avg_displacements": 19952.0,
+          "avg_comparisons": 29391.28
+        }
+      }
+    }
+  },
+  "quick_sort": {
+    "gen_asc": {
+      "100": {
+        "1": {
+          "avg_displacements": 297.0,
+          "avg_comparisons": 5149.0
+        },
+        "10": {
+          "avg_displacements": 297.0,
+          "avg_comparisons": 5149.0
+        },
+        "100": {
+          "avg_displacements": 297.0,
+          "avg_comparisons": 5149.0
+        }
+      },
+      "150": {
+        "1": {
+          "avg_displacements": 447.0,
+          "avg_comparisons": 11474.0
+        },
+        "10": {
+          "avg_displacements": 447.0,
+          "avg_comparisons": 11474.0
+        },
+        "100": {
+          "avg_displacements": 447.0,
+          "avg_comparisons": 11474.0
+        }
+      },
+      "200": {
+        "1": {
+          "avg_displacements": 597.0,
+          "avg_comparisons": 20299.0
+        },
+        "10": {
+          "avg_displacements": 597.0,
+          "avg_comparisons": 20299.0
+        },
+        "100": {
+          "avg_displacements": 597.0,
+          "avg_comparisons": 20299.0
+        }
+      },
+      "250": {
+        "1": {
+          "avg_displacements": 747.0,
+          "avg_comparisons": 31624.0
+        },
+        "10": {
+          "avg_displacements": 747.0,
+          "avg_comparisons": 31624.0
+        },
+        "100": {
+          "avg_displacements": 747.0,
+          "avg_comparisons": 31624.0
+        }
+      },
+      "300": {
+        "1": {
+          "avg_displacements": 897.0,
+          "avg_comparisons": 45449.0
+        },
+        "10": {
+          "avg_displacements": 897.0,
+          "avg_comparisons": 45449.0
+        },
+        "100": {
+          "avg_displacements": 897.0,
+          "avg_comparisons": 45449.0
+        }
+      },
+      "350": {
+        "1": {
+          "avg_displacements": 1047.0,
+          "avg_comparisons": 61774.0
+        },
+        "10": {
+          "avg_displacements": 1047.0,
+          "avg_comparisons": 61774.0
+        },
+        "100": {
+          "avg_displacements": 1047.0,
+          "avg_comparisons": 61774.0
+        }
+      },
+      "400": {
+        "1": {
+          "avg_displacements": 1197.0,
+          "avg_comparisons": 80599.0
+        },
+        "10": {
+          "avg_displacements": 1197.0,
+          "avg_comparisons": 80599.0
+        },
+        "100": {
+          "avg_displacements": 1197.0,
+          "avg_comparisons": 80599.0
+        }
+      },
+      "450": {
+        "1": {
+          "avg_displacements": 1347.0,
+          "avg_comparisons": 101924.0
+        },
+        "10": {
+          "avg_displacements": 1347.0,
+          "avg_comparisons": 101924.0
+        },
+        "100": {
+          "avg_displacements": 1347.0,
+          "avg_comparisons": 101924.0
+        }
+      },
+      "500": {
+        "1": {
+          "avg_displacements": 1497.0,
+          "avg_comparisons": 125749.0
+        },
+        "10": {
+          "avg_displacements": 1497.0,
+          "avg_comparisons": 125749.0
+        },
+        "100": {
+          "avg_displacements": 1497.0,
+          "avg_comparisons": 125749.0
+        }
+      },
+      "550": {
+        "1": {
+          "avg_displacements": 1647.0,
+          "avg_comparisons": 152074.0
+        },
+        "10": {
+          "avg_displacements": 1647.0,
+          "avg_comparisons": 152074.0
+        },
+        "100": {
+          "avg_displacements": 1647.0,
+          "avg_comparisons": 152074.0
+        }
+      },
+      "600": {
+        "1": {
+          "avg_displacements": 1797.0,
+          "avg_comparisons": 180899.0
+        },
+        "10": {
+          "avg_displacements": 1797.0,
+          "avg_comparisons": 180899.0
+        },
+        "100": {
+          "avg_displacements": 1797.0,
+          "avg_comparisons": 180899.0
+        }
+      },
+      "650": {
+        "1": {
+          "avg_displacements": 1947.0,
+          "avg_comparisons": 212224.0
+        },
+        "10": {
+          "avg_displacements": 1947.0,
+          "avg_comparisons": 212224.0
+        },
+        "100": {
+          "avg_displacements": 1947.0,
+          "avg_comparisons": 212224.0
+        }
+      },
+      "700": {
+        "1": {
+          "avg_displacements": 2097.0,
+          "avg_comparisons": 246049.0
+        },
+        "10": {
+          "avg_displacements": 2097.0,
+          "avg_comparisons": 246049.0
+        },
+        "100": {
+          "avg_displacements": 2097.0,
+          "avg_comparisons": 246049.0
+        }
+      },
+      "750": {
+        "1": {
+          "avg_displacements": 2247.0,
+          "avg_comparisons": 282374.0
+        },
+        "10": {
+          "avg_displacements": 2247.0,
+          "avg_comparisons": 282374.0
+        },
+        "100": {
+          "avg_displacements": 2247.0,
+          "avg_comparisons": 282374.0
+        }
+      },
+      "800": {
+        "1": {
+          "avg_displacements": 2397.0,
+          "avg_comparisons": 321199.0
+        },
+        "10": {
+          "avg_displacements": 2397.0,
+          "avg_comparisons": 321199.0
+        },
+        "100": {
+          "avg_displacements": 2397.0,
+          "avg_comparisons": 321199.0
+        }
+      },
+      "850": {
+        "1": {
+          "avg_displacements": 2547.0,
+          "avg_comparisons": 362524.0
+        },
+        "10": {
+          "avg_displacements": 2547.0,
+          "avg_comparisons": 362524.0
+        },
+        "100": {
+          "avg_displacements": 2547.0,
+          "avg_comparisons": 362524.0
+        }
+      },
+      "900": {
+        "1": {
+          "avg_displacements": 2697.0,
+          "avg_comparisons": 406349.0
+        },
+        "10": {
+          "avg_displacements": 2697.0,
+          "avg_comparisons": 406349.0
+        },
+        "100": {
+          "avg_displacements": 2697.0,
+          "avg_comparisons": 406349.0
+        }
+      },
+      "950": {
+        "1": {
+          "avg_displacements": 2847.0,
+          "avg_comparisons": 452674.0
+        },
+        "10": {
+          "avg_displacements": 2847.0,
+          "avg_comparisons": 452674.0
+        },
+        "100": {
+          "avg_displacements": 2847.0,
+          "avg_comparisons": 452674.0
+        }
+      },
+      "1000": {
+        "1": {
+          "avg_displacements": 2997.0,
+          "avg_comparisons": 501499.0
+        },
+        "10": {
+          "avg_displacements": 2997.0,
+          "avg_comparisons": 501499.0
+        },
+        "100": {
+          "avg_displacements": 2997.0,
+          "avg_comparisons": 501499.0
+        }
+      }
+    },
+    "gen_desc": {
+      "100": {
+        "1": {
+          "avg_displacements": 4621.0,
+          "avg_comparisons": 6759.0
+        },
+        "10": {
+          "avg_displacements": 4757.3,
+          "avg_comparisons": 6954.8
+        },
+        "100": {
+          "avg_displacements": 4676.52,
+          "avg_comparisons": 6835.72
+        }
+      },
+      "150": {
+        "1": {
+          "avg_displacements": 10837.0,
+          "avg_comparisons": 15988.0
+        },
+        "10": {
+          "avg_displacements": 10370.3,
+          "avg_comparisons": 15284.1
+        },
+        "100": {
+          "avg_displacements": 10317.46,
+          "avg_comparisons": 15206.87
+        }
+      },
+      "200": {
+        "1": {
+          "avg_displacements": 18586.0,
+          "avg_comparisons": 27509.0
+        },
+        "10": {
+          "avg_displacements": 18130.6,
+          "avg_comparisons": 26838.7
+        },
+        "100": {
+          "avg_displacements": 18169.73,
+          "avg_comparisons": 26895.02
+        }
+      },
+      "250": {
+        "1": {
+          "avg_displacements": 28238.0,
+          "avg_comparisons": 41908.0
+        },
+        "10": {
+          "avg_displacements": 28436.3,
+          "avg_comparisons": 42204.9
+        },
+        "100": {
+          "avg_displacements": 28282.34,
+          "avg_comparisons": 41973.41
+        }
+      },
+      "300": {
+        "1": {
+          "avg_displacements": 40996.0,
+          "avg_comparisons": 60946.0
+        },
+        "10": {
+          "avg_displacements": 40421.0,
+          "avg_comparisons": 60094.7
+        },
+        "100": {
+          "avg_displacements": 40411.96,
+          "avg_comparisons": 60078.82
+        }
+      },
+      "350": {
+        "1": {
+          "avg_displacements": 57166.0,
+          "avg_comparisons": 85098.0
+        },
+        "10": {
+          "avg_displacements": 54833.6,
+          "avg_comparisons": 81619.9
+        },
+        "100": {
+          "avg_displacements": 54962.66,
+          "avg_comparisons": 81814.75
+        }
+      },
+      "400": {
+        "1": {
+          "avg_displacements": 75244.0,
+          "avg_comparisons": 112122.0
+        },
+        "10": {
+          "avg_displacements": 72137.0,
+          "avg_comparisons": 107483.6
+        },
+        "100": {
+          "avg_displacements": 71665.41,
+          "avg_comparisons": 106777.43
+        }
+      },
+      "450": {
+        "1": {
+          "avg_displacements": 90828.0,
+          "avg_comparisons": 135432.0
+        },
+        "10": {
+          "avg_displacements": 90378.9,
+          "avg_comparisons": 134759.6
+        },
+        "100": {
+          "avg_displacements": 90200.43,
+          "avg_comparisons": 134492.91
+        }
+      },
+      "500": {
+        "1": {
+          "avg_displacements": 111428.0,
+          "avg_comparisons": 166239.0
+        },
+        "10": {
+          "avg_displacements": 112614.4,
+          "avg_comparisons": 168015.8
+        },
+        "100": {
+          "avg_displacements": 111899.07,
+          "avg_comparisons": 166946.95
+        }
+      },
+      "550": {
+        "1": {
+          "avg_displacements": 132914.0,
+          "avg_comparisons": 198402.0
+        },
+        "10": {
+          "avg_displacements": 134267.3,
+          "avg_comparisons": 200413.6
+        },
+        "100": {
+          "avg_displacements": 134891.97,
+          "avg_comparisons": 201348.19
+        }
+      },
+      "600": {
+        "1": {
+          "avg_displacements": 159386.0,
+          "avg_comparisons": 238016.0
+        },
+        "10": {
+          "avg_displacements": 161415.5,
+          "avg_comparisons": 241038.6
+        },
+        "100": {
+          "avg_displacements": 160346.69,
+          "avg_comparisons": 239439.51
+        }
+      },
+      "650": {
+        "1": {
+          "avg_displacements": 187539.0,
+          "avg_comparisons": 280140.0
+        },
+        "10": {
+          "avg_displacements": 186266.6,
+          "avg_comparisons": 278238.4
+        },
+        "100": {
+          "avg_displacements": 187835.68,
+          "avg_comparisons": 280584.96
+        }
+      },
+      "700": {
+        "1": {
+          "avg_displacements": 221954.0,
+          "avg_comparisons": 331661.0
+        },
+        "10": {
+          "avg_displacements": 217071.8,
+          "avg_comparisons": 324348.7
+        },
+        "100": {
+          "avg_displacements": 217487.41,
+          "avg_comparisons": 324973.14
+        }
+      },
+      "750": {
+        "1": {
+          "avg_displacements": 247436.0,
+          "avg_comparisons": 369812.0
+        },
+        "10": {
+          "avg_displacements": 249354.7,
+          "avg_comparisons": 372682.0
+        },
+        "100": {
+          "avg_displacements": 249128.83,
+          "avg_comparisons": 372346.91
+        }
+      },
+      "800": {
+        "1": {
+          "avg_displacements": 288610.0,
+          "avg_comparisons": 431472.0
+        },
+        "10": {
+          "avg_displacements": 284360.3,
+          "avg_comparisons": 425100.0
+        },
+        "100": {
+          "avg_displacements": 283986.66,
+          "avg_comparisons": 424542.37
+        }
+      },
+      "850": {
+        "1": {
+          "avg_displacements": 322846.0,
+          "avg_comparisons": 482734.0
+        },
+        "10": {
+          "avg_displacements": 318485.3,
+          "avg_comparisons": 476200.4
+        },
+        "100": {
+          "avg_displacements": 320842.25,
+          "avg_comparisons": 479731.78
+        }
+      },
+      "900": {
+        "1": {
+          "avg_displacements": 370090.0,
+          "avg_comparisons": 553484.0
+        },
+        "10": {
+          "avg_displacements": 358240.0,
+          "avg_comparisons": 535741.8
+        },
+        "100": {
+          "avg_displacements": 358873.39,
+          "avg_comparisons": 536688.76
+        }
+      },
+      "950": {
+        "1": {
+          "avg_displacements": 396714.0,
+          "avg_comparisons": 593355.0
+        },
+        "10": {
+          "avg_displacements": 401410.6,
+          "avg_comparisons": 600403.0
+        },
+        "100": {
+          "avg_displacements": 399751.62,
+          "avg_comparisons": 597918.6
+        }
+      },
+      "1000": {
+        "1": {
+          "avg_displacements": 447568.0,
+          "avg_comparisons": 669543.0
+        },
+        "10": {
+          "avg_displacements": 441199.9,
+          "avg_comparisons": 660006.0
+        },
+        "100": {
+          "avg_displacements": 444598.24,
+          "avg_comparisons": 665093.64
+        }
+      }
+    },
+    "gen_rand": {
+      "100": {
+        "1": {
+          "avg_displacements": 1013.0,
+          "avg_comparisons": 1374.0
+        },
+        "10": {
+          "avg_displacements": 959.3,
+          "avg_comparisons": 1282.6
+        },
+        "100": {
+          "avg_displacements": 924.68,
+          "avg_comparisons": 1255.79
+        }
+      },
+      "150": {
+        "1": {
+          "avg_displacements": 1435.0,
+          "avg_comparisons": 2061.0
+        },
+        "10": {
+          "avg_displacements": 1452.0,
+          "avg_comparisons": 2020.4
+        },
+        "100": {
+          "avg_displacements": 1493.58,
+          "avg_comparisons": 2045.81
+        }
+      },
+      "200": {
+        "1": {
+          "avg_displacements": 2265.0,
+          "avg_comparisons": 3189.0
+        },
+        "10": {
+          "avg_displacements": 2011.2,
+          "avg_comparisons": 2797.0
+        },
+        "100": {
+          "avg_displacements": 2115.06,
+          "avg_comparisons": 2943.3
+        }
+      },
+      "250": {
+        "1": {
+          "avg_displacements": 2702.0,
+          "avg_comparisons": 3588.0
+        },
+        "10": {
+          "avg_displacements": 2716.6,
+          "avg_comparisons": 3777.3
+        },
+        "100": {
+          "avg_displacements": 2762.77,
+          "avg_comparisons": 3812.15
+        }
+      },
+      "300": {
+        "1": {
+          "avg_displacements": 3766.0,
+          "avg_comparisons": 4975.0
+        },
+        "10": {
+          "avg_displacements": 3320.2,
+          "avg_comparisons": 4691.4
+        },
+        "100": {
+          "avg_displacements": 3397.29,
+          "avg_comparisons": 4722.5
+        }
+      },
+      "350": {
+        "1": {
+          "avg_displacements": 3971.0,
+          "avg_comparisons": 5714.0
+        },
+        "10": {
+          "avg_displacements": 3966.0,
+          "avg_comparisons": 5652.2
+        },
+        "100": {
+          "avg_displacements": 4059.63,
+          "avg_comparisons": 5679.33
+        }
+      },
+      "400": {
+        "1": {
+          "avg_displacements": 4517.0,
+          "avg_comparisons": 6405.0
+        },
+        "10": {
+          "avg_displacements": 5000.4,
+          "avg_comparisons": 6860.7
+        },
+        "100": {
+          "avg_displacements": 4698.46,
+          "avg_comparisons": 6577.63
+        }
+      },
+      "450": {
+        "1": {
+          "avg_displacements": 5200.0,
+          "avg_comparisons": 7669.0
+        },
+        "10": {
+          "avg_displacements": 5383.6,
+          "avg_comparisons": 7538.9
+        },
+        "100": {
+          "avg_displacements": 5449.94,
+          "avg_comparisons": 7600.48
+        }
+      },
+      "500": {
+        "1": {
+          "avg_displacements": 5876.0,
+          "avg_comparisons": 8116.0
+        },
+        "10": {
+          "avg_displacements": 6335.4,
+          "avg_comparisons": 8691.7
+        },
+        "100": {
+          "avg_displacements": 6206.65,
+          "avg_comparisons": 8636.59
+        }
+      },
+      "550": {
+        "1": {
+          "avg_displacements": 7356.0,
+          "avg_comparisons": 9821.0
+        },
+        "10": {
+          "avg_displacements": 6967.6,
+          "avg_comparisons": 9703.8
+        },
+        "100": {
+          "avg_displacements": 6996.12,
+          "avg_comparisons": 9746.19
+        }
+      },
+      "600": {
+        "1": {
+          "avg_displacements": 7513.0,
+          "avg_comparisons": 10955.0
+        },
+        "10": {
+          "avg_displacements": 7666.0,
+          "avg_comparisons": 10715.6
+        },
+        "100": {
+          "avg_displacements": 7688.33,
+          "avg_comparisons": 10747.37
+        }
+      },
+      "650": {
+        "1": {
+          "avg_displacements": 8174.0,
+          "avg_comparisons": 11784.0
+        },
+        "10": {
+          "avg_displacements": 8972.3,
+          "avg_comparisons": 11945.2
+        },
+        "100": {
+          "avg_displacements": 8566.88,
+          "avg_comparisons": 11945.94
+        }
+      },
+      "700": {
+        "1": {
+          "avg_displacements": 9762.0,
+          "avg_comparisons": 13130.0
+        },
+        "10": {
+          "avg_displacements": 8919.1,
+          "avg_comparisons": 12618.3
+        },
+        "100": {
+          "avg_displacements": 9123.18,
+          "avg_comparisons": 12796.23
+        }
+      },
+      "750": {
+        "1": {
+          "avg_displacements": 9074.0,
+          "avg_comparisons": 13560.0
+        },
+        "10": {
+          "avg_displacements": 10013.0,
+          "avg_comparisons": 13986.9
+        },
+        "100": {
+          "avg_displacements": 9978.89,
+          "avg_comparisons": 13972.46
+        }
+      },
+      "800": {
+        "1": {
+          "avg_displacements": 10932.0,
+          "avg_comparisons": 14645.0
+        },
+        "10": {
+          "avg_displacements": 10734.0,
+          "avg_comparisons": 15172.7
+        },
+        "100": {
+          "avg_displacements": 10751.65,
+          "avg_comparisons": 14970.79
+        }
+      },
+      "850": {
+        "1": {
+          "avg_displacements": 11354.0,
+          "avg_comparisons": 15966.0
+        },
+        "10": {
+          "avg_displacements": 11344.5,
+          "avg_comparisons": 15915.4
+        },
+        "100": {
+          "avg_displacements": 11462.52,
+          "avg_comparisons": 16095.66
+        }
+      },
+      "900": {
+        "1": {
+          "avg_displacements": 12163.0,
+          "avg_comparisons": 16690.0
+        },
+        "10": {
+          "avg_displacements": 12357.2,
+          "avg_comparisons": 17303.8
+        },
+        "100": {
+          "avg_displacements": 12173.89,
+          "avg_comparisons": 17163.26
+        }
+      },
+      "950": {
+        "1": {
+          "avg_displacements": 13141.0,
+          "avg_comparisons": 19084.0
+        },
+        "10": {
+          "avg_displacements": 12865.9,
+          "avg_comparisons": 18014.2
+        },
+        "100": {
+          "avg_displacements": 12969.8,
+          "avg_comparisons": 18330.62
+        }
+      },
+      "1000": {
+        "1": {
+          "avg_displacements": 13147.0,
+          "avg_comparisons": 18896.0
+        },
+        "10": {
+          "avg_displacements": 13623.3,
+          "avg_comparisons": 19267.1
+        },
+        "100": {
+          "avg_displacements": 13830.68,
+          "avg_comparisons": 19386.09
+        }
+      }
+    }
+  },
+  "dual_pivot_quick_sort": {
+    "gen_asc": {
+      "100": {
+        "1": {
+          "avg_displacements": 300.0,
+          "avg_comparisons": 2193.0
+        },
+        "10": {
+          "avg_displacements": 299.1,
+          "avg_comparisons": 2295.8
+        },
+        "100": {
+          "avg_displacements": 300.0,
+          "avg_comparisons": 2254.26
+        }
+      },
+      "150": {
+        "1": {
+          "avg_displacements": 450.0,
+          "avg_comparisons": 5295.0
+        },
+        "10": {
+          "avg_displacements": 448.5,
+          "avg_comparisons": 5023.6
+        },
+        "100": {
+          "avg_displacements": 449.85,
+          "avg_comparisons": 5074.47
+        }
+      },
+      "200": {
+        "1": {
+          "avg_displacements": 600.0,
+          "avg_comparisons": 9096.0
+        },
+        "10": {
+          "avg_displacements": 600.3,
+          "avg_comparisons": 9046.8
+        },
+        "100": {
+          "avg_displacements": 601.17,
+          "avg_comparisons": 8991.3
+        }
+      },
+      "250": {
+        "1": {
+          "avg_displacements": 756.0,
+          "avg_comparisons": 14264.0
+        },
+        "10": {
+          "avg_displacements": 749.1,
+          "avg_comparisons": 14024.8
+        },
+        "100": {
+          "avg_displacements": 751.59,
+          "avg_comparisons": 14078.65
+        }
+      },
+      "300": {
+        "1": {
+          "avg_displacements": 900.0,
+          "avg_comparisons": 20373.0
+        },
+        "10": {
+          "avg_displacements": 903.9,
+          "avg_comparisons": 20263.8
+        },
+        "100": {
+          "avg_displacements": 901.92,
+          "avg_comparisons": 20288.39
+        }
+      },
+      "350": {
+        "1": {
+          "avg_displacements": 1053.0,
+          "avg_comparisons": 27927.0
+        },
+        "10": {
+          "avg_displacements": 1052.4,
+          "avg_comparisons": 27584.0
+        },
+        "100": {
+          "avg_displacements": 1052.37,
+          "avg_comparisons": 27572.55
+        }
+      },
+      "400": {
+        "1": {
+          "avg_displacements": 1200.0,
+          "avg_comparisons": 35851.0
+        },
+        "10": {
+          "avg_displacements": 1201.5,
+          "avg_comparisons": 36031.5
+        },
+        "100": {
+          "avg_displacements": 1202.64,
+          "avg_comparisons": 36019.7
+        }
+      },
+      "450": {
+        "1": {
+          "avg_displacements": 1347.0,
+          "avg_comparisons": 45849.0
+        },
+        "10": {
+          "avg_displacements": 1353.6,
+          "avg_comparisons": 45602.1
+        },
+        "100": {
+          "avg_displacements": 1354.14,
+          "avg_comparisons": 45555.2
+        }
+      },
+      "500": {
+        "1": {
+          "avg_displacements": 1500.0,
+          "avg_comparisons": 55654.0
+        },
+        "10": {
+          "avg_displacements": 1505.7,
+          "avg_comparisons": 56379.6
+        },
+        "100": {
+          "avg_displacements": 1504.5,
+          "avg_comparisons": 56217.92
+        }
+      },
+      "550": {
+        "1": {
+          "avg_displacements": 1647.0,
+          "avg_comparisons": 67477.0
+        },
+        "10": {
+          "avg_displacements": 1656.0,
+          "avg_comparisons": 67931.2
+        },
+        "100": {
+          "avg_displacements": 1655.67,
+          "avg_comparisons": 68006.13
+        }
+      },
+      "600": {
+        "1": {
+          "avg_displacements": 1818.0,
+          "avg_comparisons": 80853.0
+        },
+        "10": {
+          "avg_displacements": 1805.1,
+          "avg_comparisons": 80663.6
+        },
+        "100": {
+          "avg_displacements": 1804.98,
+          "avg_comparisons": 80852.77
+        }
+      },
+      "650": {
+        "1": {
+          "avg_displacements": 1968.0,
+          "avg_comparisons": 95449.0
+        },
+        "10": {
+          "avg_displacements": 1953.9,
+          "avg_comparisons": 95493.4
+        },
+        "100": {
+          "avg_displacements": 1956.03,
+          "avg_comparisons": 95018.73
+        }
+      },
+      "700": {
+        "1": {
+          "avg_displacements": 2100.0,
+          "avg_comparisons": 112011.0
+        },
+        "10": {
+          "avg_displacements": 2106.0,
+          "avg_comparisons": 109781.9
+        },
+        "100": {
+          "avg_displacements": 2106.84,
+          "avg_comparisons": 110090.3
+        }
+      },
+      "750": {
+        "1": {
+          "avg_displacements": 2250.0,
+          "avg_comparisons": 124468.0
+        },
+        "10": {
+          "avg_displacements": 2256.0,
+          "avg_comparisons": 126213.0
+        },
+        "100": {
+          "avg_displacements": 2257.41,
+          "avg_comparisons": 126445.24
+        }
+      },
+      "800": {
+        "1": {
+          "avg_displacements": 2424.0,
+          "avg_comparisons": 146247.0
+        },
+        "10": {
+          "avg_displacements": 2407.8,
+          "avg_comparisons": 144063.1
+        },
+        "100": {
+          "avg_displacements": 2408.55,
+          "avg_comparisons": 143883.02
+        }
+      },
+      "850": {
+        "1": {
+          "avg_displacements": 2550.0,
+          "avg_comparisons": 162334.0
+        },
+        "10": {
+          "avg_displacements": 2555.7,
+          "avg_comparisons": 162730.5
+        },
+        "100": {
+          "avg_displacements": 2558.1,
+          "avg_comparisons": 162587.54
+        }
+      },
+      "900": {
+        "1": {
+          "avg_displacements": 2706.0,
+          "avg_comparisons": 179530.0
+        },
+        "10": {
+          "avg_displacements": 2705.4,
+          "avg_comparisons": 182886.7
+        },
+        "100": {
+          "avg_displacements": 2709.09,
+          "avg_comparisons": 181930.22
+        }
+      },
+      "950": {
+        "1": {
+          "avg_displacements": 2877.0,
+          "avg_comparisons": 202108.0
+        },
+        "10": {
+          "avg_displacements": 2858.4,
+          "avg_comparisons": 202237.9
+        },
+        "100": {
+          "avg_displacements": 2861.4,
+          "avg_comparisons": 202495.14
+        }
+      },
+      "1000": {
+        "1": {
+          "avg_displacements": 3009.0,
+          "avg_comparisons": 223560.0
+        },
+        "10": {
+          "avg_displacements": 3010.8,
+          "avg_comparisons": 224841.3
+        },
+        "100": {
+          "avg_displacements": 3011.43,
+          "avg_comparisons": 224576.37
+        }
+      }
+    },
+    "gen_desc": {
+      "100": {
+        "1": {
+          "avg_displacements": 849.0,
+          "avg_comparisons": 2612.0
+        },
+        "10": {
+          "avg_displacements": 2468.7,
+          "avg_comparisons": 2901.5
+        },
+        "100": {
+          "avg_displacements": 2820.15,
+          "avg_comparisons": 2966.64
+        }
+      },
+      "150": {
+        "1": {
+          "avg_displacements": 7566.0,
+          "avg_comparisons": 7650.0
+        },
+        "10": {
+          "avg_displacements": 6705.0,
+          "avg_comparisons": 6770.0
+        },
+        "100": {
+          "avg_displacements": 6625.86,
+          "avg_comparisons": 6830.92
+        }
+      },
+      "200": {
+        "1": {
+          "avg_displacements": 10872.0,
+          "avg_comparisons": 11774.0
+        },
+        "10": {
+          "avg_displacements": 12059.7,
+          "avg_comparisons": 12428.6
+        },
+        "100": {
+          "avg_displacements": 11717.25,
+          "avg_comparisons": 12168.84
+        }
+      },
+      "250": {
+        "1": {
+          "avg_displacements": 18954.0,
+          "avg_comparisons": 19603.0
+        },
+        "10": {
+          "avg_displacements": 18215.4,
+          "avg_comparisons": 18709.2
+        },
+        "100": {
+          "avg_displacements": 18509.07,
+          "avg_comparisons": 19082.82
+        }
+      },
+      "300": {
+        "1": {
+          "avg_displacements": 25398.0,
+          "avg_comparisons": 27153.0
+        },
+        "10": {
+          "avg_displacements": 26197.2,
+          "avg_comparisons": 27147.8
+        },
+        "100": {
+          "avg_displacements": 26791.14,
+          "avg_comparisons": 27486.7
+        }
+      },
+      "350": {
+        "1": {
+          "avg_displacements": 36768.0,
+          "avg_comparisons": 37356.0
+        },
+        "10": {
+          "avg_displacements": 36825.6,
+          "avg_comparisons": 37585.3
+        },
+        "100": {
+          "avg_displacements": 37271.52,
+          "avg_comparisons": 37843.96
+        }
+      },
+      "400": {
+        "1": {
+          "avg_displacements": 48984.0,
+          "avg_comparisons": 49687.0
+        },
+        "10": {
+          "avg_displacements": 49092.6,
+          "avg_comparisons": 50150.5
+        },
+        "100": {
+          "avg_displacements": 48152.61,
+          "avg_comparisons": 49251.99
+        }
+      },
+      "450": {
+        "1": {
+          "avg_displacements": 60678.0,
+          "avg_comparisons": 65262.0
+        },
+        "10": {
+          "avg_displacements": 61776.3,
+          "avg_comparisons": 63305.9
+        },
+        "100": {
+          "avg_displacements": 61041.42,
+          "avg_comparisons": 62166.11
+        }
+      },
+      "500": {
+        "1": {
+          "avg_displacements": 79551.0,
+          "avg_comparisons": 79408.0
+        },
+        "10": {
+          "avg_displacements": 74862.0,
+          "avg_comparisons": 76245.9
+        },
+        "100": {
+          "avg_displacements": 76178.01,
+          "avg_comparisons": 77684.12
+        }
+      },
+      "550": {
+        "1": {
+          "avg_displacements": 93453.0,
+          "avg_comparisons": 92772.0
+        },
+        "10": {
+          "avg_displacements": 89903.1,
+          "avg_comparisons": 93119.6
+        },
+        "100": {
+          "avg_displacements": 92072.25,
+          "avg_comparisons": 93651.58
+        }
+      },
+      "600": {
+        "1": {
+          "avg_displacements": 108567.0,
+          "avg_comparisons": 109627.0
+        },
+        "10": {
+          "avg_displacements": 108643.5,
+          "avg_comparisons": 109775.6
+        },
+        "100": {
+          "avg_displacements": 109687.08,
+          "avg_comparisons": 111419.65
+        }
+      },
+      "650": {
+        "1": {
+          "avg_displacements": 117873.0,
+          "avg_comparisons": 126469.0
+        },
+        "10": {
+          "avg_displacements": 127679.7,
+          "avg_comparisons": 130659.1
+        },
+        "100": {
+          "avg_displacements": 129330.63,
+          "avg_comparisons": 131088.69
+        }
+      },
+      "700": {
+        "1": {
+          "avg_displacements": 138882.0,
+          "avg_comparisons": 148978.0
+        },
+        "10": {
+          "avg_displacements": 149628.3,
+          "avg_comparisons": 151574.7
+        },
+        "100": {
+          "avg_displacements": 150006.63,
+          "avg_comparisons": 151824.34
+        }
+      },
+      "750": {
+        "1": {
+          "avg_displacements": 176832.0,
+          "avg_comparisons": 176671.0
+        },
+        "10": {
+          "avg_displacements": 171835.2,
+          "avg_comparisons": 174938.7
+        },
+        "100": {
+          "avg_displacements": 172651.05,
+          "avg_comparisons": 174403.88
+        }
+      },
+      "800": {
+        "1": {
+          "avg_displacements": 184422.0,
+          "avg_comparisons": 194289.0
+        },
+        "10": {
+          "avg_displacements": 195987.0,
+          "avg_comparisons": 197236.3
+        },
+        "100": {
+          "avg_displacements": 197479.8,
+          "avg_comparisons": 199584.77
+        }
+      },
+      "850": {
+        "1": {
+          "avg_displacements": 224790.0,
+          "avg_comparisons": 226280.0
+        },
+        "10": {
+          "avg_displacements": 223203.6,
+          "avg_comparisons": 225026.2
+        },
+        "100": {
+          "avg_displacements": 223705.2,
+          "avg_comparisons": 225450.9
+        }
+      },
+      "900": {
+        "1": {
+          "avg_displacements": 253650.0,
+          "avg_comparisons": 253413.0
+        },
+        "10": {
+          "avg_displacements": 251261.7,
+          "avg_comparisons": 255776.2
+        },
+        "100": {
+          "avg_displacements": 249321.03,
+          "avg_comparisons": 251917.52
+        }
+      },
+      "950": {
+        "1": {
+          "avg_displacements": 279633.0,
+          "avg_comparisons": 281249.0
+        },
+        "10": {
+          "avg_displacements": 280738.5,
+          "avg_comparisons": 283127.5
+        },
+        "100": {
+          "avg_displacements": 277591.59,
+          "avg_comparisons": 280075.54
+        }
+      },
+      "1000": {
+        "1": {
+          "avg_displacements": 315519.0,
+          "avg_comparisons": 316241.0
+        },
+        "10": {
+          "avg_displacements": 310619.1,
+          "avg_comparisons": 311287.6
+        },
+        "100": {
+          "avg_displacements": 307746.09,
+          "avg_comparisons": 310517.31
+        }
+      }
+    },
+    "gen_rand": {
+      "100": {
+        "1": {
+          "avg_displacements": 996.0,
+          "avg_comparisons": 637.0
+        },
+        "10": {
+          "avg_displacements": 826.8,
+          "avg_comparisons": 546.7
+        },
+        "100": {
+          "avg_displacements": 832.2,
+          "avg_comparisons": 535.94
+        }
+      },
+      "150": {
+        "1": {
+          "avg_displacements": 1713.0,
+          "avg_comparisons": 1111.0
+        },
+        "10": {
+          "avg_displacements": 1390.5,
+          "avg_comparisons": 920.3
+        },
+        "100": {
+          "avg_displacements": 1401.9,
+          "avg_comparisons": 918.62
+        }
+      },
+      "200": {
+        "1": {
+          "avg_displacements": 1992.0,
+          "avg_comparisons": 1311.0
+        },
+        "10": {
+          "avg_displacements": 1953.6,
+          "avg_comparisons": 1334.3
+        },
+        "100": {
+          "avg_displacements": 1921.11,
+          "avg_comparisons": 1300.63
+        }
+      },
+      "250": {
+        "1": {
+          "avg_displacements": 2490.0,
+          "avg_comparisons": 1677.0
+        },
+        "10": {
+          "avg_displacements": 2531.4,
+          "avg_comparisons": 1773.5
+        },
+        "100": {
+          "avg_displacements": 2518.65,
+          "avg_comparisons": 1716.39
+        }
+      },
+      "300": {
+        "1": {
+          "avg_displacements": 3168.0,
+          "avg_comparisons": 2120.0
+        },
+        "10": {
+          "avg_displacements": 3246.6,
+          "avg_comparisons": 2213.9
+        },
+        "100": {
+          "avg_displacements": 3161.16,
+          "avg_comparisons": 2169.5
+        }
+      },
+      "350": {
+        "1": {
+          "avg_displacements": 3606.0,
+          "avg_comparisons": 2703.0
+        },
+        "10": {
+          "avg_displacements": 3934.5,
+          "avg_comparisons": 2668.3
+        },
+        "100": {
+          "avg_displacements": 3696.57,
+          "avg_comparisons": 2584.26
+        }
+      },
+      "400": {
+        "1": {
+          "avg_displacements": 3972.0,
+          "avg_comparisons": 2882.0
+        },
+        "10": {
+          "avg_displacements": 4567.5,
+          "avg_comparisons": 3165.0
+        },
+        "100": {
+          "avg_displacements": 4295.88,
+          "avg_comparisons": 3032.15
+        }
+      },
+      "450": {
+        "1": {
+          "avg_displacements": 4551.0,
+          "avg_comparisons": 3207.0
+        },
+        "10": {
+          "avg_displacements": 5136.9,
+          "avg_comparisons": 3648.2
+        },
+        "100": {
+          "avg_displacements": 5056.38,
+          "avg_comparisons": 3542.24
+        }
+      },
+      "500": {
+        "1": {
+          "avg_displacements": 6012.0,
+          "avg_comparisons": 5024.0
+        },
+        "10": {
+          "avg_displacements": 5514.9,
+          "avg_comparisons": 3901.8
+        },
+        "100": {
+          "avg_displacements": 5623.08,
+          "avg_comparisons": 3991.39
+        }
+      },
+      "550": {
+        "1": {
+          "avg_displacements": 5985.0,
+          "avg_comparisons": 4039.0
+        },
+        "10": {
+          "avg_displacements": 6240.6,
+          "avg_comparisons": 4430.4
+        },
+        "100": {
+          "avg_displacements": 6342.66,
+          "avg_comparisons": 4475.71
+        }
+      },
+      "600": {
+        "1": {
+          "avg_displacements": 7632.0,
+          "avg_comparisons": 5310.0
+        },
+        "10": {
+          "avg_displacements": 7226.1,
+          "avg_comparisons": 5065.7
+        },
+        "100": {
+          "avg_displacements": 6966.33,
+          "avg_comparisons": 4964.15
+        }
+      },
+      "650": {
+        "1": {
+          "avg_displacements": 6720.0,
+          "avg_comparisons": 5011.0
+        },
+        "10": {
+          "avg_displacements": 7930.8,
+          "avg_comparisons": 5615.0
+        },
+        "100": {
+          "avg_displacements": 7657.8,
+          "avg_comparisons": 5451.24
+        }
+      },
+      "700": {
+        "1": {
+          "avg_displacements": 8691.0,
+          "avg_comparisons": 6171.0
+        },
+        "10": {
+          "avg_displacements": 8529.6,
+          "avg_comparisons": 6096.8
+        },
+        "100": {
+          "avg_displacements": 8255.55,
+          "avg_comparisons": 5918.96
+        }
+      },
+      "750": {
+        "1": {
+          "avg_displacements": 8676.0,
+          "avg_comparisons": 6464.0
+        },
+        "10": {
+          "avg_displacements": 8878.8,
+          "avg_comparisons": 6421.5
+        },
+        "100": {
+          "avg_displacements": 9090.99,
+          "avg_comparisons": 6475.81
+        }
+      },
+      "800": {
+        "1": {
+          "avg_displacements": 10920.0,
+          "avg_comparisons": 7435.0
+        },
+        "10": {
+          "avg_displacements": 9743.7,
+          "avg_comparisons": 7033.2
+        },
+        "100": {
+          "avg_displacements": 9623.34,
+          "avg_comparisons": 6931.92
+        }
+      },
+      "850": {
+        "1": {
+          "avg_displacements": 9726.0,
+          "avg_comparisons": 6873.0
+        },
+        "10": {
+          "avg_displacements": 10529.1,
+          "avg_comparisons": 7331.2
+        },
+        "100": {
+          "avg_displacements": 10394.01,
+          "avg_comparisons": 7508.83
+        }
+      },
+      "900": {
+        "1": {
+          "avg_displacements": 10947.0,
+          "avg_comparisons": 8012.0
+        },
+        "10": {
+          "avg_displacements": 10664.1,
+          "avg_comparisons": 7737.3
+        },
+        "100": {
+          "avg_displacements": 11142.33,
+          "avg_comparisons": 8076.0
+        }
+      },
+      "950": {
+        "1": {
+          "avg_displacements": 12585.0,
+          "avg_comparisons": 9304.0
+        },
+        "10": {
+          "avg_displacements": 11822.7,
+          "avg_comparisons": 8788.3
+        },
+        "100": {
+          "avg_displacements": 11817.15,
+          "avg_comparisons": 8513.49
+        }
+      },
+      "1000": {
+        "1": {
+          "avg_displacements": 12585.0,
+          "avg_comparisons": 9342.0
+        },
+        "10": {
+          "avg_displacements": 12978.3,
+          "avg_comparisons": 9179.5
+        },
+        "100": {
+          "avg_displacements": 12548.94,
+          "avg_comparisons": 9091.75
+        }
+      }
+    }
+  },
+  "hybrid_sort": {
+    "gen_asc": {
+      "100": {
+        "1": {
+          "avg_displacements": 283.0,
+          "avg_comparisons": 5030.0
+        },
+        "10": {
+          "avg_displacements": 283.0,
+          "avg_comparisons": 5030.0
+        },
+        "100": {
+          "avg_displacements": 283.0,
+          "avg_comparisons": 5030.0
+        }
+      },
+      "150": {
+        "1": {
+          "avg_displacements": 433.0,
+          "avg_comparisons": 11355.0
+        },
+        "10": {
+          "avg_displacements": 433.0,
+          "avg_comparisons": 11355.0
+        },
+        "100": {
+          "avg_displacements": 433.0,
+          "avg_comparisons": 11355.0
+        }
+      },
+      "200": {
+        "1": {
+          "avg_displacements": 583.0,
+          "avg_comparisons": 20180.0
+        },
+        "10": {
+          "avg_displacements": 583.0,
+          "avg_comparisons": 20180.0
+        },
+        "100": {
+          "avg_displacements": 583.0,
+          "avg_comparisons": 20180.0
+        }
+      },
+      "250": {
+        "1": {
+          "avg_displacements": 733.0,
+          "avg_comparisons": 31505.0
+        },
+        "10": {
+          "avg_displacements": 733.0,
+          "avg_comparisons": 31505.0
+        },
+        "100": {
+          "avg_displacements": 733.0,
+          "avg_comparisons": 31505.0
+        }
+      },
+      "300": {
+        "1": {
+          "avg_displacements": 883.0,
+          "avg_comparisons": 45330.0
+        },
+        "10": {
+          "avg_displacements": 883.0,
+          "avg_comparisons": 45330.0
+        },
+        "100": {
+          "avg_displacements": 883.0,
+          "avg_comparisons": 45330.0
+        }
+      },
+      "350": {
+        "1": {
+          "avg_displacements": 1033.0,
+          "avg_comparisons": 61655.0
+        },
+        "10": {
+          "avg_displacements": 1033.0,
+          "avg_comparisons": 61655.0
+        },
+        "100": {
+          "avg_displacements": 1033.0,
+          "avg_comparisons": 61655.0
+        }
+      },
+      "400": {
+        "1": {
+          "avg_displacements": 1183.0,
+          "avg_comparisons": 80480.0
+        },
+        "10": {
+          "avg_displacements": 1183.0,
+          "avg_comparisons": 80480.0
+        },
+        "100": {
+          "avg_displacements": 1183.0,
+          "avg_comparisons": 80480.0
+        }
+      },
+      "450": {
+        "1": {
+          "avg_displacements": 1333.0,
+          "avg_comparisons": 101805.0
+        },
+        "10": {
+          "avg_displacements": 1333.0,
+          "avg_comparisons": 101805.0
+        },
+        "100": {
+          "avg_displacements": 1333.0,
+          "avg_comparisons": 101805.0
+        }
+      },
+      "500": {
+        "1": {
+          "avg_displacements": 1483.0,
+          "avg_comparisons": 125630.0
+        },
+        "10": {
+          "avg_displacements": 1483.0,
+          "avg_comparisons": 125630.0
+        },
+        "100": {
+          "avg_displacements": 1483.0,
+          "avg_comparisons": 125630.0
+        }
+      },
+      "550": {
+        "1": {
+          "avg_displacements": 1633.0,
+          "avg_comparisons": 151955.0
+        },
+        "10": {
+          "avg_displacements": 1633.0,
+          "avg_comparisons": 151955.0
+        },
+        "100": {
+          "avg_displacements": 1633.0,
+          "avg_comparisons": 151955.0
+        }
+      },
+      "600": {
+        "1": {
+          "avg_displacements": 1783.0,
+          "avg_comparisons": 180780.0
+        },
+        "10": {
+          "avg_displacements": 1783.0,
+          "avg_comparisons": 180780.0
+        },
+        "100": {
+          "avg_displacements": 1783.0,
+          "avg_comparisons": 180780.0
+        }
+      },
+      "650": {
+        "1": {
+          "avg_displacements": 1933.0,
+          "avg_comparisons": 212105.0
+        },
+        "10": {
+          "avg_displacements": 1933.0,
+          "avg_comparisons": 212105.0
+        },
+        "100": {
+          "avg_displacements": 1933.0,
+          "avg_comparisons": 212105.0
+        }
+      },
+      "700": {
+        "1": {
+          "avg_displacements": 2083.0,
+          "avg_comparisons": 245930.0
+        },
+        "10": {
+          "avg_displacements": 2083.0,
+          "avg_comparisons": 245930.0
+        },
+        "100": {
+          "avg_displacements": 2083.0,
+          "avg_comparisons": 245930.0
+        }
+      },
+      "750": {
+        "1": {
+          "avg_displacements": 2233.0,
+          "avg_comparisons": 282255.0
+        },
+        "10": {
+          "avg_displacements": 2233.0,
+          "avg_comparisons": 282255.0
+        },
+        "100": {
+          "avg_displacements": 2233.0,
+          "avg_comparisons": 282255.0
+        }
+      },
+      "800": {
+        "1": {
+          "avg_displacements": 2383.0,
+          "avg_comparisons": 321080.0
+        },
+        "10": {
+          "avg_displacements": 2383.0,
+          "avg_comparisons": 321080.0
+        },
+        "100": {
+          "avg_displacements": 2383.0,
+          "avg_comparisons": 321080.0
+        }
+      },
+      "850": {
+        "1": {
+          "avg_displacements": 2533.0,
+          "avg_comparisons": 362405.0
+        },
+        "10": {
+          "avg_displacements": 2533.0,
+          "avg_comparisons": 362405.0
+        },
+        "100": {
+          "avg_displacements": 2533.0,
+          "avg_comparisons": 362405.0
+        }
+      },
+      "900": {
+        "1": {
+          "avg_displacements": 2683.0,
+          "avg_comparisons": 406230.0
+        },
+        "10": {
+          "avg_displacements": 2683.0,
+          "avg_comparisons": 406230.0
+        },
+        "100": {
+          "avg_displacements": 2683.0,
+          "avg_comparisons": 406230.0
+        }
+      },
+      "950": {
+        "1": {
+          "avg_displacements": 2833.0,
+          "avg_comparisons": 452555.0
+        },
+        "10": {
+          "avg_displacements": 2833.0,
+          "avg_comparisons": 452555.0
+        },
+        "100": {
+          "avg_displacements": 2833.0,
+          "avg_comparisons": 452555.0
+        }
+      },
+      "1000": {
+        "1": {
+          "avg_displacements": 2983.0,
+          "avg_comparisons": 501380.0
+        },
+        "10": {
+          "avg_displacements": 2983.0,
+          "avg_comparisons": 501380.0
+        },
+        "100": {
+          "avg_displacements": 2983.0,
+          "avg_comparisons": 501380.0
+        }
+      }
+    },
+    "gen_desc": {
+      "100": {
+        "1": {
+          "avg_displacements": 4670.0,
+          "avg_comparisons": 6835.0
+        },
+        "10": {
+          "avg_displacements": 4664.9,
+          "avg_comparisons": 6842.6
+        },
+        "100": {
+          "avg_displacements": 4691.09,
+          "avg_comparisons": 6879.88
+        }
+      },
+      "150": {
+        "1": {
+          "avg_displacements": 10422.0,
+          "avg_comparisons": 15394.0
+        },
+        "10": {
+          "avg_displacements": 10401.8,
+          "avg_comparisons": 15355.0
+        },
+        "100": {
+          "avg_displacements": 10331.39,
+          "avg_comparisons": 15248.55
+        }
+      },
+      "200": {
+        "1": {
+          "avg_displacements": 18149.0,
+          "avg_comparisons": 26872.0
+        },
+        "10": {
+          "avg_displacements": 18340.7,
+          "avg_comparisons": 27166.8
+        },
+        "100": {
+          "avg_displacements": 18233.32,
+          "avg_comparisons": 27004.39
+        }
+      },
+      "250": {
+        "1": {
+          "avg_displacements": 28121.0,
+          "avg_comparisons": 41737.0
+        },
+        "10": {
+          "avg_displacements": 27749.1,
+          "avg_comparisons": 41185.6
+        },
+        "100": {
+          "avg_displacements": 28220.36,
+          "avg_comparisons": 41892.27
+        }
+      },
+      "300": {
+        "1": {
+          "avg_displacements": 38534.0,
+          "avg_comparisons": 57290.0
+        },
+        "10": {
+          "avg_displacements": 40484.9,
+          "avg_comparisons": 60197.1
+        },
+        "100": {
+          "avg_displacements": 40445.28,
+          "avg_comparisons": 60135.48
+        }
+      },
+      "350": {
+        "1": {
+          "avg_displacements": 55451.0,
+          "avg_comparisons": 82557.0
+        },
+        "10": {
+          "avg_displacements": 54252.2,
+          "avg_comparisons": 80755.0
+        },
+        "100": {
+          "avg_displacements": 55060.16,
+          "avg_comparisons": 81961.7
+        }
+      },
+      "400": {
+        "1": {
+          "avg_displacements": 71615.0,
+          "avg_comparisons": 106694.0
+        },
+        "10": {
+          "avg_displacements": 70612.9,
+          "avg_comparisons": 105200.2
+        },
+        "100": {
+          "avg_displacements": 71531.27,
+          "avg_comparisons": 106575.14
+        }
+      },
+      "450": {
+        "1": {
+          "avg_displacements": 89581.0,
+          "avg_comparisons": 133548.0
+        },
+        "10": {
+          "avg_displacements": 90777.3,
+          "avg_comparisons": 135349.8
+        },
+        "100": {
+          "avg_displacements": 90419.22,
+          "avg_comparisons": 134813.96
+        }
+      },
+      "500": {
+        "1": {
+          "avg_displacements": 109461.0,
+          "avg_comparisons": 163277.0
+        },
+        "10": {
+          "avg_displacements": 111360.6,
+          "avg_comparisons": 166130.5
+        },
+        "100": {
+          "avg_displacements": 111217.53,
+          "avg_comparisons": 165917.94
+        }
+      },
+      "550": {
+        "1": {
+          "avg_displacements": 131483.0,
+          "avg_comparisons": 196220.0
+        },
+        "10": {
+          "avg_displacements": 134997.4,
+          "avg_comparisons": 201497.1
+        },
+        "100": {
+          "avg_displacements": 134959.35,
+          "avg_comparisons": 201436.86
+        }
+      },
+      "600": {
+        "1": {
+          "avg_displacements": 165201.0,
+          "avg_comparisons": 246706.0
+        },
+        "10": {
+          "avg_displacements": 160279.9,
+          "avg_comparisons": 239315.6
+        },
+        "100": {
+          "avg_displacements": 160373.67,
+          "avg_comparisons": 239463.19
+        }
+      },
+      "650": {
+        "1": {
+          "avg_displacements": 181283.0,
+          "avg_comparisons": 270758.0
+        },
+        "10": {
+          "avg_displacements": 188779.0,
+          "avg_comparisons": 281975.2
+        },
+        "100": {
+          "avg_displacements": 187722.25,
+          "avg_comparisons": 280393.12
+        }
+      },
+      "700": {
+        "1": {
+          "avg_displacements": 215827.0,
+          "avg_comparisons": 322469.0
+        },
+        "10": {
+          "avg_displacements": 218867.0,
+          "avg_comparisons": 327009.7
+        },
+        "100": {
+          "avg_displacements": 217659.54,
+          "avg_comparisons": 325205.84
+        }
+      },
+      "750": {
+        "1": {
+          "avg_displacements": 247377.0,
+          "avg_comparisons": 369685.0
+        },
+        "10": {
+          "avg_displacements": 250128.3,
+          "avg_comparisons": 373815.6
+        },
+        "100": {
+          "avg_displacements": 249562.44,
+          "avg_comparisons": 372965.38
+        }
+      },
+      "800": {
+        "1": {
+          "avg_displacements": 279411.0,
+          "avg_comparisons": 417643.0
+        },
+        "10": {
+          "avg_displacements": 284448.9,
+          "avg_comparisons": 425200.0
+        },
+        "100": {
+          "avg_displacements": 284281.2,
+          "avg_comparisons": 424946.98
+        }
+      },
+      "850": {
+        "1": {
+          "avg_displacements": 322205.0,
+          "avg_comparisons": 481746.0
+        },
+        "10": {
+          "avg_displacements": 320437.8,
+          "avg_comparisons": 479088.2
+        },
+        "100": {
+          "avg_displacements": 320890.3,
+          "avg_comparisons": 479767.17
+        }
+      },
+      "900": {
+        "1": {
+          "avg_displacements": 362474.0,
+          "avg_comparisons": 542058.0
+        },
+        "10": {
+          "avg_displacements": 359871.2,
+          "avg_comparisons": 538138.8
+        },
+        "100": {
+          "avg_displacements": 360107.98,
+          "avg_comparisons": 538497.89
+        }
+      },
+      "950": {
+        "1": {
+          "avg_displacements": 394151.0,
+          "avg_comparisons": 589479.0
+        },
+        "10": {
+          "avg_displacements": 399949.5,
+          "avg_comparisons": 598161.9
+        },
+        "100": {
+          "avg_displacements": 400631.16,
+          "avg_comparisons": 599190.29
+        }
+      },
+      "1000": {
+        "1": {
+          "avg_displacements": 439093.0,
+          "avg_comparisons": 656787.0
+        },
+        "10": {
+          "avg_displacements": 445165.6,
+          "avg_comparisons": 665898.7
+        },
+        "100": {
+          "avg_displacements": 442966.62,
+          "avg_comparisons": 662604.34
+        }
+      }
+    },
+    "gen_rand": {
+      "100": {
+        "1": {
+          "avg_displacements": 852.0,
+          "avg_comparisons": 1155.0
+        },
+        "10": {
+          "avg_displacements": 885.8,
+          "avg_comparisons": 1214.1
+        },
+        "100": {
+          "avg_displacements": 829.26,
+          "avg_comparisons": 1147.33
+        }
+      },
+      "150": {
+        "1": {
+          "avg_displacements": 1791.0,
+          "avg_comparisons": 2386.0
+        },
+        "10": {
+          "avg_displacements": 1530.6,
+          "avg_comparisons": 2076.9
+        },
+        "100": {
+          "avg_displacements": 1354.03,
+          "avg_comparisons": 1878.09
+        }
+      },
+      "200": {
+        "1": {
+          "avg_displacements": 1865.0,
+          "avg_comparisons": 2627.0
+        },
+        "10": {
+          "avg_displacements": 1901.9,
+          "avg_comparisons": 2673.3
+        },
+        "100": {
+          "avg_displacements": 1952.87,
+          "avg_comparisons": 2698.83
+        }
+      },
+      "250": {
+        "1": {
+          "avg_displacements": 2213.0,
+          "avg_comparisons": 3261.0
+        },
+        "10": {
+          "avg_displacements": 2579.0,
+          "avg_comparisons": 3573.2
+        },
+        "100": {
+          "avg_displacements": 2545.87,
+          "avg_comparisons": 3583.54
+        }
+      },
+      "300": {
+        "1": {
+          "avg_displacements": 3503.0,
+          "avg_comparisons": 4901.0
+        },
+        "10": {
+          "avg_displacements": 3204.5,
+          "avg_comparisons": 4499.7
+        },
+        "100": {
+          "avg_displacements": 3226.47,
+          "avg_comparisons": 4479.56
+        }
+      },
+      "350": {
+        "1": {
+          "avg_displacements": 4132.0,
+          "avg_comparisons": 5997.0
+        },
+        "10": {
+          "avg_displacements": 3709.0,
+          "avg_comparisons": 5230.6
+        },
+        "100": {
+          "avg_displacements": 3715.79,
+          "avg_comparisons": 5254.13
+        }
+      },
+      "400": {
+        "1": {
+          "avg_displacements": 4865.0,
+          "avg_comparisons": 6428.0
+        },
+        "10": {
+          "avg_displacements": 4237.1,
+          "avg_comparisons": 6015.9
+        },
+        "100": {
+          "avg_displacements": 4338.96,
+          "avg_comparisons": 6197.8
+        }
+      },
+      "450": {
+        "1": {
+          "avg_displacements": 4889.0,
+          "avg_comparisons": 6984.0
+        },
+        "10": {
+          "avg_displacements": 5516.0,
+          "avg_comparisons": 7511.0
+        },
+        "100": {
+          "avg_displacements": 5109.86,
+          "avg_comparisons": 7172.12
+        }
+      },
+      "500": {
+        "1": {
+          "avg_displacements": 6166.0,
+          "avg_comparisons": 8197.0
+        },
+        "10": {
+          "avg_displacements": 5792.7,
+          "avg_comparisons": 8239.2
+        },
+        "100": {
+          "avg_displacements": 5731.23,
+          "avg_comparisons": 8116.67
+        }
+      },
+      "550": {
+        "1": {
+          "avg_displacements": 6291.0,
+          "avg_comparisons": 8835.0
+        },
+        "10": {
+          "avg_displacements": 6556.6,
+          "avg_comparisons": 9129.2
+        },
+        "100": {
+          "avg_displacements": 6501.39,
+          "avg_comparisons": 9128.58
+        }
+      },
+      "600": {
+        "1": {
+          "avg_displacements": 7665.0,
+          "avg_comparisons": 10552.0
+        },
+        "10": {
+          "avg_displacements": 6916.7,
+          "avg_comparisons": 9840.0
+        },
+        "100": {
+          "avg_displacements": 7131.76,
+          "avg_comparisons": 10148.42
+        }
+      },
+      "650": {
+        "1": {
+          "avg_displacements": 7047.0,
+          "avg_comparisons": 10191.0
+        },
+        "10": {
+          "avg_displacements": 7799.2,
+          "avg_comparisons": 11243.3
+        },
+        "100": {
+          "avg_displacements": 7803.83,
+          "avg_comparisons": 10971.31
+        }
+      },
+      "700": {
+        "1": {
+          "avg_displacements": 9180.0,
+          "avg_comparisons": 12788.0
+        },
+        "10": {
+          "avg_displacements": 8346.6,
+          "avg_comparisons": 12183.2
+        },
+        "100": {
+          "avg_displacements": 8390.54,
+          "avg_comparisons": 11935.99
+        }
+      },
+      "750": {
+        "1": {
+          "avg_displacements": 8292.0,
+          "avg_comparisons": 12437.0
+        },
+        "10": {
+          "avg_displacements": 9058.5,
+          "avg_comparisons": 13096.4
+        },
+        "100": {
+          "avg_displacements": 9130.16,
+          "avg_comparisons": 13004.66
+        }
+      },
+      "800": {
+        "1": {
+          "avg_displacements": 10095.0,
+          "avg_comparisons": 14655.0
+        },
+        "10": {
+          "avg_displacements": 9324.1,
+          "avg_comparisons": 13802.0
+        },
+        "100": {
+          "avg_displacements": 9967.55,
+          "avg_comparisons": 14029.72
+        }
+      },
+      "850": {
+        "1": {
+          "avg_displacements": 11242.0,
+          "avg_comparisons": 15147.0
+        },
+        "10": {
+          "avg_displacements": 10590.9,
+          "avg_comparisons": 15176.8
+        },
+        "100": {
+          "avg_displacements": 10831.49,
+          "avg_comparisons": 15307.78
+        }
+      },
+      "900": {
+        "1": {
+          "avg_displacements": 15473.0,
+          "avg_comparisons": 20496.0
+        },
+        "10": {
+          "avg_displacements": 11225.7,
+          "avg_comparisons": 16083.8
+        },
+        "100": {
+          "avg_displacements": 11415.18,
+          "avg_comparisons": 16166.71
+        }
+      },
+      "950": {
+        "1": {
+          "avg_displacements": 11257.0,
+          "avg_comparisons": 16525.0
+        },
+        "10": {
+          "avg_displacements": 11890.1,
+          "avg_comparisons": 17094.2
+        },
+        "100": {
+          "avg_displacements": 12052.84,
+          "avg_comparisons": 17240.15
+        }
+      },
+      "1000": {
+        "1": {
+          "avg_displacements": 12681.0,
+          "avg_comparisons": 17583.0
+        },
+        "10": {
+          "avg_displacements": 12565.4,
+          "avg_comparisons": 17963.9
+        },
+        "100": {
+          "avg_displacements": 12993.22,
+          "avg_comparisons": 18375.73
+        }
+      }
+    }
+  }
+}

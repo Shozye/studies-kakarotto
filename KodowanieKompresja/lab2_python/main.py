@@ -12,7 +12,7 @@ def test_huffman_decoding(encoded_filepath, decoded_filepath):
 
 def main():
     filename = "my_test1.txt" if len(sys.argv) == 1 else sys.argv[1]
-    filepath = f"files/{filename}"
+    filepath = f"../lab2_ocena5/files/{filename}"
     name, extension = filename.split(".")
     encoded_filepath = f"encoded/{name + '_commpressed_' + extension}"
     decoded_filepath = f"decoded/{filename}"
@@ -32,7 +32,7 @@ def tests():
              'test3.bin']
     #files = ['test2.bin']
     for filename in files:
-        filepath = f"files/{filename}"
+        filepath = f"../lab2_ocena5/files/{filename}"
         name, extension = filename.split(".")
         encoded_filepath = f"encoded/{name + '_commpressed_' + extension}"
         decoded_filepath = f"decoded/{filename}"

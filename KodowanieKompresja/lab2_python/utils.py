@@ -80,14 +80,14 @@ def get_huffman_code(data: dict):
 
 
 def test_entropy():
-    print(entropy('files/pan-tadeusz-czyli-ostatni-zajazd-na-litwie.txt'))
-    print(entropy('files/test1.bin'))
-    print(entropy('files/test2.bin'))
-    print(entropy('files/test3.bin'))
+    print(entropy('../lab2_ocena5/files/pan-tadeusz-czyli-ostatni-zajazd-na-litwie.txt'))
+    print(entropy('../lab2_ocena5/files/test1.bin'))
+    print(entropy('../lab2_ocena5/files/test2.bin'))
+    print(entropy('../lab2_ocena5/files/test3.bin'))
 
 
 def test_get_huffman_code():
-    print(get_huffman_code(get_file_data("files/my_test1.txt")))
+    print(get_huffman_code(get_file_data("../lab2_ocena5/files/my_test1.txt")))
 
 
 def get_file_length(filename: str):

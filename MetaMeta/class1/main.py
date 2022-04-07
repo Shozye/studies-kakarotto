@@ -14,36 +14,16 @@ def main():
     generator = FileGenerator()
     generator.rm_dataset_directory()
 
-    start=10
-    end=50
-    step = 3
+    start = 10
+    end = 20
+    step = 1
     for i in range(start, end, step):
         generator.create_symmetric_dataset("GANGI", i)
-    data_for_k_random_100 = []
-    data_for_2_opt = []
-    data_for_best = []
-    data_for_repet_neighbour = []
-    start_time = time.time()
 
-    for i in range(start, end, step):
-        algos = TSPAlgorithms(f"datasets/GANGI{i}/GANGI{i}.tsp")
-        data_for_k_random_100.append(algos.k_random(10000)[1])
-        data_for_2_opt.append(algos.two_opt()[1])
-        data_for_best.append(algos.best()[1])
-        data_for_repet_neighbour.append(algos.repetitive_closest_neighbour()[1])
-    print(f"Zajelo {time.time() - start_time}")
+    data = DataHandler(f"datasets/GANGI10/GANGI10.tsp")
 
-    Xs = range(start,end, step)
-    plt.plot(Xs, data_for_k_random_100, color='red', label='k_random_10000')
-    plt.plot(Xs, data_for_2_opt, color='yellow', label='two_opt')
-    plt.plot(Xs, data_for_best, color='green', label='best')
-    plt.plot(Xs, data_for_repet_neighbour, color='black', label='repetitive')
-    plt.xlabel('n')
-    plt.ylabel('found_solution')
-    plt.legend()
-    plt.tight_layout()
-
-    plt.show()
+    algos = TSPAlgorithms(np.array(data.get_edge_weights()), data.dimension())
+    algos.two_opt_invert()
 
 
 def test_hardcoded_solutions(solution: list, filename: str):
