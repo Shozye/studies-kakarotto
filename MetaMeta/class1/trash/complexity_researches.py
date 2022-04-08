@@ -92,9 +92,9 @@ def two_opt_with_repetitive_visualize():
 
 
 def complexity_visualize():
-    with open(f"data/complexity_data_maker_end=120_rep=20_json", "r") as file:
+    with open(f"../data/complexity_data_maker_end=120_rep=20_json", "r") as file:
         data = json.loads(file.read())
-    with open(f"data/repetitive_complexity_data_maker_end=120_rep=20_json", 'r') as file:
+    with open(f"../data/repetitive_complexity_data_maker_end=120_rep=20_json", 'r') as file:
         data2 = json.loads(file.read())
     data['two_opt_and_repetitive_neighbour'] = data2['two_opt_and_repetitive_neighbour']
     fig, axs = plt.subplots(2, 2, figsize=(10, 10))

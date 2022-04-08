@@ -30,7 +30,7 @@ def generate_quality_research_data():
     for _ in range(DIFF_FILE_TRIES):
         generator.rm_dataset_directory()
         generator.create_symmetric_dataset("GANGI", 50)
-        _dataHandler = DataHandler(f"datasets/GANGI50/GANGI50.tsp")
+        _dataHandler = DataHandler(f"../datasets/GANGI50/GANGI50.tsp")
         algos = TSPAlgorithms(_dataHandler.get_edge_weights(), _dataHandler.dimension())
         start_time = time.time()
         data_small = np.zeros(TIME_AMOUNT)
@@ -117,6 +117,6 @@ def visualise_quality_research_data():
 
 if __name__ == "__main__":
     TIME_AMOUNT = 180
-    filename = "data/quality_research.json"
+    filename = "../data/quality_research.json"
     generate_quality_research_data()
     visualise_quality_research_data()

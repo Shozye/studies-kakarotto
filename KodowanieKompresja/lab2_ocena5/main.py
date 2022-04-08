@@ -6,7 +6,7 @@ from arithmetic_coding import decompress
 
 def printUsage():
     print("""Usage:
-    main.py [type] [filename] [path_to_dir] [output_dir]
+    test.py [type] [filename] [path_to_dir] [output_dir]
     where type is compress or decompress
     path to dir is directory where filename is located
     output_dir is where output_file should be located. 

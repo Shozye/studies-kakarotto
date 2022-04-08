@@ -1,8 +1,7 @@
 import tsplib95.models
 
-from DataHandler import DataHandler
 import random
-from two_opt_neighbourings import *
+from neighbourings import *
 import numpy as np
 
 
@@ -14,6 +13,8 @@ class TSPAlgorithms:
     def __init__(self, edge_weights: np.array, dimension: int):
         self.edge_weights = edge_weights
         self.dimension = dimension
+        self.last_solution = np.array(np.random.permutation(self.dimension))
+        self.last_cost = self.goal(self.last_solution)
 
     def getWeight(self, node1: int, node2: int) -> int:
         return self.edge_weights[node1][node2]
@@ -23,97 +24,101 @@ class TSPAlgorithms:
             [self.getWeight(nodes[index], nodes[index + 1]) for index in range(len(nodes) - 1)]) + self.getWeight(
             nodes[-1], nodes[0])
 
+    def update(self, last_solution: np.array, last_cost: int):
+        self.last_solution = last_solution
+        self.last_cost = last_cost
+
     def k_random(self, k=1000):
-        dimension = self.dimension
-        best_solution = [[], np.inf]
+        best_solution = np.random.permutation(self.dimension)
+        best_cost = self.goal(best_solution)
+        solution = best_solution.copy()
         for _ in range(k):
-            permutation = get_random_solution(dimension)
-            weight = self.goal(permutation)
-            if weight < best_solution[1]:
-                best_solution = [permutation, weight]
-        return best_solution
+            np.random.shuffle(solution)
+            cost = self.goal(solution)
+            if cost < best_cost:
+                best_solution = solution
+                best_cost = cost
+        self.update(best_solution, best_cost)
+        return best_cost
 
     def closest_neighbour(self, start=None):
         dimension = self.dimension
-        not_visited = list(range(0, dimension))
-        start_index = random.randint(0, dimension - 1) if start is None else start
-        node_id = not_visited[start_index]
+        visited = [False] * self.dimension
+        node_id = random.randint(0, dimension - 1) if start is None else start
         tour = [node_id]
-        not_visited.remove(node_id)
+        visited[node_id] = True
 
         summarize_goal_function = 0
-        while len(not_visited) != 0:
+        while not all(visited):
             closest_node_id = 0
             closest_cost = np.inf
-            for node_target in not_visited:
-                node_cost = self.getWeight(node_id, node_target)
-                if node_cost < closest_cost:
-                    closest_cost = node_cost
-                    closest_node_id = node_target
+            for node_target in range(0, self.dimension):
+                if not visited[node_target]:
+                    node_cost = self.getWeight(node_id, node_target)
+                    if node_cost < closest_cost:
+                        closest_cost = node_cost
+                        closest_node_id = node_target
+
             node_id = closest_node_id
             tour.append(node_id)
-            not_visited.remove(node_id)
+            visited[node_id] = True
             summarize_goal_function += closest_cost
         summarize_goal_function += self.getWeight(tour[-1], tour[0])
-        return [tour, summarize_goal_function]
+        self.update(tour, summarize_goal_function)
+        return summarize_goal_function
 
     def repetitive_closest_neighbour(self):
-        best_tour = []
-        best_goal = np.inf
+        best_cost = np.inf
+        best_solution = np.array([])
         for i in range(self.dimension):
-            tour, goal = self.closest_neighbour(i)
-            if goal < best_goal:
-                best_tour = tour
-                best_goal = goal
-        return [best_tour, best_goal]
+            cost = self.closest_neighbour(i)
+            if cost < best_cost:
+                best_cost = cost
+                best_solution = self.last_solution
+        self.update(best_solution, best_cost)
+        return best_cost
 
-    def two_opt_invert(self, starting_solution=np.array([])):
-        best_solution = starting_solution if starting_solution != np.array([]) else get_random_solution(self.dimension)
+    def two_opt(self, neighboring_function=invert, starting_solution=np.array([])):
+        best_solution = starting_solution if starting_solution != np.array([]) else np.random.permutation(
+            self.dimension)
         best_cost = self.goal(best_solution)
-
         can_find_better_solution = True
         while can_find_better_solution:
-            left = 0
-            right = 0
-            cost = np.inf
-            for temp_left in range(self.dimension):
-                for temp_right in range(left + 1, self.dimension):
-                    temp_cost = 0
-                    indexes = list(range(self.dimension))
-                    indexes = indexes[:temp_left] + indexes[temp_left:temp_right + 1][::-1] + indexes[temp_right + 1:]
-                    for index in range(len(indexes) - 1):
-                        temp_cost += self.getWeight(best_solution[indexes[index]], best_solution[indexes[index + 1]])
-                    temp_cost += self.getWeight(best_solution[indexes[-1]], best_solution[indexes[0]])
+            cost = best_cost
+            solution = best_solution.copy()
+            for neighbour_solution in neighboring_function(best_solution):
+                neighbour_cost = self.goal(neighbour_solution)
 
-                    if temp_cost < cost:
-                        left = temp_left
-                        right = temp_right
-                        cost = temp_cost
-            best_solution = list(best_solution)
+                if neighbour_cost < cost:
+                    cost = neighbour_cost
+                    solution = neighbour_solution
             if cost < best_cost:
-                best_solution = np.array(
-                    best_solution[:left] + best_solution[left:right + 1][::-1] + best_solution[right + 1:])
+                best_solution = solution
                 best_cost = cost
             else:
                 can_find_better_solution = False
-        return [best_solution, best_cost]
+        self.update(best_solution, best_cost)
+        return best_cost
 
-    def repetitive_two_opt(self, amount_of_repetitions: int):
-        solution_now = [[], np.inf]
+    def repetitive_two_opt(self, amount_of_repetitions: int, neighbouring_function=invert):
+        best_solution = np.array([])
+        best_cost = np.inf
         for _ in range(amount_of_repetitions):
-            solution = self.two_opt_invert()
-            if solution[1] < solution_now[1]:
-                solution_now = solution
-        return solution_now
+            cost = self.two_opt(neighboring_function=neighbouring_function)
+            if cost < best_cost:
+                best_cost = cost
+                best_solution = self.last_solution
+        self.update(best_solution, best_cost)
+        return best_cost
 
-    def two_opt_with_repetitive_closest_neighbour(self):
-        solution = self.repetitive_closest_neighbour()
-        solution = self.two_opt_invert(solution[0])
-        return solution
+    def two_opt_with_repetitive_closest_neighbour(self, neighbouring_function=invert):
+        self.repetitive_closest_neighbour()
+        return self.two_opt(neighboring_function=neighbouring_function, starting_solution=self.last_solution)
 
     def best(self):
-        single_solutions = [self.two_opt_with_repetitive_closest_neighbour(),
-                            self.k_random(100),
-                            self.repetitive_two_opt(10)]
-        best_solution = min(single_solutions, key=lambda x: x[1])
-        return best_solution
+        costs = [self.two_opt_with_repetitive_closest_neighbour(invert),
+                 self.two_opt_with_repetitive_closest_neighbour(swap),
+                 self.two_opt(invert),
+                 self.two_opt(swap),
+                 self.k_random(100)]
+        return min(costs)

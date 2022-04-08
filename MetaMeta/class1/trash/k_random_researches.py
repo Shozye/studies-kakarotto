@@ -76,7 +76,7 @@ def visualise_k_random_research_data():
     plt.show()
 
 def visualize_small_k_random_research_data():
-    filename = "data/k_random_research_small.json"
+    filename = "../data/k_random_research_small.json"
     with open(filename, "r") as file:
         full_data = json.loads(file.read())
     n = '30'
@@ -95,7 +95,7 @@ def visualize_small_k_random_research_data():
 
 
 if __name__ == "__main__":
-    filename = "data/k_random_research_small.json"
+    filename = "../data/k_random_research_small.json"
     #generate_k_random_research_data()
     #visualise_k_random_research_data()
     visualize_small_k_random_research_data()

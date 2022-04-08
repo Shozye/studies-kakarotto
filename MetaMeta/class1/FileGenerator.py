@@ -1,6 +1,4 @@
 import sys
-import math
-import time
 import os
 import shutil
 import tsplib95.models

@@ -3,7 +3,7 @@ from numba.experimental import jitclass
 from numba import types
 from numba import int32
 import numba
-from MetaMeta.class1.two_opt_neighbourings import invert, swap
+from MetaMeta.class1.neighbourings import invert, swap
 
 spec = [
     ('edge_weights', types.Array),
