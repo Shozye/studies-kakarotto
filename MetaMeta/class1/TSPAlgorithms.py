@@ -1,40 +1,44 @@
-import tsplib95.models
-
 import random
+
+from MetaMeta.class1.TabooSearch import TabooSearch
 from neighbourings import *
 import numpy as np
-
-
-def get_random_solution(max_incl: int) -> np.array:
-    return np.random.permutation(max_incl)
+from DataHandler import DataHandler
 
 
 class TSPAlgorithms:
-    def __init__(self, edge_weights: np.array, dimension: int):
-        self.edge_weights = edge_weights
-        self.dimension = dimension
-        self.last_solution = np.array(np.random.permutation(self.dimension))
-        self.last_cost = self.goal(self.last_solution)
+    """
+    Klasa, która przez którą zyskujemy dostęp do każdego algorytmu.
+    Wszystkie algorytmy powinny update'owac last_solution i last_cost
+    W przypadku taboo searcha odwolujemy sie do klasy TabooSearch i uzywamy jej searcha
+    Metoda taboo_search w takim razie jest tylko "wrapperem" na TabooSearch.search
+    """
+    data: DataHandler
 
-    def getWeight(self, node1: int, node2: int) -> int:
-        return self.edge_weights[node1][node2]
+    def __init__(self, dataHandler: DataHandler):
+        self.data = dataHandler
+        self.last_solution = np.array(np.random.permutation(self.data.dimension))
+        self.last_cost = self.data.cost(self.last_solution)
 
-    def goal(self, nodes: np.array) -> int:
-        return sum(
-            [self.getWeight(nodes[index], nodes[index + 1]) for index in range(len(nodes) - 1)]) + self.getWeight(
-            nodes[-1], nodes[0])
-
-    def update(self, last_solution: np.array, last_cost: int):
+    def update(self, last_solution, last_cost):
         self.last_solution = last_solution
         self.last_cost = last_cost
 
+    def taboo_search(self, neighboring_function=invert, starting_solution=np.array([])):
+        starting_solution = starting_solution if starting_solution != np.array([]) else np.random.permutation(self.data.dimension)
+        taboo = TabooSearch(self.data)
+        cost = taboo.search(neighboring_function=neighboring_function, starting_solution=starting_solution)
+        self.last_cost = cost
+        self.last_solution = taboo.last_solution
+        return cost
+
     def k_random(self, k=1000):
-        best_solution = np.random.permutation(self.dimension)
-        best_cost = self.goal(best_solution)
+        best_solution = np.random.permutation(self.data.dimension)
+        best_cost = self.data.cost(best_solution)
         solution = best_solution.copy()
         for _ in range(k):
             np.random.shuffle(solution)
-            cost = self.goal(solution)
+            cost = self.data.cost(solution)
             if cost < best_cost:
                 best_solution = solution
                 best_cost = cost
@@ -42,8 +46,8 @@ class TSPAlgorithms:
         return best_cost
 
     def closest_neighbour(self, start=None):
-        dimension = self.dimension
-        visited = [False] * self.dimension
+        dimension = self.data.dimension
+        visited = [False] * self.data.dimension
         node_id = random.randint(0, dimension - 1) if start is None else start
         tour = [node_id]
         visited[node_id] = True
@@ -52,9 +56,9 @@ class TSPAlgorithms:
         while not all(visited):
             closest_node_id = 0
             closest_cost = np.inf
-            for node_target in range(0, self.dimension):
+            for node_target in range(0, self.data.dimension):
                 if not visited[node_target]:
-                    node_cost = self.getWeight(node_id, node_target)
+                    node_cost = self.data.getCost(node_id, node_target)
                     if node_cost < closest_cost:
                         closest_cost = node_cost
                         closest_node_id = node_target
@@ -63,14 +67,14 @@ class TSPAlgorithms:
             tour.append(node_id)
             visited[node_id] = True
             summarize_goal_function += closest_cost
-        summarize_goal_function += self.getWeight(tour[-1], tour[0])
+        summarize_goal_function += self.data.getCost(tour[-1], tour[0])
         self.update(tour, summarize_goal_function)
         return summarize_goal_function
 
     def repetitive_closest_neighbour(self):
         best_cost = np.inf
         best_solution = np.array([])
-        for i in range(self.dimension):
+        for i in range(self.data.dimension):
             cost = self.closest_neighbour(i)
             if cost < best_cost:
                 best_cost = cost
@@ -80,14 +84,14 @@ class TSPAlgorithms:
 
     def two_opt(self, neighboring_function=invert, starting_solution=np.array([])):
         best_solution = starting_solution if starting_solution != np.array([]) else np.random.permutation(
-            self.dimension)
-        best_cost = self.goal(best_solution)
+            self.data.dimension)
+        best_cost = self.data.cost(best_solution)
         can_find_better_solution = True
         while can_find_better_solution:
             cost = best_cost
             solution = best_solution.copy()
             for neighbour_solution in neighboring_function(best_solution):
-                neighbour_cost = self.goal(neighbour_solution)
+                neighbour_cost = self.data.cost(neighbour_solution)
 
                 if neighbour_cost < cost:
                     cost = neighbour_cost

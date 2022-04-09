@@ -1,0 +1,5 @@
+Siema Matis. Miejsce w którym możesz napisać swój kod to jest najprawdopodobniej TabooSearch.py
+Napisz tam swojego searcha oprocz mojego basic_search i podmien w uzyciu metody search
+
+Nastepnie mozesz juz tego uzywac.
+Przykladowo mozesz uzyc tego w test.py uzywajac analyze_file tak jak tam jest w przykladzie
