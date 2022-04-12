@@ -28,13 +28,15 @@ class TabooSearch:
         best_cost = self.data.cost(starting_solution)
 
         solution = best_solution.copy()
-        taboo_list = deque([solution], 20)
-        while time.time() - time_start < 60:
+        taboo_list = deque([], 20)
+        taboo_list.append(solution)
+        while time.time() - time_start < 30:
             neighboring_best_solution = np.array([])
             neighboring_best_cost = np.inf
             for neighboring_solution in neighboring_function(solution):
                 neighboring_cost = self.data.cost(neighboring_solution)
-                if neighboring_cost < neighboring_best_cost:
+                (taboo_list == neighboring_solution).any()
+                if neighboring_cost < neighboring_best_cost and (taboo_list == neighboring_solution).any():
                     neighboring_best_solution = neighboring_solution
                     neighboring_best_cost = neighboring_cost
             solution = neighboring_best_solution

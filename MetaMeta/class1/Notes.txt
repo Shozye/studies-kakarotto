@@ -3,3 +3,22 @@ Napisz tam swojego searcha oprocz mojego basic_search i podmien w uzyciu metody 
 
 Nastepnie mozesz juz tego uzywac.
 Przykladowo mozesz uzyc tego w test.py uzywajac analyze_file tak jak tam jest w przykladzie
+
+1. Kod który istnieje - jak zerkniesz na obecne repo mozesz sobie poczytac kod ktory obecnie powstal i sprobowac go
+calego zrozumiec mniej wiecej, zebys wiedzial na przyklad GDZIE DOPISAC SWOJEGO TABU SEARCHA czy cos takiego.
+Gdzie i dlaczego tak? A dlaczego to napisalem w ten sposob itd. Fajnie by bylo gdybys zrozumial caly ten kod w ktoryms
+momencie no i jako ze masz problem z pythonem to git bedzie jak sam zobaczysz czego nie wiesz a ja mam
+ile czasu chcesz zeby o tym rozmawiac i dyskutowac
+
+2. Dowiedziec sie czym jest Tabu Search
+2a) obejrzec filmiki ogolne na temat tabu searcha
+2b) wiedziec jakie sa główne składowe tabu searcha które są niezmienne we wszystkich tabu searchach
+2c) wiedziec gdzie sa miejsca tabu searcha, które można zmieniać, dodawać inne elementy
+2d) dowiedzieć się jakie są elementy jakie można usprawniać w tabu search dokładniej, ale niekoniecznie wiedziec jak
+    je napisać
+2e) umieć napisać podstawowego tabu searcha, który będzie zawierał elementy z 2b)
+
+3) Przeleciec przez tą listę co jest na metaheurystycznych koncowa i zobaczyc czy na pewno wszystko rozumiemy
+
+No i nie ma co sie oszczedzac w srodakch. Czytac kody z githuba. Z poradnikow.
+Z githubow zeszlych rocznikow zeby wiedziec co tam napisali. Bez ograniczen

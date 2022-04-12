@@ -1,14 +1,14 @@
 import numpy as np
 
 
-def invert(solution: np.array):
+def invert(solution: np.array) -> np.array:
     for i in range(len(solution)):
         for j in range(i + 1, len(solution)):
             neighbour = np.concatenate((solution[:i], solution[i:j + 1][::-1], solution[j + 1:]))
             yield neighbour
 
 
-def swap(solution: np.array):
+def swap(solution: np.array) -> np.array:
     for i in range(len(solution)):
         for j in range(i + 1, len(solution)):
             new_solution = solution.copy()
