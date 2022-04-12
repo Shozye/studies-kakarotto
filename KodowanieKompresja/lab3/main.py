@@ -5,6 +5,8 @@ from utils import end_information
 from lz77 import compress
 from lz77 import decompress
 
+from tqdm import tqdm
+
 
 def printUsage():
     print("""Usage:
@@ -32,16 +34,17 @@ def main():
 
 
 def tests():
-    files = ['pan-tadeusz-czyli-ostatni-zajazd-na-litwie.txt',
-             'test1.bin',
-             'test2.bin',
-             'test3.bin']
-    files = ['my_test2.txt']
+    #files = ['pan-tadeusz-czyli-ostatni-zajazd-na-litwie.txt',
+    #         'test1.bin',
+    #         'test2.bin',
+    #         'test3.bin']
+    files = ['my_test5.txt']
     for filename in files:
         start_time = time.time()
         print(f"Start compressing {filename}")
         compress(filename, path_to_dir="files/", output_dir="compressed/")
         compress_time = time.time()
+        end_information("files/" + filename, "compressed/" + filename)
         print(f"Compression of {filename} took {round(compress_time - start_time,2)} seconds")
         decompress(filename, path_to_dir="compressed/", output_dir="decompressed/")
         decompress_time = time.time()
