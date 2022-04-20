@@ -1,0 +1,17 @@
+
+1. Znalezc dobre warunki poczatkowe. Z jakiego rozwiazania rozpoczynac?
+2. Jaka dlugosc listy tabu?
+3. Jaka funkcja sąsiadowa jest najlepsza?
+4. Dodać akceleracje.
+
+Rzeczy postanowione (chyba)
+1. Czas trwania Tabu Searcha nie jest zadna zmienna do strojenia, by algorytm stal sie lepszy
+* Jest to zwyczajny parametr, który chcemy ustawic jak najwiekszy.
+* Natomiast jest to element, który możemy poddać badaniom.
+* ! Przyklad !
+    Mamy TabuSearchA, TabuSearchB. Dają takie same wyniki dla czasu t=60sekund.
+    Ale przy blizszym poznaniu okazuje sie ze TabuSearchA(t=60) = TabuSearchA(T=15) = TabuSearchA(T=180)
+    A TabuSearchB(t=15) <<<<< TabuSearchB(t=60) < TabuSearchB(t=180)
+2. Warunek stopu = Czas
+
+

@@ -22,3 +22,58 @@ ile czasu chcesz zeby o tym rozmawiac i dyskutowac
 
 No i nie ma co sie oszczedzac w srodakch. Czytac kody z githuba. Z poradnikow.
 Z githubow zeszlych rocznikow zeby wiedziec co tam napisali. Bez ograniczen
+
+
+1. Metoda może być deterministyczna, gdy zawsze daje nam to samo rozwiązanie.
+Metoda probabilistyczne może być wtedy, gdy z dużym prawdopodobieństwem znaleźć dobre rozwiązania
+
+2. Rozpoczynanie z TwoOpta nie ma zbytnio sensu. Jest to podobne do k-randoma.
+Ale można rozpoczynać z repeated nearest neighbour i to powinno dawać jakieś sensowne wyniki.
+
+3.
+
+4. Ogólnie to mamy sąsiedztwo N(x)
+sąsiedztwo N'(x) to jest N(x) zmienione o liste tabu i inne nasze selekcje
+Z N'(x) wybieramy nowego sąsiada
+
+a) jeżeli element jest na liscie tabu, to dodajemy do niego jakiś koszt
+example:
+    lista tabu = [1,2,3]
+    rozwiazania do wyboru = [1,2,4,5]
+    Zamiast usuwac rozwiazania 1,2 dajemy im większy koszt = koszt_normalny + odległość w liście tabu * D
+    minusy:
+        Większa szansa na zapętlenia
+    plusy: jakieś
+b)
+[1,2,3,4,5,6]
+[1,3,2,4,5,6] < przeszlosc invert 2,3 funkcja odwrotna inverta to invert 2,3 TO
+[1,3,2,5,4,6] <            invert 4,5 odwrotna to invert 4,5 TO JEST NASZE ZLE ROZWIAZANIE
+[1,2,3,5,4,6] <            invert 2,3
+
+5. Kolejka jest dobra na początek, aleee można znaleźć coś lepszego. Matiego robota.
+[1,2,3,4,5,6,7,8] obecnośc na liście tabu to moment w którym się zwalnia element
+Inna lista tabu : slownik
+{1: 1
+2: 2
+3: 3
+4: 4
+5: 5
+6: 6
+7: 7
+8: 8 }
+^ rozwiazanie
+   ^ tabu tenure
+1. Nie zawsze dodawac do listy tabu albo dodawać do listy tabu z mniejszym tabu tenure, albo z losowym tabu tenure
+Albo lepszym dawac male tabu tenure, a gorszym dawac duze tabu tenure
+
+6. Mamy pewne zasady, które stosujemy w wyjątkowych sytuacjach.
+Możliwe, że przydaje nam się do tego wiedza w jakich rozwiązaniach bylismy wczesniej
+Dlatego robimy jakas strukture pamieci, która ma w osbie wszytkei wczesniejsze rozwiazania, z lista tabu obecna wczesniej,
+z obecnymi elentami jakimis ktore trzymamy
+na przyklad. Mamy liste z wszystkimi wczesniej znalezionymi najlepszymi rozwiazaniami
+I liste z najlepszymi minimami lokalnymi
+Możemy "w pewnym momencie" wrocic do minimum lokalnego jakiegos ale nie isc tam gdzie wczesniej.
+
+7. o stagnacji i jej wykrywaniu dlaej nic nie wiemy
+Stagnacja jest wtedy kiedy nie mozemy znalezc lepszego rozwiązania
+https://towardsdatascience.com/optimization-techniques-tabu-search-36f197ef8e25

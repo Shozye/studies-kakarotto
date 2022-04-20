@@ -159,7 +159,8 @@ void decompress(std::string filename, std::string file_dir, std::string output_d
 
 void tests(){
     std::string filenames[] = {"pan-tadeusz-czyli-ostatni-zajazd-na-litwie.txt",
-                               "test1.bin","test2.bin","test3.bin"};
+                             "test1.bin","test2.bin","test3.bin"};
+    //std::string filenames[] = {"my_test1.txt", "my_test2.txt", "my_test3.txt", "my_test4.txt"};
     for (auto filename : filenames){
         auto start_time = std::chrono::high_resolution_clock::now();
         std::cout << "\nStart compressing " << filename << std::endl;

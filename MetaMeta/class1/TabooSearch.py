@@ -13,6 +13,7 @@ class TabooSearch:
     Natomiast tuż przed zwróceniem powinno się odpalić "update",
     by uzupelnic znalezione rozwiazanie "last solution"
     """
+
     def __init__(self, dataHandler: DataHandler):
         self.data = dataHandler
         self.last_solution = None
@@ -22,20 +23,21 @@ class TabooSearch:
         self.last_solution = last_solution
         self.last_cost = last_cost
 
-    def __basic_search(self, neighboring_function, starting_solution: np.array):
+    def __basic_search(self, neighboring_function, starting_solution: np.array, TABOO_LIST_SIZE=20, TIME=30):
         time_start = time.time()
         best_solution = starting_solution
         best_cost = self.data.cost(starting_solution)
 
         solution = best_solution.copy()
-        taboo_list = deque([], 20) # <- struktura listy tabu - Kolejka?
+        taboo_list = deque([], TABOO_LIST_SIZE)  # <- struktura listy tabu - Kolejka?
         taboo_list.append(solution)
-        while time.time() - time_start < 30: # <- Warunek stopu = czas
+        while time.time() - time_start < TIME:  # <- Warunek stopu = czas
             neighboring_best_solution = np.array([])
             neighboring_best_cost = np.inf
 
             for neighboring_solution in neighboring_function(solution):
-                if not any([x.all() for x in neighboring_solution == taboo_list]): # If neighboring solution is not in taboo list
+                if not any([x.all() for x in
+                            neighboring_solution == taboo_list]):  # If neighboring solution is not in taboo list
                     neighboring_cost = self.data.cost(neighboring_solution)
                     if neighboring_cost < neighboring_best_cost:
                         neighboring_best_solution = neighboring_solution
