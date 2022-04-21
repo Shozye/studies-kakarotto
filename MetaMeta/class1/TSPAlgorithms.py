@@ -24,10 +24,10 @@ class TSPAlgorithms:
         self.last_solution = last_solution
         self.last_cost = last_cost
 
-    def taboo_search(self, neighboring_function=invert, starting_solution=np.array([])):
+    def taboo_search(self, neighboring_function=invert, starting_solution=np.array([]), TIME=30):
         starting_solution = starting_solution if starting_solution != np.array([]) else np.random.permutation(self.data.dimension)
         taboo = TabooSearch(self.data)
-        cost = taboo.search(neighboring_function=neighboring_function, starting_solution=starting_solution)
+        cost = taboo.search(neighboring_function=neighboring_function, starting_solution=starting_solution, TIME=TIME)
         self.last_cost = cost
         self.last_solution = taboo.last_solution
         return cost

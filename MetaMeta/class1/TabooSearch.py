@@ -56,5 +56,5 @@ class TabooSearch:
 
     pass
 
-    def search(self, neighboring_function, starting_solution):
-        return self.__basic_search(neighboring_function=neighboring_function, starting_solution=starting_solution)
+    def search(self, neighboring_function, starting_solution, TIME):
+        return self.__basic_search(neighboring_function=neighboring_function, starting_solution=starting_solution, TIME=TIME)
