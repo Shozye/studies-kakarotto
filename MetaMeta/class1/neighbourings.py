@@ -1,21 +1,25 @@
 import numpy as np
 
 
-def invert(solution: np.array) -> np.array:
+def possible_i_j(solution: np.array) -> list:
+    result = list()
     for i in range(len(solution)):
         for j in range(i + 1, len(solution)):
-            neighbour = np.concatenate((solution[:i], solution[i:j + 1][::-1], solution[j + 1:]))
-            yield neighbour
+            result.append((i, j))
+    return result
 
 
-def swap(solution: np.array) -> np.array:
-    for i in range(len(solution)):
-        for j in range(i + 1, len(solution)):
-            new_solution = solution.copy()
-            temp = new_solution[i]
-            new_solution[i] = new_solution[j]
-            new_solution[j] = temp
-            yield new_solution
+def invert(solution: np.array, i: int, j: int) -> np.array:
+    neighbour = np.concatenate((solution[:i], solution[i:j + 1][::-1], solution[j + 1:]))
+    return neighbour
+
+
+def swap(solution: np.array, i: int, j: int) -> np.array:
+    new_solution = solution.copy()
+    temp = new_solution[i]
+    new_solution[i] = new_solution[j]
+    new_solution[j] = temp
+    return new_solution
 
 
 def main():

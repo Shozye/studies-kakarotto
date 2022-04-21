@@ -70,3 +70,6 @@ class DataHandler:
 
     def getPos(self) -> dict:
         return self.node_coords
+
+    def is_symmetric(self) -> bool:
+        return "[symmetric]" in self.__problem.comment or self.__problem.is_symmetric()

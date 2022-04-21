@@ -7,15 +7,26 @@ import neighbourings
 from FileGenerator import FileGenerator
 import math
 from typing import List
-
+from neighbourings import *
+from GoalCalculator import GoalCalculator
+import time
 
 def main():
     generator = FileGenerator()
     generator.rm_dataset_directory()
     generator.create_symmetric_EUC2D_dataset("GANGI", 52)
     dataHandler = DataHandler(generator.last_path)
-    # algos = TSPAlgorithms(DataHandler)
-    # cost = algos.taboo_search()
+    algos = TSPAlgorithms(dataHandler)
+
+    # W tym momencie taboo search zaseeduje sobie z losowego rozwiazania
+    cost = algos.taboo_search("basic")
+    # W tym momencie taboo search zaseeduje z rozwiazania neareset neighbour
+    algos.repetitive_closest_neighbour()
+    cost = algos.taboo_search("basic", starting_solution=algos.last_solution)
+    # Mogę też użyć przyśpieszonego Tab00 Searcha
+    algos.k_random(100000)
+    cost = algos.taboo_search("accelerate", starting_solution=algos.last_solution)
+
     analyze_file(dataHandler, verbose=True)
 
 
@@ -40,8 +51,8 @@ def analyze_file(data: DataHandler, verbose=False):
         [algos.repetitive_closest_neighbour, tuple(), axs[1][1]],
         [algos.two_opt, tuple([neighbourings.invert]), axs[2][0]],
         [algos.two_opt, tuple([neighbourings.swap]), axs[2][1]],
-        [algos.taboo_search, tuple([neighbourings.invert]), axs[3][0]],
-        [algos.taboo_search, tuple([neighbourings.swap]), axs[3][1]]
+        [algos.taboo_search, tuple(["accelerate", neighbourings.invert]), axs[3][0]],
+        [algos.taboo_search, tuple(["accelerate", neighbourings.swap]), axs[3][1]]
     ]
 
     for algorithm in algorithms_and_parameters:
@@ -65,6 +76,58 @@ def analyze_file(data: DataHandler, verbose=False):
         plt.tight_layout()
         plt.show()
 
+def goalCalculatorTest(neighbouring_function, i, j, N, is_symmetric, TIMES=1, should_print=False):
+    generator = FileGenerator()
+    generator.rm_dataset_directory()
+    generator.create_symmetric_EUC2D_dataset("Test", N)
+    dataHandler = DataHandler(generator.last_path)
+    goal = GoalCalculator(dataHandler)
+
+    algos = TSPAlgorithms(dataHandler)
+    algos.k_random()
+    main_solution = algos.last_solution
+
+    goal.set_main_solution(main_solution)
+    goal.set_neighboring_function(neighbouring_function)
+
+    solution = neighbouring_function(main_solution, i, j)
+    time_basic = time.time()
+    solution_cost_basic = -2.0
+    for _ in range(TIMES):
+        solution_cost_basic = goal.basic_goal(solution)
+    time_accelerated = time.time()
+    solution_cost_accelerated = -1.0
+    for _ in range(TIMES):
+        solution_cost_accelerated = goal.goal(solution, i, j)
+    if should_print:
+        print(f"Calculate basic {neighbouring_function.__name__} symmetric={str(is_symmetric)} {TIMES} times took       {round(time.time() - time_basic, 4)} seconds")
+        print(f"Calculate accelerated {neighbouring_function.__name__} symmetric={str(is_symmetric)} {TIMES} times took {round(time.time() - time_accelerated, 4)} seconds")
+    assert round(solution_cost_basic, 5) == round(solution_cost_accelerated, 5), f"{solution_cost_basic} != {solution_cost_accelerated}"
+
+def goalCalculatorTests():
+    goalCalculatorTest(invert, 2, 6, 100, is_symmetric=True)
+    goalCalculatorTest(invert, 0, 20, 100, is_symmetric=True)
+    goalCalculatorTest(invert, 80, 99, 100, is_symmetric=True)
+    goalCalculatorTest(invert, 80, 81, 100, is_symmetric=True)
+    goalCalculatorTest(swap, 80, 81, 100, is_symmetric=True)
+    goalCalculatorTest(swap, 2, 6, 100, is_symmetric=True)
+    goalCalculatorTest(swap, 0, 20, 100, is_symmetric=True)
+    goalCalculatorTest(swap, 80, 99, 100, is_symmetric=True)
+    goalCalculatorTest(invert, 2, 6, 100, is_symmetric=False)
+    goalCalculatorTest(invert, 0, 20, 100, is_symmetric=False)
+    goalCalculatorTest(invert, 80, 99, 100, is_symmetric=False)
+    goalCalculatorTest(invert, 80, 81, 100, is_symmetric=False)
+    goalCalculatorTest(swap, 80, 81, 100, is_symmetric=False)
+    goalCalculatorTest(swap, 2, 6, 100, is_symmetric=False)
+    goalCalculatorTest(swap, 0, 20, 100, is_symmetric=False)
+    goalCalculatorTest(swap, 80, 99, 100, is_symmetric=False)
+    goalCalculatorTest(invert, 2, 9, 100, is_symmetric=True, TIMES=100000, should_print=True)
+    goalCalculatorTest(swap, 2, 20, 100, is_symmetric=True, TIMES=100000, should_print=True)
+    goalCalculatorTest(invert, 10, 15, 100, is_symmetric=False, TIMES=100000, should_print=True)
+    goalCalculatorTest(swap, 30, 40, 100, is_symmetric=False, TIMES=100000, should_print=True)
+
+
 
 if __name__ == "__main__":
+    #goalCalculatorTests()
     main()
