@@ -5,6 +5,7 @@ from DataHandler import DataHandler
 from FileGenerator import FileGenerator
 from TSPAlgorithms import TSPAlgorithms
 from matplotlib import pyplot as plt
+from neighbourings import *
 
 def research_taboo_search(filename=None):
     if not filename:
@@ -17,13 +18,14 @@ def research_taboo_search(filename=None):
 
     data_for_different_n = dict()
     for n in range(START_RANGE, END_RANGE, STEP_RANGE):
+        print(n)
         data_for_different_n[n] = 0
         for _ in range(AMOUNT_FOR_N):
             generator.rm_dataset_directory()
             generator.create_symmetric_EUC2D_dataset("RESEARCH", n)
             data = DataHandler(generator.last_path)
             algos = TSPAlgorithms(data)
-            cost = algos.taboo_search()
+            cost = algos.taboo_search() #invert/swap, k-random/2opt/neighbouring
             data_for_different_n[n] += cost
         data_for_different_n[n] /= AMOUNT_FOR_N
 
@@ -50,5 +52,5 @@ if __name__ == "__main__":
     STEP_RANGE = 10
     AMOUNT_FOR_N =5
     #research_two_opt()
-    #research_taboo_search("BasicTabooDeque20Time30")
+    research_taboo_search("BasicTabooDeque20Time30")
     draw_all_researches()
