@@ -24,10 +24,12 @@ class TSPAlgorithms:
         self.last_solution = last_solution
         self.last_cost = last_cost
 
-    def taboo_search(self, neighboring_function=invert, starting_solution=np.array([]), TIME=30):
-        starting_solution = starting_solution if starting_solution != np.array([]) else np.random.permutation(self.data.dimension)
+    def taboo_search(self, TABOO_SEARCH_TYPE: str, neighboring_function=invert, starting_solution=np.array([]), TABOO_LIST_SIZE=20, TIME=30):
+        starting_solution = starting_solution if starting_solution != np.array([]) else np.random.permutation(
+            self.data.dimension)
         taboo = TabooSearch(self.data)
-        cost = taboo.search(neighboring_function=neighboring_function, starting_solution=starting_solution, TIME=TIME)
+        cost = taboo.search(TABOO_SEARCH_TYPE=TABOO_SEARCH_TYPE, neighboring_function=neighboring_function,
+                            starting_solution=starting_solution, TABOO_LIST_SIZE=TABOO_LIST_SIZE, TIME=TIME)
         self.last_cost = cost
         self.last_solution = taboo.last_solution
         return cost
@@ -68,7 +70,7 @@ class TSPAlgorithms:
             visited[node_id] = True
             summarize_goal_function += closest_cost
         summarize_goal_function += self.data.getCost(tour[-1], tour[0])
-        self.update(tour, summarize_goal_function)
+        self.update(np.array(tour, dtype=np.int), summarize_goal_function)
         return summarize_goal_function
 
     def repetitive_closest_neighbour(self):
@@ -90,7 +92,8 @@ class TSPAlgorithms:
         while can_find_better_solution:
             cost = best_cost
             solution = best_solution.copy()
-            for neighbour_solution in neighboring_function(best_solution):
+            for i, j in possible_i_j(best_solution):
+                neighbour_solution = neighboring_function(best_solution, i, j)
                 neighbour_cost = self.data.cost(neighbour_solution)
 
                 if neighbour_cost < cost:
