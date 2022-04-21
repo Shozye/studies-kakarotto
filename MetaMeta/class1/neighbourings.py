@@ -1,6 +1,5 @@
 import numpy as np
 
-
 def invert(solution: np.array) -> np.array:
     for i in range(len(solution)):
         for j in range(i + 1, len(solution)):

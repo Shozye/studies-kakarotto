@@ -1,6 +1,6 @@
 import random
 
-from MetaMeta.class1.TabooSearch import TabooSearch
+from TabooSearch import TabooSearch
 from neighbourings import *
 import numpy as np
 from DataHandler import DataHandler

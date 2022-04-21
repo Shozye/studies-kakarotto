@@ -1,23 +1,21 @@
 from TSPAlgorithms import TSPAlgorithms
 from DataHandler import DataHandler
-import tsplib95
 import matplotlib.pyplot as plt
 import networkx as nx
 import neighbourings
 from FileGenerator import FileGenerator
-import math
 from typing import List
-
+from neighbourings import *
 
 def main():
     generator = FileGenerator()
     generator.rm_dataset_directory()
     generator.create_symmetric_EUC2D_dataset("GANGI", 52)
     dataHandler = DataHandler(generator.last_path)
-    # algos = TSPAlgorithms(DataHandler)
-    # cost = algos.taboo_search()
-    analyze_file(dataHandler, verbose=True)
-
+    algos = TSPAlgorithms(dataHandler)
+    algos.k_random()
+    cost = algos.taboo_search(invert, algos.last_solution)
+    # analyze_file(dataHandler, verbose=True)
 
 def analyze_file(data: DataHandler, verbose=False):
     """
