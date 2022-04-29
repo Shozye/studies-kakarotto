@@ -1,15 +1,14 @@
 from TSPAlgorithms import TSPAlgorithms
 from DataHandler import DataHandler
-import tsplib95
 import matplotlib.pyplot as plt
 import networkx as nx
 import neighbourings
 from FileGenerator import FileGenerator
-import math
 from typing import List
 from neighbourings import *
-from GoalCalculator import GoalCalculator
+from MetaMeta.class1.TabooSearchClasses.GoalCalculator import GoalCalculator
 import time
+
 
 def main():
     generator = FileGenerator()
@@ -17,15 +16,6 @@ def main():
     generator.create_symmetric_EUC2D_dataset("GANGI", 52)
     dataHandler = DataHandler(generator.last_path)
     algos = TSPAlgorithms(dataHandler)
-
-    # W tym momencie taboo search zaseeduje sobie z losowego rozwiazania
-    cost = algos.taboo_search("basic")
-    # W tym momencie taboo search zaseeduje z rozwiazania neareset neighbour
-    algos.repetitive_closest_neighbour()
-    cost = algos.taboo_search("basic", starting_solution=algos.last_solution)
-    # Mogę też użyć przyśpieszonego Tab00 Searcha
-    algos.k_random(100000)
-    cost = algos.taboo_search("accelerate", starting_solution=algos.last_solution)
 
     analyze_file(dataHandler, verbose=True)
 
@@ -42,7 +32,7 @@ def analyze_file(data: DataHandler, verbose=False):
     # only used in verbose and euc2d but need scope
     axs: List[List[plt.Axes]]
     fig: plt.Figure
-    fig, axs = plt.subplots(4, 2, figsize=(20, 40))
+    fig, axs = plt.subplots(7, 2, figsize=(20, 70))
     axs[0][1].remove()
 
     algorithms_and_parameters = [
@@ -52,14 +42,23 @@ def analyze_file(data: DataHandler, verbose=False):
         [algos.two_opt, tuple([neighbourings.invert]), axs[2][0]],
         [algos.two_opt, tuple([neighbourings.swap]), axs[2][1]],
         [algos.taboo_search, tuple(["accelerate", neighbourings.invert]), axs[3][0]],
-        [algos.taboo_search, tuple(["accelerate", neighbourings.swap]), axs[3][1]]
+        [algos.taboo_search, tuple(["accelerate", neighbourings.swap]), axs[3][1]],
+        [algos.taboo_search, tuple(["cycled_accelerate", neighbourings.invert]), axs[4][0]],
+        [algos.taboo_search, tuple(["cycled_accelerate", neighbourings.swap]), axs[4][1]],
+        [algos.taboo_search, tuple(["stagnation_accelerate", neighbourings.invert]), axs[5][0]],
+        [algos.taboo_search, tuple(["stagnation_accelerate", neighbourings.swap]), axs[5][1]],
+        [algos.taboo_search, tuple(["long_term_memory", neighbourings.invert]), axs[6][0]],
+        [algos.taboo_search, tuple(["long_term_memory", neighbourings.swap]), axs[6][1]]
     ]
 
     for algorithm in algorithms_and_parameters:
         algo, parameter_list, ax = algorithm
         ax: plt.Axes
         function_label = f"{algo.__name__}({', '.join(list(map(str, parameter_list)))})"
-        print(f"{function_label} = {algo(*parameter_list)}")  # func(*params) = func(params[0], params[1],...,params[k])
+        time_before = time.time()
+        cost = algo(*parameter_list)
+        time_after = time.time()
+        print(f"{function_label} = {cost}, took {round(time_after-time_before,2)} seconds")  # func(*params) = func(params[0], params[1],...,params[k])
         solution = algos.last_solution
         if verbose:
             print(f"Solution:", algos.last_solution)
@@ -75,6 +74,7 @@ def analyze_file(data: DataHandler, verbose=False):
         fig.suptitle(f"Wykres algorytmów dla instancji {data.name}", fontsize=16)
         plt.tight_layout()
         plt.show()
+
 
 def goalCalculatorTest(neighbouring_function, i, j, N, is_symmetric, TIMES=1, should_print=False):
     generator = FileGenerator()
@@ -100,9 +100,13 @@ def goalCalculatorTest(neighbouring_function, i, j, N, is_symmetric, TIMES=1, sh
     for _ in range(TIMES):
         solution_cost_accelerated = goal.goal(solution, i, j)
     if should_print:
-        print(f"Calculate basic {neighbouring_function.__name__} symmetric={str(is_symmetric)} {TIMES} times took       {round(time.time() - time_basic, 4)} seconds")
-        print(f"Calculate accelerated {neighbouring_function.__name__} symmetric={str(is_symmetric)} {TIMES} times took {round(time.time() - time_accelerated, 4)} seconds")
-    assert round(solution_cost_basic, 5) == round(solution_cost_accelerated, 5), f"{solution_cost_basic} != {solution_cost_accelerated}"
+        print(
+            f"Calculate basic {neighbouring_function.__name__} symmetric={str(is_symmetric)} {TIMES} times took       {round(time.time() - time_basic, 4)} seconds")
+        print(
+            f"Calculate accelerated {neighbouring_function.__name__} symmetric={str(is_symmetric)} {TIMES} times took {round(time.time() - time_accelerated, 4)} seconds")
+    assert round(solution_cost_basic, 5) == round(solution_cost_accelerated,
+                                                  5), f"{solution_cost_basic} != {solution_cost_accelerated}"
+
 
 def goalCalculatorTests():
     goalCalculatorTest(invert, 2, 6, 100, is_symmetric=True)
@@ -127,7 +131,6 @@ def goalCalculatorTests():
     goalCalculatorTest(swap, 30, 40, 100, is_symmetric=False, TIMES=100000, should_print=True)
 
 
-
 if __name__ == "__main__":
-    #goalCalculatorTests()
+    # goalCalculatorTests()
     main()

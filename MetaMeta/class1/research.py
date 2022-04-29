@@ -1,9 +1,9 @@
 import os
 from datetime import datetime
 import json
-from MetaMeta.class1.DataHandler import DataHandler
-from MetaMeta.class1.FileGenerator import FileGenerator
-from MetaMeta.class1.TSPAlgorithms import TSPAlgorithms
+from DataHandler import DataHandler
+from FileGenerator import FileGenerator
+from TSPAlgorithms import TSPAlgorithms
 from matplotlib import pyplot as plt
 
 
