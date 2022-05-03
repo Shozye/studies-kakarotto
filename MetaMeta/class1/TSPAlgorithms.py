@@ -4,7 +4,8 @@ from TabooSearch import TabooSearch
 from neighbourings import *
 import numpy as np
 from DataHandler import DataHandler
-
+import json
+import logging
 
 class TSPAlgorithms:
     """
@@ -24,14 +25,13 @@ class TSPAlgorithms:
         self.last_solution = last_solution
         self.last_cost = last_cost
 
-    def taboo_search(self, TABOO_SEARCH_TYPE: str, neighboring_function=invert, starting_solution=np.array([]), TABOO_LIST_SIZE=20, TIME=30):
+    def taboo_search(self, TABOO_SEARCH_TYPE: str, neighboring_function=invert, starting_solution=np.array([]), TABOO_LIST_SIZE=10, TIME=30):
         starting_solution = starting_solution if starting_solution != np.array([]) else np.random.permutation(
             self.data.dimension)
         taboo = TabooSearch(self.data)
         cost = taboo.search(TABOO_SEARCH_TYPE=TABOO_SEARCH_TYPE, neighboring_function=neighboring_function,
                             starting_solution=starting_solution, TABOO_LIST_SIZE=TABOO_LIST_SIZE, TIME=TIME)
-        self.last_cost = cost
-        self.last_solution = taboo.last_solution
+        self.update(taboo.last_solution, cost)
         return cost
 
     def k_random(self, k=1000):
@@ -85,6 +85,7 @@ class TSPAlgorithms:
         return best_cost
 
     def two_opt(self, neighboring_function=invert, starting_solution=np.array([])):
+        logger = logging.getLogger("two_opt")
         best_solution = starting_solution if starting_solution != np.array([]) else np.random.permutation(
             self.data.dimension)
         best_cost = self.data.cost(best_solution)
@@ -92,6 +93,7 @@ class TSPAlgorithms:
         while can_find_better_solution:
             cost = best_cost
             solution = best_solution.copy()
+            logger.debug(f"{str(cost)} {json.dumps([int(x) for x in solution])}")
             for i, j in possible_i_j(best_solution):
                 neighbour_solution = neighboring_function(best_solution, i, j)
                 neighbour_cost = self.data.cost(neighbour_solution)

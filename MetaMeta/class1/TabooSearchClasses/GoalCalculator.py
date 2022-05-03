@@ -1,10 +1,11 @@
 import time
 
-from DataHandler import DataHandler
+from MetaMeta.class1.DataHandler import DataHandler
 import numpy as np
 
-from neighbourings import *
 import sys
+
+from MetaMeta.class1.neighbourings import *
 
 
 class GoalCalculator:
@@ -30,7 +31,7 @@ class GoalCalculator:
         self.__main_solution = solution
         self.calculate_cumulative_goal_function()
 
-    def set_neighboring_function(self, neighboring_function):
+    def set_neighboring_function(self, neighboring_function: str):
         """Sets neighboring function for acceleration purposes"""
         self.__neighboring_function = neighboring_function
 
@@ -57,9 +58,9 @@ class GoalCalculator:
         """Function that will try to use acceleration if possible else basic_goal"""
         if not self.__should_use_acceleration():
             return self.basic_goal(solution)
-        if self.__neighboring_function == invert:
+        if self.__neighboring_function == "invert":
             return self.__invert_accelerate_goal(solution, i, j)
-        elif self.__neighboring_function == swap:
+        if self.__neighboring_function == "swap":
             return self.__swap_accelerate_goal(solution, i, j)
         return self.basic_goal(solution)
 
@@ -103,4 +104,4 @@ class GoalCalculator:
     def __should_use_acceleration(self) -> bool:
         return self.__main_solution is not None \
                and self.__cumulative_goal_function is not None \
-               and self.__neighboring_function in [invert, swap]
+               and self.__neighboring_function in ["invert", "swap"]
