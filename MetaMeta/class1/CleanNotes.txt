@@ -1,3 +1,27 @@
+Do sprawozdania:
+1. Sprawdzic recznie dla danych takich jak na wyslanym screenie jak dzialają
+a) k_random(10000)
+b) repetitive_nearest_neighbour
+c) two_opt(invert, repetitive_nearest_neighbour)
+d) two_opt(swap, repetitive_nearest_neighbour)
+e) tabu(invert, repetitive_nearest_neighbour) # tabu jeszcze nie mamy
+f) tabu(swap, repetitive_nearest_neighbour)   # tabu jeszcze nie mamy
+g) optymalne
+
+2. Wygenerowac dane dla dla n = 10..100..5
+dla symetrycznych losowych danych
+a) two_opt(invert, repetitive_nearest_neighbour)
+b) tabu_search(stagnation, invert, repetitive_nearest_neighbour, 7)
+c) tabu_search(stagnation, invert, repetitive_nearest_neighbour, 10)
+d) tabu_search(cycled, invert, repetitive_nearest_neighbour, 7)
+e) tabu_search(cycled, invert, repetitive_nearest_neighbour, 10)
+Zrobic wykres z b, c (wybrac lepsze)
+Zrobic wykres z d, e (wybrac lepsze)
+Zrobic wykres z a, max(b,c), max(d,e)
+
+
+
+
 1. Z jakiego rozwiazania rozpoczynac?
 2. Jaka jest najlepsza wartość funkcji tabu?
 3. Jaka funkcja sąsiadowa jest najlepsza? W jakich warunkach jest lepsza jedna, a w jakich druga?
