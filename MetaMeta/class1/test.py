@@ -18,8 +18,26 @@ def main():
     generator.create_symmetric_EUC2D_dataset("GANGI", 50)
     dataHandler = DataHandler(generator.last_path)
     algos = TSPAlgorithms(dataHandler)
+    test_dla_matisa()
 
-    analyze_file(dataHandler, verbose=True)
+    # analyze_file(dataHandler, verbose=True)
+def test_dla_matisa():
+    generator = FileGenerator()
+    generator.rm_dataset_directory()
+
+
+    # dla n = 50
+    # amount for n razy wykonuj to co ponizej
+    generator.create_symmetric_EUC2D_dataset("GANGI", 50)
+    dataHandler = DataHandler(generator.last_path)
+    algos = TSPAlgorithms(dataHandler)
+    algos.repetitive_closest_neighbour()
+    rozwiazanie_neighboura = algos.last_solution
+    koszt_two_opta = algos.two_opt(invert, starting_solution=rozwiazanie_neighboura )
+    koszt_stagnacji = algos.taboo_search("stagnation", invert, starting_solution=rozwiazanie_neighboura)
+    koszt_cyklu = algos.taboo_search("cycle", invert, starting_solution=rozwiazanie_neighboura)
+
+
 
 
 def analyze_file(data: DataHandler, verbose=False):

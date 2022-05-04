@@ -26,7 +26,7 @@ class DataHandler:
         return self.node_coords is not None
 
     def __setup(self):
-        if self.__problem.edge_weight_type == "FULL_MATRIX":
+        if self.__problem.edge_weight_type == "FULL_MATRIX" or (self.__problem.edge_weight_type == "EXPLICIT" and self.__problem.edge_weight_format == "FULL_MATRIX"):
             # Full matrix has got edge weights. So i am porting it to my class
             self.edge_weights = self.__problem.edge_weights
         elif self.__problem.edge_weight_type == "EUC_2D":
