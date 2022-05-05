@@ -74,7 +74,7 @@ class TabooSearch:
         return best_cost
 
     def search(self, TABOO_SEARCH_TYPE, neighboring_function, starting_solution, TABOO_LIST_SIZE=20, TIME=30):
-        TABOO_SEARCH_TYPES = ["basic", "accelerate", "cycled_accelerate", "stagnation_accelerate", "long_term_memory"]
+        TABOO_SEARCH_TYPES = ["basic", "accelerate", "cycled_accelerate", "stagnation_accelerate", "long_term_memory", "accelerate_moves"]
         if TABOO_SEARCH_TYPE not in TABOO_SEARCH_TYPES:
             raise Exception(f"TABOO_SEARCH_TYPE ({TABOO_SEARCH_TYPE}) should be in {TABOO_SEARCH_TYPES}")
 
@@ -99,9 +99,9 @@ class TabooSearch:
                                                                     TABOO_LIST_SIZE=TABOO_LIST_SIZE, TIME=TIME)
 
         elif TABOO_SEARCH_TYPE == "accelerate_moves":
-            return self.__05_04_accelerated_moves_search(neighboring_function=neighboring_function,
-                                                         starting_solution=starting_solution,
-                                                         TABOO_LIST_SIZE=TABOO_LIST_SIZE, TIME=TIME)
+            return self.__05_04_accelerated_moves_diverse_search(neighboring_function=neighboring_function,
+                                                                 starting_solution=starting_solution,
+                                                                 TABOO_LIST_SIZE=TABOO_LIST_SIZE, TIME=TIME)
 
     def __20_04_accelerated_search(self, neighboring_function, starting_solution: np.array, TIME=15,
                                    TABOO_LIST_SIZE=20):

@@ -49,7 +49,7 @@ def analyze_file(data: DataHandler, verbose=False):
         #[algos.two_opt, tuple([neighbourings.swap, random_permutation]), axs[2][1]],
         #[algos.taboo_search, tuple(["accelerate", neighbourings.invert, random_permutation]), axs[3][0]],
         #[algos.taboo_search, tuple(["accelerate", neighbourings.swap, random_permutation]), axs[3][1]],
-        [algos.taboo_search, tuple(["cycled_accelerate", neighbourings.invert, random_permutation]), axs[4][0]],
+        [algos.taboo_search, tuple(["accelerate_moves", neighbourings.invert, random_permutation]), axs[4][0]],
         #[algos.taboo_search, tuple(["cycled_accelerate", neighbourings.swap, random_permutation]), axs[4][1]],
         [algos.taboo_search, tuple(["stagnation_accelerate", neighbourings.invert, random_permutation]), axs[5][0]],
         #[algos.taboo_search, tuple(["stagnation_accelerate", neighbourings.swap, random_permutation]), axs[5][1]],
