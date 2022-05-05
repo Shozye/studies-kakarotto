@@ -3,7 +3,7 @@ import collections
 
 
 class LongTermMemory:
-    def __init__(self, FUTURE_TABOO_TO_REMEMBER_LENGTH=100, TABOO_LENGTH=20):
+    def __init__(self, FUTURE_TABOO_TO_REMEMBER_LENGTH=20, TABOO_LENGTH=20):
         self.FUTURE_TABOO_TO_REMEMBER_LENGTH = FUTURE_TABOO_TO_REMEMBER_LENGTH
         self.solutions = list()
         self.solutions_duration = list()
