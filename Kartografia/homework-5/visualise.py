@@ -28,8 +28,8 @@ def visualise_with_estimations(filepath: str):
     plots = [
         [Xs, rsa_time_values, "RSA", 5],
         [Xs, rsa_crt_time_values, "RSA CRT", 5],
-        [XsForEstimation, [1/(2**27 * 2.25)*x**3 for x in XsForEstimation], f"1/{round((2**27 * 2.25))} * x^3", 2],
-        [XsForEstimation, [1/(2**25 * 2.5)*x**3 for x in XsForEstimation], f"1/{round((2**25 * 2.5))} * x^3", 2]
+        [XsForEstimation, [1/(2**27 * 2.25)*x**3 for x in XsForEstimation], f"1/{round((2**27 * 2.25))} * n^3", 2],
+        [XsForEstimation, [1/(2**25 * 2.5)*x**3 for x in XsForEstimation], f"1/{round((2**25 * 2.5))} * n^3", 2]
     ]
 
     for X, values, label, linewidth in plots:
@@ -42,7 +42,7 @@ def visualise_with_estimations(filepath: str):
     plt.show()
 
 if __name__ == "__main__":
-    if len(sys.argv) == 1 and sys.argv[1] == "--additional":
+    if len(sys.argv) == 2 and sys.argv[1] == "--additional":
         visualise_with_estimations("plot_data.json")
     else:
         visualise("plot_data.json")
