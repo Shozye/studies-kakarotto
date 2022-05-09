@@ -1,5 +1,6 @@
 from matplotlib import pyplot as plt
 import json
+import sys
 
 def visualise(filepath: str):
     with open(filepath, 'r') as file:
@@ -41,4 +42,7 @@ def visualise_with_estimations(filepath: str):
     plt.show()
 
 if __name__ == "__main__":
-    visualise_with_estimations("plot_data.json")
+    if len(sys.argv) == 1 and sys.argv[1] == "--additional":
+        visualise_with_estimations("plot_data.json")
+    else:
+        visualise("plot_data.json")
