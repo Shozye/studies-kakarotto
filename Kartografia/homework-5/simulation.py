@@ -51,17 +51,18 @@ def measure_time_of_primes(prime_pairs: list):
 
 
 def gather_data_from_file(filepath: str):
+    AMOUNT_OF_PAIRS=1000
     with open(filepath, 'r') as file:
         primes = list(map(int, file.read().split('\n')[:-1]))
     pairs = []
-    while len(pairs) != 1000:
-        pair = tuple(random.sample(primes, 2))
-        if pair not in pairs:
-            pairs.append(pair)
+    while len(pairs) != AMOUNT_OF_PAIRS:
+        p,q = tuple(random.sample(primes, 2))
+        if (p, q) not in pairs and (q, p) not in pairs:
+            pairs.append((p, q))
 
     time_data = [measure_time_of_two_primes(*pair) for pair in pairs]
-    rsa_time = sum([x[0] for x in time_data])
-    rsa_crt_time = sum([x[1] for x in time_data])
+    rsa_time = sum([x[0] for x in time_data])/AMOUNT_OF_PAIRS
+    rsa_crt_time = sum([x[1] for x in time_data])/AMOUNT_OF_PAIRS
 
     return rsa_time, rsa_crt_time
 
