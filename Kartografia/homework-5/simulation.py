@@ -24,19 +24,16 @@ def get_rsa_parameters(p, q):
 
 
 def measure_time_of_two_primes(p: int, q: int):
-    TRIES = 1
     N, d, dp, dq, qi = get_rsa_parameters(p, q)
-    randoms = [random.randint(2, N - 1) for _ in range(TRIES)]
+    random_number = random.randint(2, N - 1)
 
     rsa_start = time.time()
-    for i in range(TRIES):
-        RSA(randoms[i], N, d)
-    rsa_time = (time.time() - rsa_start) / TRIES
+    RSA(random_number, N, d)
+    rsa_time = (time.time() - rsa_start)
 
     rsa_crt_start = time.time()
-    for i in range(TRIES):
-        RSA_CRT(randoms[i], p, q, dp, dq, qi)
-    rsa_crt_time = (time.time() - rsa_crt_start) / TRIES
+    RSA_CRT(random_number, p, q, dp, dq, qi)
+    rsa_crt_time = (time.time() - rsa_crt_start)
 
     return [rsa_time, rsa_crt_time]
 
