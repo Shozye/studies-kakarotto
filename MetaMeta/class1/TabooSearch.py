@@ -10,6 +10,7 @@ from TabooSearchClasses.LongTermMemory import LongTermMemory
 import sys
 from TabooSearchClasses.TabooList import TabooList
 import json
+import random
 
 
 class TabooSearch:
@@ -73,7 +74,7 @@ class TabooSearch:
         return best_cost
 
     def search(self, TABOO_SEARCH_TYPE, neighboring_function, starting_solution, TABOO_LIST_SIZE=20, TIME=30):
-        TABOO_SEARCH_TYPES = ["basic", "accelerate", "cycled_accelerate", "stagnation_accelerate", "long_term_memory"]
+        TABOO_SEARCH_TYPES = ["basic", "accelerate", "cycled_accelerate", "stagnation_accelerate", "long_term_memory", "accelerate_moves"]
         if TABOO_SEARCH_TYPE not in TABOO_SEARCH_TYPES:
             raise Exception(f"TABOO_SEARCH_TYPE ({TABOO_SEARCH_TYPE}) should be in {TABOO_SEARCH_TYPES}")
 
@@ -96,6 +97,11 @@ class TabooSearch:
             return self.__28_04_accelerated_search_long_term_memory(neighboring_function=neighboring_function,
                                                                     starting_solution=starting_solution,
                                                                     TABOO_LIST_SIZE=TABOO_LIST_SIZE, TIME=TIME)
+
+        elif TABOO_SEARCH_TYPE == "accelerate_moves":
+            return self.__05_04_accelerated_moves_diverse_search(neighboring_function=neighboring_function,
+                                                                 starting_solution=starting_solution,
+                                                                 TABOO_LIST_SIZE=TABOO_LIST_SIZE, TIME=TIME)
 
     def __20_04_accelerated_search(self, neighboring_function, starting_solution: np.array, TIME=15,
                                    TABOO_LIST_SIZE=20):
@@ -135,6 +141,51 @@ class TabooSearch:
             # Here it is processed to memory and others
             goal.set_main_solution(solution)
             taboo_list.append(solution)
+
+        self.__update(best_solution, best_cost)
+        return best_cost
+
+    def __05_04_accelerated_moves_diverse_search(self, neighboring_function, starting_solution: np.array, TIME=15,
+                                                 TABOO_LIST_SIZE=20):
+        logger = logging.getLogger("accelerate_moves")
+        time_start = time.time()
+        goal = GoalCalculator(self.data)
+        best_solution = starting_solution
+        best_cost = goal.basic_goal(starting_solution)
+
+        solution = best_solution.copy()
+        cost = best_cost
+        goal.set_neighboring_function(neighboring_function.__name__)
+        goal.set_main_solution(solution)
+        taboo_list = deque([], TABOO_LIST_SIZE)  # <- struktura listy tabu - Kolejka?
+
+        stagnation_checker = StagnationChecker()
+        while not stagnation_checker.stagnated and time.time() - time_start < TIME:  # <- Warunek stopu = cykl lub czas, jeżeli nie zacykli
+            neighboring_best_cost = np.inf
+            neighboring_best_solutions = list()
+            logger.debug(f"{str(cost)} {json.dumps([int(x) for x in solution])}")
+            for i, j in possible_i_j(solution):
+                neighboring_solution = neighboring_function(solution, i, j)
+                if not (i, j) in taboo_list:  # If neighboring solution is not in taboo list
+                    neighboring_cost = goal(neighboring_solution, i, j)
+                    if neighboring_cost < neighboring_best_cost:
+                        neighboring_best_solutions = [(neighboring_solution, i, j)]
+                        neighboring_best_cost = neighboring_cost
+                    elif neighboring_cost == neighboring_best_cost:
+                        neighboring_best_solutions.append((neighboring_solution, i, j))
+
+            # The solution has been chosen here. It is being changed to best if possible
+
+            solution, used_i, used_j = random.choice(neighboring_best_solutions)
+            cost = neighboring_best_cost
+            if cost < best_cost:
+                best_cost = cost
+                best_solution = solution
+
+            # Here it is processed to memory and others
+            goal.set_main_solution(solution)
+            taboo_list.append((used_i, used_j))
+            stagnation_checker.update(best_cost)
 
         self.__update(best_solution, best_cost)
         return best_cost
@@ -223,7 +274,7 @@ class TabooSearch:
             # Here it is processed to memory and others
             goal.set_main_solution(solution)
             taboo_list.append(solution)
-            stagnation_checker.update(best_solution)  # we update stagnation checker to check if best solution found
+            stagnation_checker.update(best_cost)  # we update stagnation checker to check if best solution found
 
         self.__update(best_solution, best_cost)
         return best_cost
@@ -233,7 +284,7 @@ class TabooSearch:
         logger = logging.getLogger("long_term_memory")
         time_start = time.time()
         goal = GoalCalculator(self.data)
-        long_term_memory = LongTermMemory(FUTURE_TABOO_TO_REMEMBER_LENGTH=80, TABOO_LENGTH=TABOO_LIST_SIZE)
+        long_term_memory = LongTermMemory(FUTURE_TABOO_TO_REMEMBER_LENGTH=50, TABOO_LENGTH=TABOO_LIST_SIZE)
         best_solution = starting_solution
         best_cost = goal.basic_goal(starting_solution)
         long_term_memory.update_new_best_solution(best_solution)
@@ -244,24 +295,26 @@ class TabooSearch:
         goal.set_main_solution(solution)
         taboo_list = TabooList(TABOO_LIST_SIZE)
         taboo_list.update(solution)
-
+        move_taboo_list = deque([], TABOO_LIST_SIZE)  # <- struktura listy tabu - Kolejka?
 
         stagnation_checker = StagnationChecker()
-        while time.time() - time_start < TIME or long_term_memory.empty_flag:  # <- Warunek stopu = czas
-            neighboring_best_solution = np.array([])
+        while time.time() - time_start < TIME and not long_term_memory.empty_flag:  # <- Warunek stopu = czas
             neighboring_best_cost = np.inf
             logger.debug(f"{str(cost)} {json.dumps([int(x) for x in solution])}")
-            taboo = taboo_list.get()
+            neighboring_best_solutions = list()
 
             for i, j in possible_i_j(solution):
                 neighboring_solution = neighboring_function(solution, i, j)
-                if not np.any(np.all(neighboring_solution == taboo, axis=1)):  # If neighboring solution is not in taboo list
+                if (i, j) not in move_taboo_list:  # If neighboring solution is not in taboo list
                     neighboring_cost = goal(neighboring_solution, i, j)
                     if neighboring_cost < neighboring_best_cost:
-                        neighboring_best_solution = neighboring_solution
+                        neighboring_best_solutions = [(neighboring_solution, i, j)]
+                        neighboring_best_cost = neighboring_cost
+                    elif neighboring_cost == neighboring_best_cost:
+                        neighboring_best_solutions.append((neighboring_solution, i, j))
 
             # The solution has been chosen here. It is being changed to best if possible
-            solution = neighboring_best_solution
+            solution, used_i, used_j = random.choice(neighboring_best_solutions)
             cost = neighboring_best_cost
             if cost < best_cost:
                 best_cost = cost
@@ -273,17 +326,19 @@ class TabooSearch:
             # Here it is processed to memory and others
             goal.set_main_solution(solution)
             taboo_list.update(solution)
-            stagnation_checker.update(best_solution)  # we update stagnation checker to update stagnation flag
+            move_taboo_list.append((used_i, used_j))
+            stagnation_checker.update(best_cost)  # we update stagnation checker to update stagnation flag
 
             if stagnation_checker.stagnated:
                 solution_from_memory, taboo_list_from_memory = long_term_memory.take_last_solution()
                 if solution_from_memory is None:
                     continue
                 stagnation_checker.reset()
-                stagnation_checker.update(solution_from_memory)
+                stagnation_checker.update(goal.basic_goal(solution))
                 taboo_list.reset()
                 taboo_list.update_group(taboo_list_from_memory)
                 solution = solution_from_memory
+                goal.set_main_solution(solution)
 
         self.__update(best_solution, best_cost)
         return best_cost

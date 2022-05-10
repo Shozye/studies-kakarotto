@@ -9,7 +9,7 @@ def setup_logging(level=logging.INFO):
         shutil.rmtree(LOGS)
     os.mkdir(LOGS)
 
-    for name in ["basic", "accelerate", "stagnation", "cycled", "long_term_memory", "two_opt"]:
+    for name in ["basic", "accelerate", "stagnation", "cycled", "long_term_memory", "two_opt", "accelerate_moves"]:
         full_name = name if name == "two_opt" else name + "_taboo"
         logger = logging.getLogger(name)
         logger.setLevel(level)

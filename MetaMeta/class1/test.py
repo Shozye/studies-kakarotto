@@ -16,10 +16,12 @@ def main():
     generator = FileGenerator()
     generator.rm_dataset_directory()
     generator.create_symmetric_EUC2D_dataset("GANGI", 50)
-    dataHandler = DataHandler(generator.last_path)
-    algos = TSPAlgorithms(dataHandler)
+    dataHandler = DataHandler("/home/shozy/PycharmProjects/studies-kakarotto/MetaMeta/class1/tsplib_problems/RESEARCH30_030.tsp")
 
     analyze_file(dataHandler, verbose=True)
+
+
+
 
 
 def analyze_file(data: DataHandler, verbose=False):
@@ -38,20 +40,21 @@ def analyze_file(data: DataHandler, verbose=False):
     axs[0][1].remove()
 
     random_permutation = np.random.permutation(data.dimension)
+
     algorithms_and_parameters = [
         #[algos.k_random, tuple([K]), axs[0][0]],
         #[algos.closest_neighbour, tuple(), axs[1][0]],
         #[algos.repetitive_closest_neighbour, tuple(), axs[1][1]],
         [algos.two_opt, tuple([neighbourings.invert, random_permutation]), axs[2][0]],
         #[algos.two_opt, tuple([neighbourings.swap, random_permutation]), axs[2][1]],
-        [algos.taboo_search, tuple(["accelerate", neighbourings.invert, random_permutation]), axs[3][0]],
+        #[algos.taboo_search, tuple(["accelerate", neighbourings.invert, random_permutation]), axs[3][0]],
         #[algos.taboo_search, tuple(["accelerate", neighbourings.swap, random_permutation]), axs[3][1]],
-        [algos.taboo_search, tuple(["cycled_accelerate", neighbourings.invert, random_permutation]), axs[4][0]],
+        [algos.taboo_search, tuple(["accelerate_moves", neighbourings.invert, random_permutation]), axs[4][0]],
         #[algos.taboo_search, tuple(["cycled_accelerate", neighbourings.swap, random_permutation]), axs[4][1]],
         [algos.taboo_search, tuple(["stagnation_accelerate", neighbourings.invert, random_permutation]), axs[5][0]],
         #[algos.taboo_search, tuple(["stagnation_accelerate", neighbourings.swap, random_permutation]), axs[5][1]],
-        [algos.taboo_search, tuple(["basic", neighbourings.invert, random_permutation]), axs[6][0]],
-        #[algos.taboo_search, tuple(["basic", neighbourings.swap, random_permutation]), axs[6][1]]
+        [algos.taboo_search, tuple(["long_term_memory", neighbourings.invert, random_permutation]), axs[6][0]],
+        #[algos.taboo_search, tuple(["long_term_memory", neighbourings.swap, random_permutation]), axs[6][1]]
     ]
 
     for algorithm in algorithms_and_parameters:
