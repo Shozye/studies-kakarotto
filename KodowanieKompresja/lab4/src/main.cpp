@@ -24,10 +24,10 @@ void calculate_entropies_for_jpeg_encodings(std::string filename){
     double a_entropies[9] = {0};
     double b_entropies[9] = {0};
     double g_entropies[9] = {0};
-    double r_entropies[9] = {0};
+    double r_entropies[9] = {0};  
 
     b_entropies[0] = entropy(parser.pixels, width, height, "blue");
-    g_entropies[0] = entropy(parser.pixels, width, height, "green");
+    g_entropies[0] = entropy(parser.pixels, width, height, "green"); 
     r_entropies[0] = entropy(parser.pixels, width, height, "red"); 
     a_entropies[0] = entropy(parser.pixels, width, height, "all");
      
@@ -36,7 +36,7 @@ void calculate_entropies_for_jpeg_encodings(std::string filename){
         encode(parser.pixels, height, width, encoded_pixels, pred_index);
         
         b_entropies[pred_index] = entropy(encoded_pixels, width, height, "blue"); 
-        g_entropies[pred_index] = entropy(encoded_pixels, width, height, "green"); 
+        g_entropies[pred_index] = entropy(encoded_pixels, width, height, "green");  
         r_entropies[pred_index] = entropy(encoded_pixels, width, height, "red");
         a_entropies[pred_index] = entropy(encoded_pixels, width, height, "all"); 
     }
