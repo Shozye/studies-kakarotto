@@ -5,14 +5,19 @@ Zaimplementowane sa nastepujace funkcje
 - insert
 - height
 - delete  
-- print
+- print  
 Znajduje się tam główna klasa drzewa.  
 Drzewo mozemy przetestowac za pomocą programu BST_test
 ### Przykladowe dzialanie
-./rand_gen n (distinct|whatever) generuje n losowych liczb distinct lub nie i wyrzuca na standardowe wyjscie
-./BST_test (RANDOM|ASCENDING) (PRINT|WHATEVER)
-inserts numbers in RANDOM/ASCENDING mode, then deletes them in RANDOM order and prints every step if PRINT. 
-Also outputs amount of comparisons and amount of displacements in tree
+```bash
+./rand_gen n (distinct|whatever) 
+```  
+generuje n losowych liczb distinct lub nie i wyrzuca na standardowe wyjscie  
+```bash
+./BST_test (RANDOM|ASCENDING) (PRINT|WHATEVER)  
+```
+inserts numbers in RANDOM/ASCENDING mode, then deletes them in RANDOM order and prints every step if PRINT.   
+Also outputs amount of comparisons and amount of displacements in tree  
 
 Po wpisaniu
 ```bash
@@ -67,5 +72,5 @@ HEIGHT: 1
 
 HEIGHT: 0
 
-23 40
+23 40 
 ```
