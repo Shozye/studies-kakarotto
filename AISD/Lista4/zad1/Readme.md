@@ -19,7 +19,7 @@ Po wpisaniu
 ./rand_gen 5 distinct | ./BST_test RANDOM PRINT
 ```
 output
-'''bash
+```bash
 ========== INSERTING ======== 
 -[0]
 HEIGHT: 1
@@ -68,4 +68,4 @@ HEIGHT: 1
 HEIGHT: 0
 
 23 40
-'''
+```
