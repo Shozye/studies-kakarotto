@@ -32,14 +32,14 @@ int main(int argc, char** argv){
     if(should_print)
         std::cout << "========== INSERTING ======== " << std::endl;
     for(int i = 0; i < n; i++){
-        int prev_comparisons = tree.amount_of_comparisons;
-        int prev_displacements = tree.amount_of_read_and_displacements;
+        int prev_comparisons = tree.get_amount_of_comparisons();
+        int prev_displacements = tree.get_amount_of_displacements();
 
         tree.insert(source_arr[i]);
 
+        int comparisons_diff = tree.get_amount_of_comparisons(); - prev_comparisons;
+        int displacements_diff = tree.get_amount_of_displacements(); - prev_displacements;
         int h = tree.height();
-        int comparisons_diff = tree.amount_of_comparisons - prev_comparisons;
-        int displacements_diff = tree.amount_of_read_and_displacements - prev_displacements;
         height += h;
         if(h > max_height) max_height = h;
         if(comparisons_diff > max_comparisons_diff)
@@ -56,14 +56,14 @@ int main(int argc, char** argv){
     if(should_print)
         std::cout << "======= REMOVING ======" << std::endl;
     for(int i = 0; i < n; i++){
-        int prev_comparisons = tree.amount_of_comparisons;
-        int prev_displacements = tree.amount_of_read_and_displacements;
+        int prev_comparisons = tree.get_amount_of_comparisons();
+        int prev_displacements = tree.get_amount_of_displacements();
 
         tree.del(delete_arr[i]);
 
+        int comparisons_diff = tree.get_amount_of_comparisons(); - prev_comparisons;
+        int displacements_diff = tree.get_amount_of_displacements(); - prev_displacements;
         int h = tree.height();
-        int comparisons_diff = tree.amount_of_comparisons - prev_comparisons;
-        int displacements_diff = tree.amount_of_read_and_displacements - prev_displacements;
         height += h;
         if(h > max_height) max_height = h;
         if(comparisons_diff > max_comparisons_diff)
@@ -76,9 +76,8 @@ int main(int argc, char** argv){
             std::cout <<"HEIGHT: " << tree.height() << std::endl << std::endl;
         }
     }
-
-    std::cout << ((double) tree.amount_of_comparisons / (double) (2*n)) << " ";
-    std::cout << ((double) tree.amount_of_read_and_displacements / (double) (2*n))<< " ";
+    std::cout << ((double) tree.get_amount_of_comparisons() / (double) (2*n)) << " ";
+    std::cout << ((double) tree.get_amount_of_displacements() / (double) (2*n))<< " ";
     std::cout << ((double) height / (double) (2*n)) << " ";
     std::cout << max_comparisons_diff << " ";
     std::cout << max_displacements_diff << " ";

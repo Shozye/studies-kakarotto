@@ -3,6 +3,17 @@
 #include<vector>
 #include <stdexcept>
 
+int amount_of_comparisons=0;
+int amount_of_read_and_displacements=0;
+
+int BST::get_amount_of_comparisons(){
+    return amount_of_comparisons;
+}
+
+int BST::get_amount_of_displacements(){
+    return amount_of_read_and_displacements;
+}
+
 void print_indent(int indent, std::vector<int> road){
     std::vector<char> output;
     int previous = 0;

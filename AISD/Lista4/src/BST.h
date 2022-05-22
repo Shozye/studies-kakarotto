@@ -17,7 +17,7 @@ public:
     void print();
     void inorder();
     int leftmost();
-
-    int amount_of_comparisons = 0;
-    int amount_of_read_and_displacements = 0;
+    
+    int get_amount_of_comparisons();
+    int get_amount_of_displacements();
 };
