@@ -1,7 +1,7 @@
 p=programs/
 s=src/
 
-all: directories ${p}rand_gen ${p}BST_test ${p}RB_BST_test ${p}SplayTree_test
+all: directories ${p}rand_gen ${p}BST_test ${p}SplayTree_test
 
 clean:
 	rm programs/*
@@ -23,15 +23,6 @@ ${p}BST_test.o: ${s}BST_test.cpp
 
 ${p}BST.o: ${s}BST.cpp 
 	g++ -c -o ${p}BST.o ${s}BST.cpp
-
-${p}RB_BST_test: ${p}RB_BST_test.o ${p}RB_BST.o ${p}utils.o
-	g++ -o ${p}RB_BST_test ${p}RB_BST_test.o ${p}RB_BST.o ${p}utils.o
-
-${p}RB_BST_test.o: ${s}RB_BST_test.cpp 
-	g++ -c -o ${p}RB_BST_test.o ${s}RB_BST_test.cpp 
-
-${p}RB_BST.o: ${s}RB_BST.cpp 
-	g++ -c -o ${p}RB_BST.o ${s}RB_BST.cpp
 
 ${p}SplayTree_test: ${p}SplayTree_test.o ${p}SplayTree.o ${p}utils.o
 	g++ -o ${p}SplayTree_test ${p}SplayTree_test.o ${p}SplayTree.o ${p}utils.o

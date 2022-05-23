@@ -3,14 +3,113 @@
 #include<vector>
 #include <stdexcept>
 
-int amount_of_comparisons=0;
-int amount_of_read_and_displacements=0;
+using namespace std;
 
-int BST::get_amount_of_comparisons(){
+node* BST::makeEmpty(node* t) {
+    amount_of_read_and_displacements++;
+    if(t == NULL)
+        return NULL;
+    {
+        makeEmpty(t->left);
+        makeEmpty(t->right);
+        delete t;
+    }
+    return NULL;
+}
+
+node* BST::insert(int x, node* t)
+{
+    amount_of_read_and_displacements+=1;
+    if(t == NULL)
+    {
+        t = new node;
+        t->data = x;
+        t->left = t->right = NULL;
+    }
+    else if(x < t->data){
+        amount_of_comparisons+=1;
+        t->left = insert(x, t->left);
+    }
+    else if(x > t->data){
+        amount_of_comparisons += 2;
+        t->right = insert(x, t->right);
+    }
+    return t;
+}
+
+node* BST::findMin(node* t)
+{
+    if(t == NULL){
+        amount_of_read_and_displacements+=1;
+        return NULL;
+    }
+    else if(t->left == NULL){
+        amount_of_read_and_displacements+=2;
+        return t;
+    }
+    else{
+        amount_of_read_and_displacements+=2;
+        return findMin(t->left);
+    }
+}
+
+node* BST::remove(int x, node* t) {
+    node* temp;
+    amount_of_read_and_displacements+=1;
+    if(t == NULL)
+        return NULL;
+    else if(x < t->data){
+        amount_of_comparisons += 1;
+        t->left = remove(x, t->left);
+    }
+    else if(x > t->data){
+        amount_of_comparisons += 2;
+        t->right = remove(x, t->right);
+    }
+    else if(t->left && t->right)
+    {
+        amount_of_comparisons += 4;
+        temp = findMin(t->right);
+        t->data = temp->data;
+        t->right = remove(t->data, t->right);
+    }
+    else
+    {
+        amount_of_comparisons +=4;
+        amount_of_read_and_displacements += 2;
+        temp = t;
+
+        if(t->left == NULL)
+            t = t->right;
+        else if(t->right == NULL)
+            t = t->left;
+        delete temp;
+    }
+
+    return t;
+}
+
+BST::BST() {
+    root = NULL;
+}
+
+BST::~BST() {
+    root = makeEmpty(root);
+}
+
+void BST::insert(int x) {
+    root = insert(x, root);
+}
+
+void BST::remove(int x) {
+    root = remove(x, root);
+}
+
+long long BST::get_amount_of_comparisons(){
     return amount_of_comparisons;
 }
 
-int BST::get_amount_of_displacements(){
+long long BST::get_amount_of_displacements(){
     return amount_of_read_and_displacements;
 }
 
@@ -30,155 +129,28 @@ void print_indent(int indent, std::vector<int> road){
         std::cout << output.at(i);
 }
 
-BST::BST(){
-    left = nullptr;
-    right = nullptr;
-    empty = true;
-}
-
-BST::~BST() {
-}
-
-void BST::insert(int k){
-    if (empty) {
-        amount_of_read_and_displacements += 1;
-        value = k;
-        empty = false;
-        return;
-    }
-    amount_of_comparisons++;
-    if (k <= value) {
-        if(left == nullptr)
-            this->left = new BST();
-        left->insert(k);
-    }
-    else{
-        if(right == nullptr)
-            right = new BST();
-        right->insert(k);
-    }
-}
-void BST::del(int k){
-    if(empty){
-        throw std::logic_error("Can't del from empty tree!");
-    }
-    amount_of_comparisons++;
-    if(value == k){ // only possible in root node
-        if (left == nullptr && right == nullptr){
-            empty = true; 
-            amount_of_read_and_displacements += 2;
-        }
-        else if (left == nullptr){
-            BST* saved = this->right;
-            value = saved->value;
-            left = saved->left;
-            right = saved->right;
-            delete saved;
-            amount_of_read_and_displacements+= 6;
-        }
-        else if(right == nullptr){
-            BST* saved = this->left;
-            value = saved->value;
-            left = saved->left;
-            right = saved->right;
-            delete saved;
-            amount_of_read_and_displacements+= 7;
-        }
-        else{
-            int value_of_node_to_swap = right->leftmost();
-            del(value_of_node_to_swap);
-            this->value = value_of_node_to_swap;
-            amount_of_read_and_displacements+= 5;
-        }
-    }
-    amount_of_comparisons += 1;
-    if (k < value){
-        amount_of_read_and_displacements += 1;
-        if (left != nullptr){
-            amount_of_comparisons += 1;
-            if (left->value == k){
-                BST* saved = this->left;
-                if(left -> left == nullptr && left->right == nullptr){
-                    this->left = nullptr;
-                    delete saved;
-                    amount_of_read_and_displacements+= 3;
-                }
-                else if(left->left == nullptr){
-                    this->left = saved->right;
-                    delete saved;
-                    amount_of_read_and_displacements+= 4;
-                }
-                else if(left->right == nullptr){
-                    this->left = saved -> left;
-                    delete saved;
-                    amount_of_read_and_displacements+= 5;
-                }
-                else{
-                    int value_of_node_to_swap = left->right->leftmost();
-                    left->del(value_of_node_to_swap);
-                    this->left->value = value_of_node_to_swap;
-                    amount_of_read_and_displacements += 3;
-                }
-            }
-            else{
-                left->del(k);
-            }
-        }
-    }
-    else{
-        amount_of_read_and_displacements += 1;
-        if (right != nullptr){
-            amount_of_comparisons += 1;
-            if (right->value == k){
-                BST* saved = this->right;
-                if(right -> left == nullptr && right->right == nullptr){
-                    this->right = nullptr;
-                    delete saved;
-                    amount_of_read_and_displacements += 3;
-                }
-                else if(right->left == nullptr){
-                    this->right = saved->right;
-                    delete saved;
-                    amount_of_read_and_displacements += 4;
-                }
-                else if(right->right == nullptr){
-                    this->right = saved -> left;
-                    delete saved;
-                    amount_of_read_and_displacements += 5;
-                }
-                else{
-                    int value_of_node_to_swap = right->right->leftmost();
-                    right->del(value_of_node_to_swap);
-                    this->right->value = value_of_node_to_swap;
-                    amount_of_read_and_displacements += 3;
-                }
-            }
-            else{
-                right->del(k);
-            }
-        } 
-    }
-}
 int BST::height(){
-    if (empty) return 0;
-    else if (left == nullptr && right == nullptr) return 1;
-    else if (right == nullptr) return left->height() + 1;
-    else if (left == nullptr)  return right->height() + 1;
-    else                       return std::max(left->height(), right->height()) + 1;
-
+    return height(root);
+}
+int BST::height(node* t){
+    if (t == NULL) return 0;
+    else if (t->left == NULL && t->right == NULL) return 1;
+    else if (t->right == NULL) return height(t->left) + 1;
+    else if (t->left == NULL)  return height(t->right) + 1;
+    else                       return std::max(height(t->left), height(t->right)) + 1;
 }
 
 void BST::print(){
     std::vector<int> road;
-    print(0, false, road);
+    print(root, 0, false, road);
 }
 
-void BST::print(int indent, bool left_tree, std::vector<int> road){
-    if(!empty){
-        if (left != nullptr){
+void BST::print(node* t, int indent, bool left_tree, std::vector<int> road){
+    if(t != NULL){
+        if (t->left != NULL){
             std::vector<int> left_road = road;
             left_road.push_back(-1);
-            left->print(indent+1, true, left_road);
+            print(t->left, indent+1, true, left_road);
         }
 
         print_indent(indent, road);
@@ -186,22 +158,13 @@ void BST::print(int indent, bool left_tree, std::vector<int> road){
             std::cout << "/";
         if (!left_tree && indent != 0)
             std::cout << "\\";
-        std::cout << "-[" << value << "]" << std::endl;
+        std::cout << "-[" << t->data << "]" << std::endl;
 
 
-        if (right != nullptr){
+        if (t->right != NULL){
             std::vector<int> right_road = road;
             right_road.push_back(1);
-            right->print(indent+1, false, right_road);
+            print(t->right, indent+1, false, right_road);
         }
     }
-}
-
-int BST::leftmost(){
-    if(empty){
-        throw std::logic_error("Can't get leftmost from empty tree");
-    }
-    amount_of_read_and_displacements += 1;
-    if (left == nullptr) return value;
-    return left->leftmost();
 }
