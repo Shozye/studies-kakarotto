@@ -1,13 +1,13 @@
 from matplotlib import pyplot as plt
 import json
 from collections import defaultdict
-from typing import List
+from typing import List, Dict
 from itertools import product
 import os
 import shutil
 
 DATA = "data.json"
-data: dict[str, dict[str, dict[str, float]]]
+data: Dict[str, Dict[str, Dict[str, float]]]
 
 with open(DATA, 'r') as file:
     data = json.loads(file.read())
