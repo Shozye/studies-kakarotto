@@ -197,20 +197,6 @@ void BST::print(int indent, bool left_tree, std::vector<int> road){
     }
 }
 
-void BST::inorder(){
-    if(!empty){
-        if (left != nullptr)
-            left->inorder();
-        else
-            std::cout << "N";
-        std::cout << value;
-        if (right != nullptr)
-            right->inorder();
-        else
-            std::cout << "N";
-    }
-}
-
 int BST::leftmost(){
     if(empty){
         throw std::logic_error("Can't get leftmost from empty tree");

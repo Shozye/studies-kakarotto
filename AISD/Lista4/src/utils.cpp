@@ -30,3 +30,12 @@ void copy_list(int* source, int* target, int n){
         target[i] = source[i];
     }
 }
+
+bool is_distinct_array(int* array, int n){
+    int map[2*n] = {0};
+    for (int i = 0; i < n; i++){
+        if (map[array[i]] == 1) return false;
+        if (map[array[i]] == 0) map[array[i]] = 1; 
+    }
+    return true;
+}
