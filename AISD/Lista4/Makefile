@@ -1,7 +1,7 @@
 p=programs/
 s=src/
 
-all: directories ${p}rand_gen ${p}BST_test ${p}SplayTree_test
+all: directories ${p}rand_gen ${p}BST_test ${p}Red_black_tree ${p}SplayTree_test
 
 clean:
 	rm programs/*
@@ -32,6 +32,9 @@ ${p}SplayTree_test.o: ${s}SplayTree_test.cpp
 
 ${p}SplayTree.o: ${s}SplayTree.cpp 
 	g++ -c -o ${p}SplayTree.o ${s}SplayTree.cpp
+
+${p}Red_black_tree: ${s}Red_black_tree.cpp ${p}utils.o
+	g++ -o ${p}Red_black_tree ${s}Red_black_tree.cpp ${p}utils.o
 
 ${p}utils.o: ${s}utils.cpp
 	g++ -c -o ${p}utils.o ${s}utils.cpp 
