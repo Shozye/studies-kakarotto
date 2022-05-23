@@ -11,7 +11,7 @@ import json
 OUTPUT_FILE="data.json"
 PROGRAMS_PATH = "../programs/"
 GENERATE_PATH = PROGRAMS_PATH + "rand_gen"
-TESTFILE_PATH = PROGRAMS_PATH + "BST_test"
+TESTFILE_PATH = PROGRAMS_PATH + "SplayTree_test"
 MUL = 10000
 START = 1 * MUL
 END = 10 * MUL + 1
