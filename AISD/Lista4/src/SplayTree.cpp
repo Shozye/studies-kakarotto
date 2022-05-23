@@ -2,14 +2,14 @@
 #include <vector>
 #include "SplayTree.h"
 
-int amount_of_comparisons=0;
-int amount_of_read_and_displacements=0;
+long long amount_of_comparisons=0;
+long long amount_of_read_and_displacements=0;
 
-int SplayTree::get_amount_of_comparisons(){
+long long SplayTree::get_amount_of_comparisons(){
     return amount_of_comparisons;
 }
 
-int SplayTree::get_amount_of_displacements(){
+long long SplayTree::get_amount_of_displacements(){
     return amount_of_read_and_displacements;
 }
 

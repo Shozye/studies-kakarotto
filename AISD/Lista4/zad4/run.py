@@ -39,14 +39,17 @@ for insert_type, n, i in pbar:
     data[insert_type][n]['mean_comp'] += mean_comp
     data[insert_type][n]['mean_disp'] += mean_disp
     data[insert_type][n]['mean_h'] += mean_h
-    data[insert_type][n]['max_comp'] = max(data[insert_type][n]['max_comp'], max_comp)
-    data[insert_type][n]['max_disp'] = max(data[insert_type][n]['max_disp'], max_disp)
-    data[insert_type][n]['max_h'] = max(data[insert_type][n]['max_h'], max_h)
+    data[insert_type][n]['max_comp'] += max_comp
+    data[insert_type][n]['max_disp'] += max_disp
+    data[insert_type][n]['max_h'] += max_h
 
 for insert_type, n in product(INSERT_TYPES, range(START, END, STEP)):
     data[insert_type][n]['mean_comp'] /= AMOUNT_OF_TIMES_TO_REPEAT
     data[insert_type][n]['mean_disp'] /= AMOUNT_OF_TIMES_TO_REPEAT
     data[insert_type][n]['mean_h'] /= AMOUNT_OF_TIMES_TO_REPEAT
+    data[insert_type][n]['max_comp'] /= AMOUNT_OF_TIMES_TO_REPEAT
+    data[insert_type][n]['max_disp'] /= AMOUNT_OF_TIMES_TO_REPEAT
+    data[insert_type][n]['max_h'] /= AMOUNT_OF_TIMES_TO_REPEAT
     
 with open(OUTPUT_FILE, 'w+') as file:
     file.write(json.dumps(data, indent=4))

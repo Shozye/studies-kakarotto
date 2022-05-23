@@ -32,6 +32,6 @@ public:
     void print(NodePtr root, int indent, bool left_tree, std::vector<int> road);
     void print_indent(int indent, std::vector<int> road);
 
-    int get_amount_of_comparisons();
-    int get_amount_of_displacements();
+    long long get_amount_of_comparisons();
+    long long get_amount_of_displacements();
 };

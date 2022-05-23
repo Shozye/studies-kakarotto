@@ -13,10 +13,10 @@ PROGRAMS_PATH = "../programs/"
 GENERATE_PATH = PROGRAMS_PATH + "rand_gen"
 TESTFILE_PATH = PROGRAMS_PATH + "BST_test"
 MUL = 10000
-START = 7 * MUL
+START = 1 * MUL
 END = 10 * MUL + 1
 STEP = 1 * MUL
-AMOUNT_OF_TIMES_TO_REPEAT = 1
+AMOUNT_OF_TIMES_TO_REPEAT = 20
 
 if not (os.path.isfile(GENERATE_PATH) or os.path.isfile(TESTFILE_PATH)):
     raise Exception("Programs do not exist. \nUse make before running run.py")
@@ -39,14 +39,17 @@ for insert_type, n, i in pbar:
     data[insert_type][n]['mean_comp'] += mean_comp
     data[insert_type][n]['mean_disp'] += mean_disp
     data[insert_type][n]['mean_h'] += mean_h
-    data[insert_type][n]['max_comp'] = max(data[insert_type][n]['max_comp'], max_comp)
-    data[insert_type][n]['max_disp'] = max(data[insert_type][n]['max_disp'], max_disp)
-    data[insert_type][n]['max_h'] = max(data[insert_type][n]['max_h'], max_h)
+    data[insert_type][n]['max_comp'] += max_comp
+    data[insert_type][n]['max_disp'] += max_disp
+    data[insert_type][n]['max_h'] += max_h
 
 for insert_type, n in product(INSERT_TYPES, range(START, END, STEP)):
     data[insert_type][n]['mean_comp'] /= AMOUNT_OF_TIMES_TO_REPEAT
     data[insert_type][n]['mean_disp'] /= AMOUNT_OF_TIMES_TO_REPEAT
     data[insert_type][n]['mean_h'] /= AMOUNT_OF_TIMES_TO_REPEAT
+    data[insert_type][n]['max_comp'] /= AMOUNT_OF_TIMES_TO_REPEAT
+    data[insert_type][n]['max_disp'] /= AMOUNT_OF_TIMES_TO_REPEAT
+    data[insert_type][n]['max_h'] /= AMOUNT_OF_TIMES_TO_REPEAT
     
 with open(OUTPUT_FILE, 'w+') as file:
     file.write(json.dumps(data, indent=4))
