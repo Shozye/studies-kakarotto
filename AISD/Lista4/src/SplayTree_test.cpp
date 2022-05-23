@@ -37,8 +37,8 @@ int main(int argc, char** argv){
 
         tree->insert(source_arr[i]);
 
-        long long comparisons_diff = tree->get_amount_of_comparisons(); - prev_comparisons;
-        long long displacements_diff = tree->get_amount_of_displacements(); - prev_displacements;
+        long long comparisons_diff = tree->get_amount_of_comparisons() - prev_comparisons;
+        long long displacements_diff = tree->get_amount_of_displacements() - prev_displacements;
         long long h = tree->height();
         height += h;
         if(h > max_height) max_height = h;
@@ -61,8 +61,8 @@ int main(int argc, char** argv){
 
         tree->deleteNode(delete_arr[i]);
 
-        long long comparisons_diff = tree->get_amount_of_comparisons(); - prev_comparisons;
-        long long displacements_diff = tree->get_amount_of_displacements(); - prev_displacements;
+        long long comparisons_diff = tree->get_amount_of_comparisons() - prev_comparisons;
+        long long displacements_diff = tree->get_amount_of_displacements() - prev_displacements;
         long long h = tree->height();
         height += h;
         if(h > max_height) max_height = h;

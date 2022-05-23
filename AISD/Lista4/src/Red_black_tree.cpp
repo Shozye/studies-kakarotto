@@ -119,7 +119,7 @@ void Red_black_tree::insert_Node(int key){
     {
         amount_of_read_and_displacements++;
         y = x;
-        amount_of_comparisons += 2;
+        amount_of_comparisons += 1;
         if (z->key < x->key)
         {
             amount_of_read_and_displacements++;
@@ -127,7 +127,6 @@ void Red_black_tree::insert_Node(int key){
         }
         else
         {
-            amount_of_comparisons++;
             amount_of_read_and_displacements++;
             x = x->right;
         }
@@ -142,13 +141,13 @@ void Red_black_tree::insert_Node(int key){
     }
     else if (z->key < y->key)
     {
-        amount_of_comparisons += 2;
+        amount_of_comparisons += 1;
         amount_of_read_and_displacements++;
         y->left = z;
     }
     else
     {
-        amount_of_comparisons += 3;
+        amount_of_comparisons += 1;
         amount_of_read_and_displacements++;
         y->right = z;
     }
@@ -165,7 +164,6 @@ void Red_black_tree::insert_fixup(Node* z)
 { 
     amount_of_read_and_displacements++;
     Node* y = NULL;
-    amount_of_comparisons++;
     while (z->parent->color == 'R')
     {
         amount_of_read_and_displacements++;
@@ -173,7 +171,6 @@ void Red_black_tree::insert_fixup(Node* z)
         {
             amount_of_read_and_displacements++;
             y = z->parent->parent->right;
-            amount_of_comparisons++;
             if (y->color == 'R')
             {
                 z->parent->color = 'B';                 
@@ -184,7 +181,6 @@ void Red_black_tree::insert_fixup(Node* z)
             }
             else 
             {
-                amount_of_comparisons++;
                 amount_of_read_and_displacements++;
                 if (z == z->parent->right)
                 {
@@ -193,16 +189,14 @@ void Red_black_tree::insert_fixup(Node* z)
                     left_rotate(z);                
                 }
                 z->parent->color = 'B';              
-                z->parent->parent->color = 'R';  
-                amount_of_read_and_displacements++;      
+                z->parent->parent->color = 'R';      
                 right_rotate(z->parent->parent);
             }
-        } //ok
+        } 
         else if (z->parent == z->parent->parent->right)
         {
             amount_of_read_and_displacements += 2;
             y = z->parent->parent->left;
-            amount_of_comparisons++;
             if (y->color == 'R')
             {
                 z->parent->color = 'B';                 
@@ -213,7 +207,6 @@ void Red_black_tree::insert_fixup(Node* z)
             }
             else 
             {
-                amount_of_comparisons++;
                 amount_of_read_and_displacements++;
                 if (z == z->parent->left)
                 {
@@ -223,7 +216,6 @@ void Red_black_tree::insert_fixup(Node* z)
                 }
                 z->parent->color = 'B';                
                 z->parent->parent->color = 'R';  
-                amount_of_read_and_displacements++;      
                 left_rotate(z->parent->parent); 
             }
         }
@@ -247,7 +239,7 @@ void Red_black_tree::transplant(Node* u, Node* v)
     }
     else
     {
-        amount_of_read_and_displacements += 3;
+        amount_of_read_and_displacements += 2;
         u->parent->right = v;
     }
     amount_of_read_and_displacements++;
@@ -257,23 +249,20 @@ void Red_black_tree::transplant(Node* u, Node* v)
 Node* Red_black_tree::tree_search(Node* node, int key){
 
     amount_of_read_and_displacements++;
-    amount_of_comparisons++;
     if (node == T_nil || key == node->key)
         return node;  
-    amount_of_comparisons++;
     if (key < node->key)
         return tree_search(node->left, key);
     else{
-        amount_of_comparisons++;
         return tree_search(node->right, key);
     }
 }
 
 Node* Red_black_tree::tree_minimum(Node* node){
     Node* x = node; 
-    amount_of_read_and_displacements += 2;
+    amount_of_read_and_displacements += 1;
     while(x->left != T_nil){
-        amount_of_read_and_displacements++;
+        amount_of_read_and_displacements+=2;
         x = x->left;
     } 
     return x;
@@ -281,13 +270,11 @@ Node* Red_black_tree::tree_minimum(Node* node){
 
 void Red_black_tree::delete_Node(int key)
 {
-    amount_of_read_and_displacements++;
     Node* z = tree_search(root, key);
     amount_of_read_and_displacements++;
     if (z == T_nil)
         return;
     
-    amount_of_read_and_displacements += 2;
     Node* y = z;
     Node* x = NULL;
     char y_original_color = y->color;
@@ -309,7 +296,7 @@ void Red_black_tree::delete_Node(int key)
     {
         amount_of_read_and_displacements += 2;
 
-        amount_of_read_and_displacements += 2;
+        amount_of_read_and_displacements += 1;
         y = tree_minimum(z->right);
         y_original_color = y->color;
         x = y->right;
@@ -342,10 +329,8 @@ void Red_black_tree::delete_Node(int key)
 
 void Red_black_tree::delete_fixup(Node* x)
 {
-    amount_of_read_and_displacements++;
     Node* w = NULL;
 
-    amount_of_comparisons++;
     amount_of_read_and_displacements++;
     while (x != root && x->color == 'B')
     {
@@ -354,7 +339,6 @@ void Red_black_tree::delete_fixup(Node* x)
         {
             amount_of_read_and_displacements++;
             w = x->parent->right;
-            amount_of_comparisons++;
             if (w->color == 'R')
             {
                 w->color = 'B';
@@ -365,16 +349,12 @@ void Red_black_tree::delete_fixup(Node* x)
             }
             if (w->left->color == 'B' && w->right->color == 'B')
             {
-                amount_of_comparisons += 2;
                 w->color = 'R';
                 amount_of_read_and_displacements++;
                 x = x->parent;
             }
             else
             {
-                amount_of_comparisons += 3;
-
-                amount_of_comparisons++;
                 if (w->right->color == 'B')
                 {
                     w->left->color = 'B';
@@ -392,10 +372,9 @@ void Red_black_tree::delete_fixup(Node* x)
             }
         }
         else
-        {   amount_of_read_and_displacements += 2;
+        {   amount_of_read_and_displacements += 1;
             w = x->parent->left;
             
-            amount_of_comparisons++;
             if (w->color == 'R')
             {
                 w->color = 'B';
@@ -404,7 +383,6 @@ void Red_black_tree::delete_fixup(Node* x)
                 amount_of_read_and_displacements++;
                 w = x->parent->left;
             }
-            amount_of_comparisons += 2;
             if (w->left->color == 'B' && w->right->color == 'B')
             {
                 w->color = 'R';
@@ -413,7 +391,6 @@ void Red_black_tree::delete_fixup(Node* x)
             }
             else
             {
-                amount_of_comparisons += 2;
                 if (w->left->color == 'B')
                 {
                     w->right->color = 'B';
@@ -513,10 +490,10 @@ void Red_black_tree::print_indent(int indent, std::vector<int> road){
 int main(int argc, char** argv){
     int n;
     bool should_print = false;
-    int height = 0;
-    int max_height = 0;
-    int max_comparisons_diff = 0;
-    int max_displacements_diff = 0;
+    long long height = 0;
+    long long max_height = 0;
+    long long max_comparisons_diff = 0;
+    long long max_displacements_diff = 0;
     std::cin >> n;
     int delete_arr[n];
     for (int i = 0; i < n ; i++){
@@ -541,14 +518,12 @@ int main(int argc, char** argv){
     if(should_print)
         std::cout << "========== INSERTING ======== " << std::endl;
     for(int i = 0; i < n; i++){
-        int prev_comparisons = tree->get_amount_of_comparisons();
-        int prev_displacements = tree->get_amount_of_displacements();
-
+        long long prev_comparisons = tree->get_amount_of_comparisons();
+        long long prev_displacements = tree->get_amount_of_displacements();
         tree->insert_Node(source_arr[i]);
-
-        int comparisons_diff = tree->get_amount_of_comparisons(); - prev_comparisons;
-        int displacements_diff = tree->get_amount_of_displacements(); - prev_displacements;
-        int h = tree->height();
+        long long comparisons_diff = tree->get_amount_of_comparisons() - prev_comparisons;
+        long long displacements_diff = tree->get_amount_of_displacements() - prev_displacements;
+        long long h = tree->height();
         height += h;
         if(h > max_height) max_height = h;
         if(comparisons_diff > max_comparisons_diff)
@@ -565,14 +540,14 @@ int main(int argc, char** argv){
     if(should_print)
         std::cout << "======= REMOVING ======" << std::endl;
     for(int i = 0; i < n; i++){
-        int prev_comparisons = tree->get_amount_of_comparisons();
-        int prev_displacements = tree->get_amount_of_displacements();
+        long long prev_comparisons = tree->get_amount_of_comparisons();
+        long long prev_displacements = tree->get_amount_of_displacements();
 
         tree->delete_Node(delete_arr[i]);
 
-        int comparisons_diff = tree->get_amount_of_comparisons(); - prev_comparisons;
-        int displacements_diff = tree->get_amount_of_displacements(); - prev_displacements;
-        int h = tree->height();
+        long long comparisons_diff = tree->get_amount_of_comparisons() - prev_comparisons;
+        long long displacements_diff = tree->get_amount_of_displacements() - prev_displacements;
+        long long h = tree->height();
         height += h;
         if(h > max_height) max_height = h;
         if(comparisons_diff > max_comparisons_diff)

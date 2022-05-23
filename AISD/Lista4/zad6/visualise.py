@@ -38,7 +38,7 @@ for insert_type, keys_name in product(INSERT_TYPES, ["max", "mean"]):
     keys = max_keys if keys_name == "max" else mean_keys
     axs: List[List[plt.Axes]]
     fig: plt.Figure
-    fig, axs = plt.subplots(len(keys), 1, figsize=(5, len(keys)*5))
+    fig, axs = plt.subplots(len(keys), 1, figsize=(4, len(keys)*4))
     
     for i, key in enumerate(keys):
         axs[i].plot(Xs, plot[(insert_type, key)], label=f"{insert_type}_{key}", linewidth=LINEWIDTH, color='red')

@@ -11,7 +11,7 @@ import json
 OUTPUT_FILE="data.json"
 PROGRAMS_PATH = "../programs/"
 GENERATE_PATH = PROGRAMS_PATH + "rand_gen"
-TESTFILE_PATH = PROGRAMS_PATH + "BST_test"
+TESTFILE_PATH = PROGRAMS_PATH + "Red_black_tree"
 MUL = 10000
 START = 1 * MUL
 END = 10 * MUL + 1
@@ -42,7 +42,6 @@ for insert_type, n, i in pbar:
     data[insert_type][n]['max_comp'] += max_comp
     data[insert_type][n]['max_disp'] += max_disp
     data[insert_type][n]['max_h'] += max_h
-
 for insert_type, n in product(INSERT_TYPES, range(START, END, STEP)):
     data[insert_type][n]['mean_comp'] /= AMOUNT_OF_TIMES_TO_REPEAT
     data[insert_type][n]['mean_disp'] /= AMOUNT_OF_TIMES_TO_REPEAT
