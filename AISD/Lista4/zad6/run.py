@@ -16,7 +16,7 @@ MUL = 10000
 START = 1 * MUL
 END = 10 * MUL + 1
 STEP = 1 * MUL
-AMOUNT_OF_TIMES_TO_REPEAT = 20
+AMOUNT_OF_TIMES_TO_REPEAT = 10
 
 if not (os.path.isfile(GENERATE_PATH) or os.path.isfile(TESTFILE_PATH)):
     raise Exception("Programs do not exist. \nUse make before running run.py")
