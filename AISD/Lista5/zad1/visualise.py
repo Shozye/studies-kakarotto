@@ -5,7 +5,7 @@ import sys
 
 COLORS = ["blue", "orange", "green", "red", "purple", "brown", "pink", "gray", "olive", "cyan"]
 TITLES = ["Amount of displacements for different sorts", "Amount of Comparisons for different sorts"]
-SORT_TYPES = ["insert_sort", "merge_sort", "dual_pivot_quick_sort", "quick_sort", "hybrid_sort" ,"max_heap_test"]
+SORT_TYPES = ["insert_sort", "merge_sort", "dual_pivot_quick_sort", "quick_sort", "hybrid_sort" ,"heap_sort"]
 YLABELS = ["Amount of displacements", "Amount of comparisons"]
 KEYS = ["displacements", "comparisons"]
 XLABEL = "N - amount of numbers in array"
@@ -32,7 +32,7 @@ for sort_index, sort_type in enumerate(SORT_TYPES):
         Xs = data[sort_type]["Xs"]
         Ys = data[sort_type][key]
         
-        if sort_type == "max_heap_test":
+        if sort_type == "heap_sort":
             axs[i].plot(Xs, Ys, label=sort_type, linewidth=LINEWIDTH+2)
         else:
             axs[i].plot(Xs, Ys, label=sort_type, linewidth=LINEWIDTH)

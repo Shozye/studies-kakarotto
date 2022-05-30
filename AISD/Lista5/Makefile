@@ -13,11 +13,13 @@ generators: ${p}gen_asc ${p}gen_desc ${p}gen_rand
 
 previous_sorts: ${p}insert_sort ${p}merge_sort ${p}quick_sort ${p}dual_pivot_quick_sort ${p}hybrid_sort
 
-heap: ${p}max_heap_test
+heap: ${p}heap_sort ${p}insert_extract_heap
 
+${p}insert_extract_heap: ${s}insert_extract_heap.cpp ${p}max_heap.o ${p}utils.o
+	g++ -o ${p}insert_extract_heap ${s}insert_extract_heap.cpp ${p}max_heap.o ${p}utils.o
 
-${p}max_heap_test: ${s}max_heap_test.cpp ${p}max_heap.o ${p}utils.o
-	g++ -o ${p}max_heap_test ${s}max_heap_test.cpp ${p}max_heap.o ${p}utils.o
+${p}heap_sort: ${s}heap_sort.cpp ${p}max_heap.o ${p}utils.o
+	g++ -o ${p}heap_sort ${s}heap_sort.cpp ${p}max_heap.o ${p}utils.o
 
 ${p}max_heap.o: ${s}max_heap.cpp
 	g++ -c -o ${p}max_heap.o ${s}max_heap.cpp

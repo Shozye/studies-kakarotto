@@ -11,7 +11,7 @@ import json
 OUTPUT_FILE="data.json"
 PROGRAMS_PATH = "../programs/"
 GENERATE_PATH = PROGRAMS_PATH + "gen_rand"
-SORT_TYPES = ["insert_sort", "merge_sort", "dual_pivot_quick_sort", "quick_sort", "hybrid_sort" ,"max_heap_test"]
+SORT_TYPES = ["insert_sort", "merge_sort", "dual_pivot_quick_sort", "quick_sort", "hybrid_sort" ,"heap_sort"]
 TESTFILES_PATH = [PROGRAMS_PATH + sort_type for sort_type in SORT_TYPES]
 MUL = 100
 START = 1 * MUL
