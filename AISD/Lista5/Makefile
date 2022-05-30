@@ -1,7 +1,7 @@
 p=programs/
 s=src/
 
-all: directories generators previous_sorts heap
+all: directories generators previous_sorts heap ${p}longest_common_substring
 
 clean:
 	rm programs/*
@@ -14,6 +14,9 @@ generators: ${p}gen_asc ${p}gen_desc ${p}gen_rand
 previous_sorts: ${p}insert_sort ${p}merge_sort ${p}quick_sort ${p}dual_pivot_quick_sort ${p}hybrid_sort
 
 heap: ${p}heap_sort ${p}insert_extract_heap
+
+${p}longest_common_substring: ${s}longest_common_substring.cpp ${p}utils.o
+	g++ -o ${p}longest_common_substring ${s}longest_common_substring.cpp ${p}utils.o
 
 ${p}insert_extract_heap: ${s}insert_extract_heap.cpp ${p}max_heap.o ${p}utils.o
 	g++ -o ${p}insert_extract_heap ${s}insert_extract_heap.cpp ${p}max_heap.o ${p}utils.o

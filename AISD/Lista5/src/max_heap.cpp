@@ -76,7 +76,10 @@ void heap_increase_key(int* tab, int i, int key){
         throw std::invalid_argument("New key is smaller than MIN_INT");
     }
     tab[i] = key;
+    amount_of_displacements += 1;
+    amount_of_comparisons += 1;
     while(i > 0 && tab[parent(i)] < tab[i]){
+        amount_of_comparisons += 1;
         swap(&tab[i], &tab[parent(i)]);
         i=parent(i);
     }
@@ -91,11 +94,21 @@ void print_tree(int* tab, int length, int index, std::vector<int> path){
         pathl.push_back(1);
         print_tree(tab, length, l, pathl);
     }
-    int prev = -1;
+    int prev = 0;
+    std::vector<char> indent;
     for(int i = path.size()-1; i >= 0; i--){
-        if(prev == path[i]) std::cout << " ";
-        else if (prev == (-1)*path[i]) std::cout << "|";
+        if(prev == path[i]) indent.push_back(' ');
+        else if (prev == (-1)*path[i]) indent.push_back('|');
+        prev = path[i];
     }
+    for(int i = indent.size()-1; i >= 0; i--){
+        std::cout << indent[i];
+    }
+    if (path.size() > 0)
+        if (path[path.size()-1] == 1) std::cout << "/";
+        else std::cout << "\\";
+    //if (path[path.size()-1] == 1) std::cout << "/";
+    //else std::cout << "\\";
     std::cout << "-[" << tab[index] << "]" << std::endl;
     if (r < length && r >= 0){
         std::vector<int> pathr = path;
@@ -105,12 +118,17 @@ void print_tree(int* tab, int length, int index, std::vector<int> path){
 }
 
 void print_tree(int* tab, int length){
+    if(length <= 0){
+        std::cout << "Heap empty" << std::endl;
+        return;
+    };
     std::vector<int> path;
     print_tree(tab, length, 0, path);
 }
 
 void insert(int* tab, int length, int key){
     tab[length] = INT32_MIN;
+    amount_of_displacements += 1;
     heap_increase_key(tab, length, key);
 }
 int extract_max(int* tab, int length){
@@ -118,6 +136,7 @@ int extract_max(int* tab, int length){
         throw std::invalid_argument("Heap empty");
     int max = tab[0];
     tab[0] = tab[length-1];
-    max_heapify(tab, length-1, length-1, 0);
+    amount_of_displacements += 1;
+    max_heapify(tab, length, length-1, 0);
     return max;
 }
