@@ -48,6 +48,7 @@ int main(int argc, char** argv){
             max_displacements_diff = displacements_diff;
 
         if (should_print){
+            std::cout << "Insert " << source_arr[i] << std::endl << std::endl;
             tree->print();
             std::cout <<"HEIGHT: " << tree->height() << std::endl << std::endl;
         }
@@ -72,6 +73,7 @@ int main(int argc, char** argv){
             max_displacements_diff = displacements_diff;
 
         if (should_print){
+            std::cout << "Delete " << delete_arr[i] << std::endl << std::endl;
             tree->print();
             std::cout <<"HEIGHT: " << tree->height() << std::endl << std::endl;
         }
