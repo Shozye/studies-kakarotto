@@ -6,6 +6,8 @@ import numpy as np
 from DataHandler import DataHandler
 import json
 import logging
+from AntColony import AntColony
+
 
 class TSPAlgorithms:
     """
@@ -25,13 +27,20 @@ class TSPAlgorithms:
         self.last_solution = last_solution
         self.last_cost = last_cost
 
-    def taboo_search(self, TABOO_SEARCH_TYPE: str, neighboring_function=invert, starting_solution=np.array([]), TABOO_LIST_SIZE=10, TIME=30):
+    def taboo_search(self, TABOO_SEARCH_TYPE: str, neighboring_function=invert, starting_solution=np.array([]),
+                     TABOO_LIST_SIZE=10, TIME=30):
         starting_solution = starting_solution if starting_solution != np.array([]) else np.random.permutation(
             self.data.dimension)
         taboo = TabooSearch(self.data)
         cost = taboo.search(TABOO_SEARCH_TYPE=TABOO_SEARCH_TYPE, neighboring_function=neighboring_function,
                             starting_solution=starting_solution, TABOO_LIST_SIZE=TABOO_LIST_SIZE, TIME=TIME)
         self.update(taboo.last_solution, cost)
+        return cost
+
+    def ant_colony(self):
+        aco = AntColony(self.data)
+        cost = aco.search()
+        self.update(aco.last_solution, cost)
         return cost
 
     def k_random(self, k=1000):
