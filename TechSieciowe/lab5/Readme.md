@@ -72,7 +72,7 @@ if($r->uri eq "/" | $r->uri eq "/favicon.ico"){
 ```
 If is needed to figure out if user is connecting to the website for the first time.  
 5. Run wireshark with `sudo wireshark`
-Then click on `Loopback: lo`. This is where packets will show up.
-![packets](/wireshark_packets.png)
+Then click on `Loopback: lo`. This is where packets will show up.  
+![packets](./wireshark_packets.png)
 We can see there Packets with port 4321 -> 57582. This is communication between client and server. 
 Get messages contain Header or website content.
