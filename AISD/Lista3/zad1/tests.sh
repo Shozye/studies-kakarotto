@@ -8,5 +8,5 @@ do
     # num is k-th smallet number to pick
     # 5 is partition divide size during select
     ../programs/gen_rand $n $num 5 | ../programs/select 
-    ../programs/gen_rand $n $num 5 | ../programs/rand_select 
+    ../programs/gen_rand $n $num 5 | ../programs/random_select 
 done

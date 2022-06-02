@@ -55,6 +55,7 @@ struct TgaHeader{
         std::cout << "F5_3 | Image Width          " << F5_3 << std::endl;
         std::cout << "F5_4 | Image Height         " << F5_4 << std::endl;
         std::cout << "F5_5 | Pixel Depth          " << F5_5 << std::endl;
+        std::cout << "F5_6 | Image Descriptor     " << F5_6 << std::endl;
         std::cout << "origin                      " << origin << std::endl;
         std::cout << "alphaChannel                " << alphaChannel << std::endl;
     }
@@ -117,10 +118,15 @@ private:
 
         for(int row = height-1; row >= 0; row--){
             for(int col = 0; col < width; col++){
-                pixels[row*width + col] = Pixel(getchar(), getchar(), getchar());
+                int b = getchar();
+                int g = getchar();
+                int r = getchar();
+                std::cout << "For row col " << row << " " << col << " "<< b << " " << g << " " << r << std::endl;
+                pixels[row*width + col] = Pixel(b, g, r);
             }
         }
         footer.F28 = getchar() + getchar() * 2 + getchar() * 4 + getchar() * 8;
+        std::cout << footer.F28 << std::endl;
         footer.F29 = getchar() + getchar() * 2 + getchar() * 4 + getchar() * 8;
         char signature[16];
         for(int i = 0; i < 16; i ++){
@@ -130,5 +136,8 @@ private:
         footer.F30 = sig_string;
         footer.F31 = getchar();
         footer.F32 = getchar();
+
+        header.print();
+        footer.print();
     }
 };
