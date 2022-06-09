@@ -6,8 +6,11 @@ import numpy as np
 from DataHandler import DataHandler
 import json
 import logging
-from AntColony import AntColony
-
+import AntColonyButDifferent
+import AntColony
+from utils import dist, calculate_goal
+import tsplib95
+from typing import Union
 
 class TSPAlgorithms:
     """
@@ -18,10 +21,11 @@ class TSPAlgorithms:
     """
     data: DataHandler
 
-    def __init__(self, dataHandler: DataHandler):
+    def __init__(self, dataHandler: Union[DataHandler, tsplib95.models.StandardProblem]):
         self.data = dataHandler
-        self.last_solution = np.array(np.random.permutation(self.data.dimension))
-        self.last_cost = self.data.cost(self.last_solution)
+        self.last_solution = None
+        self.last_cost = None
+        self.time_running = 0
 
     def update(self, last_solution, last_cost):
         self.last_solution = last_solution
@@ -37,10 +41,18 @@ class TSPAlgorithms:
         self.update(taboo.last_solution, cost)
         return cost
 
-    def ant_colony(self):
-        aco = AntColony(self.data)
-        cost = aco.search()
-        self.update(aco.last_solution, cost)
+    def ant_colony(self, ant_colony_type="normal", **kwargs):
+        node_coords = dict()
+        for key in (self.data.node_coords.keys()):
+            node_coords[str(key)] = tuple(self.data.node_coords[key])
+        cities = list(sorted(node_coords.items()))
+        if ant_colony_type == "normal":
+            found_path = AntColony.AntColonyRunner(cities, verbose=False, **kwargs)
+        else:
+            found_path = AntColonyButDifferent.AntColonyRunner(cities, verbose=False, **kwargs)
+        cost = calculate_goal(found_path)
+
+        self.update([node[0] for node in found_path], cost)
         return cost
 
     def k_random(self, k=1000):

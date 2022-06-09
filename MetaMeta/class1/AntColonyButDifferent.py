@@ -15,19 +15,10 @@ def distance(xy1, xy2) -> float:
     return math.sqrt((xy1[0] - xy2[0]) ** 2 + (xy1[1] - xy2[1]) ** 2)
 
 
-def path_distance(path) -> int:
-    if isinstance(path, dict):      path = list(path.values())  # if path == {"Name": (x,y)}
-    if isinstance(path[0][0], str): path = [item[1] for item in path]  # if path == ("Name", (x,y))
-    return int(sum(
-        [distance(path[i], path[i + 1]) for i in range(len(path) - 1)]
-        + [distance(path[-1], path[0])]  # include cost of return journey
-    ))
-
-
 def reset_ant(ants, i, problem_path):
     ants["distance"][i] = 0
-    ants["path"][i] = [problem_path[0]]
-    ants["remaining"][i] = set(problem_path[1:])
+    ants["path"][i] = [problem_path[i]]
+    ants["remaining"][i] = set(problem_path) - {problem_path[i]}
     ants["path_cost"][i] = 0
     ants["round_trips"][i] += 1
 
@@ -44,10 +35,8 @@ class AntColonySolver:
                  max_round_trips=0,  # maximum number of round trips before stopping
                  min_ants=0,  # Total number of ants to use
                  max_ants=0,  # Total number of ants to use
-
-                 ant_count=64,  # this is the bottom of the near-optimal range for numpy performance
                  ant_speed=1,  # how many steps do ants travel per epoch
-
+                 ant_count=64,
                  distance_power=1,  # power to which distance affects pheromones
                  pheromone_power=1.25,  # power to which differences in pheromones are noticed
                  decay_power=0,  # how fast do pheromones decay
@@ -58,6 +47,7 @@ class AntColonySolver:
                  verbose=False,
 
                  ):
+        ant_count = -1
         assert callable(cost_fn)
         self.cost_fn = cost_fn
         self.time = int(time)
@@ -134,8 +124,8 @@ class AntColonySolver:
         # Here come the ants!
         ants = {
             "distance": np.zeros((self.ant_count,)).astype('int32'),
-            "path": [[problem_path[0]] for _ in range(self.ant_count)],
-            "remaining": [set(problem_path[1:]) for _ in range(self.ant_count)],
+            "path": [[problem_path[_]] for _ in range(self.ant_count)],
+            "remaining": [set(problem_path) - {problem_path[_]} for _ in range(self.ant_count)],
             "path_cost": np.zeros((self.ant_count,)).astype('int32'),
             "round_trips": np.zeros((self.ant_count,)).astype('int32'),
         }

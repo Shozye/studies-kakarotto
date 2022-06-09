@@ -31,3 +31,5 @@ AISD/Lista2/programs/*
 /Kartografia/homework-5/primes_data/p_3072.txt
 /Kartografia/homework-5/primes_data/p_4096.txt
 /Kartografia/homework-5/data/
+**/__pycache__/
+*.bin

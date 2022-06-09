@@ -29,7 +29,7 @@ class DataHandler:
         if self.__problem.edge_weight_type == "FULL_MATRIX" or (self.__problem.edge_weight_type == "EXPLICIT" and self.__problem.edge_weight_format == "FULL_MATRIX"):
             # Full matrix has got edge weights. So i am porting it to my class
             self.edge_weights = self.__problem.edge_weights
-        elif self.__problem.edge_weight_type == "EUC_2D":
+        elif self.__problem.edge_weight_type in ["EUC_2D", "GEO", "ATT"]:
             # EUC 2D may have got node_coords starting by 1. I am negating it to start by 0
             if self.__problem.node_coords.get(0) is None:
                 self.node_coords = dict()

@@ -16,7 +16,8 @@ class FileGenerator:
     """
     DATASET_DIR_NAME = "datasets"
 
-    def __init__(self):
+    def __init__(self, dirname="datasets"):
+        self.DATASET_DIR_NAME=dirname
         self.last_path = None
 
     def create_symmetric_matrix_dataset(self, name: str, dimension: int, max_num=1000):
