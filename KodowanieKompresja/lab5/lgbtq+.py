@@ -1,7 +1,7 @@
 import sys
 from Tga import Tga
 import os
-from utils import mse, snr
+from KodowanieKompresja.lab6.utils import mse, snr
 from quantize import quantize
 from codebook import create_codebook
 import numpy as np
