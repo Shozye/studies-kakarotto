@@ -1,0 +1,174 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper, total={7in, 10in}]{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\graphicspath{ {./resources/} }
+\usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+
+\title{Discrete Algorithms - Linear Programming}
+\author{Mateusz Pełechaty}
+\date{12 April 2023}%
+\begin{document}
+\maketitle
+\section{Exercise}
+\subsection{Model Description}
+\begin{itemize}
+    \item $c_{i,j}$ - cost of heart of fuel, $i$ - airport, $j$ - company
+    \item $Uc_j$ - upper bound of fuel in company $i$
+    \item $La_i$ - lower bound of needed fuel at airport $j$
+\end{itemize}
+\subsubsection*{Decision Variables}
+\begin{itemize}
+    \item $x_{i,j} \geq 0$ - how much company $j$ should provide hearts of fuel on airport $j$ 
+\end{itemize}
+\subsubsection*{Constraints}
+\begin{itemize}
+    \item $\sum_{i} x_{i, j} \leq Uc_j$ for every j
+    \item $\sum_{j} x_{i, j} \leq La_i$ for every i
+\end{itemize}
+\subsubsection*{Objective Function}
+\begin{itemize}
+    \item MIN $\sum_{i,j} x_{i,j} \cdot c_{i,j} $
+\end{itemize}
+\subsection{Testing, Analysis, Interpretation}
+\subsubsection*{What's the total min cost of deliveries?}
+You can see it by using \begin{verbatim}
+    @show objective_value(model)
+\end{verbatim}
+\subsubsection*{How much every company delivered?}
+\begin{verbatim}
+    per_company_deliveries = [
+        sum(
+            value(x[airport, i]) 
+            for airport in 1:amount_airports
+        ) 
+        for i=1:amount_companies
+    ]
+    per_company_deliveries
+\end{verbatim}
+\subsubsection*{Is every company delivering fuel?}
+\begin{verbatim}
+    all(per_company_deliveries .> 0)
+\end{verbatim}
+\subsubsection*{Are possibilities of delivering fuel exploited?}
+\begin{verbatim}
+    per_company_deliveries .== companies_upper_bounds
+\end{verbatim}
+\section{Exercise}
+Variation of shortest path problem with  model with cost and time and T. \\
+Goal is to minimizer cost with time constraint
+\subsection{Model Description}
+\begin{itemize}
+    \item $N$ - vertexes
+    \item $A$ - edges
+    \item $c_{i,j}$ - cost of moving across edge ${i,j}$
+    \item $t_{i,j}$ - time of moving across edge ${i,j}$
+    \item $T$ - Total available time
+    \item $S$ - start vertex
+    \item $G$ - goal vertex
+\end{itemize}
+\subsubsection*{Decision Variables}
+\begin{itemize}
+    \item $x_{i,j}$ answers 1/0 question if edge ${i,j}$ belongs to shortest path between ${S, G}$
+\end{itemize}
+\subsubsection*{Constraints}
+$$d_i = \sum_{j} x_{j,i} - \sum_{j} x_{i,j}$$
+\begin{itemize}
+    \item $x_i \geq 0$
+    \item $d_i = 1$ if $i == G$
+    \item $d_i = -1$ if $i == S$
+    \item $d_i = 0$ others
+    \item $\sum_{i,j \in A} x_{i,j} \cdot t_{i,j} \leq T$  sum of times on path less than max
+\end{itemize}
+\subsubsection*{Objective Function}
+\begin{itemize}
+    \item MIN $\sum_{i,j \in A} x_{i,j} \cdot c_{i,j} \leq T$  minimize cost of path
+\end{itemize}
+\subsection{Testing, Analysis, Interpretation}
+
+\subsubsection*{Is Integer Programming needed?}
+No. It is not. Sketch proof would look like this: \\
+Assume that Linear Programming has different and better solution than Integer Programming.
+That means that the path has separated at some point into $N$ not separating paths.
+Now we can compare path in IP and LP and from there concur, that at least one of the separated paths had lower cost than path in IP.
+But it would mean that IP path was not the best.
+\subsection*{Is Time constraint needed? Would it give acceptable result}
+Depends what we mean by acceptable result. In the point above I proved that IP solution == LP solution without using Time constraint so proof stays here too.
+But Solution without time constraint will just MIN cost path. 
+
+\section{Exercise}
+\subsection{Model Description}
+\begin{itemize}
+    \item $l_{d, s}$ - lower bounds for amount of cars in given district and shift
+    \item $u_{d, s}$ - upper bounds for amount of cars in given district and shift
+    \item $ls_{s}$ - lower bound for amount of cars at given shift
+    \item $ds_{d}$ - lower bound for amount of cars at given district
+\end{itemize}
+\subsubsection*{Decision Variables}
+\begin{itemize}
+    \item 
+\end{itemize}
+\subsubsection*{Constraints}
+\begin{itemize}
+    \item 
+\end{itemize}
+\subsubsection*{Objective Function}
+\begin{itemize}
+    \item 
+\end{itemize}
+
+
+\section{Exercise}
+\subsection{Model Description}
+\begin{itemize}
+    \item $N$ - board height
+    \item $M$ - board width
+    \item $k$ - Camera vision distance
+    \item $C$ - Set of tuple describing row and column
+\end{itemize}
+\subsubsection*{Decision Variables}
+\begin{itemize}
+    \item $\forall_{i=1\hdots N, j=1 \hdots M} x_{i, j}$ - 1 if camera is on tile $(i, j)$ else 0. 
+\end{itemize}
+\subsubsection*{Constraints}
+\begin{itemize}
+    \item $\forall_{(i, j) \in C} x_{i, j} = 0 $
+    \item There is at least one camera at $k$ distance in straight line from any container
+\end{itemize}
+\subsubsection*{Objective Function}
+$$ MIN \sum x_{i, j} $$
+
+\section{Exercise}
+\subsection{Model Description}
+\begin{itemize}
+    \item $P_i$ - Product $i$, $1 \leq i \leq N$
+    \item $M_j$ - Machine $j$, $1 \leq j \leq M$
+    \item $Ip_i$ - Income from selling $P_i$
+    \item $Cp_i$ - Cost of buying raw materials for $P_i$
+    \item $Cm_i$ - Cost of hour of work of $M_i$
+    \item $d_i$ - demand for $P_i$. Effectively upper bound for produce
+    \item $T$ - Time for which every machine is booked in hours
+    \item $A_{i, j}$ time use in minutes for kg of processing of $P_i$ on $M_j$
+\end{itemize}
+\subsubsection*{Decision Variables}
+\begin{itemize}
+    \item $ x_i $ - processed $x_i$ kgs of $P_i$ 
+\end{itemize}
+\subsubsection*{Constraints}
+\begin{itemize}
+    \item $\forall_{i=1 \hdots N} d_i >= x_i >= 0$
+    \item $\forall_{j=1 \hdots M} \sum_{i=1}^{N} x_i \cdot A_{i, j}  <= 60 \cdot T$
+\end{itemize}
+\subsubsection*{Objective Function}
+Total Income: $$ TI = \sum_{i=1}^{N} x_i \cdot (Ip_i - Cp_i)$$ 
+Total Machine Cost $$ TMC = \sum_{j=1}^{M} \frac{Cm_j}{60} \cdot \sum_{i = 1}^{N} x_i \cdot A_{i, j} $$
+Objective function: $$ MAX (TI - TMC)$$
+
+
+
+
+\end{document} 
