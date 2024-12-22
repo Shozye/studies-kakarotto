@@ -1,0 +1,279 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+\title{Scientific Calculations - Exploration of Arithmetic}
+\author{Mateusz Pełechaty}
+\date{23 October 2022}%
+\begin{document}
+\maketitle
+
+\section{Exercise - Basic Exploration}
+\subsection{Machine Epsilon}
+Machine epsilon ($macheps$) is the smallest number $x$ such that $1+x > 1$ and $rd(1+x) = 1+x$. \newline
+Find machine epsilon with Julia and compare results with the function eps and with values from float.h
+\subsubsection*{Solution can be found in}
+\begin{verbatim}
+./zad1/find_macheps.jl
+./zad1/epsilons.c
+\end{verbatim}
+\subsubsection*{Method and results}
+It was calculated by setting $macheps := 1$ and then if $1+macheps > 1$, then $macheps$ is divided by $2$.
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{|l|l|l|l|}
+    \hline
+        Exercise 1.1 & Macheps & Eps & Float.h \\ \hline
+        Float16 & 0.000977 & 0.000977 & ~ \\ \hline
+        Float32 & 1.1920e-7 & 1.1920e-7 & 1.1920e-07 \\ \hline
+        Float64 & 2.2204e-16 & 2.2204e-16 & 2.2204e-16 \\ \hline
+    \end{tabular}
+\end{table}
+\subsubsection*{Conclusion}
+Calculating macheps by me, \emph{eps(type)} function and Float.h constants provide the same values
+\subsection{Eta}
+Eta ($\eta$) is the smallest number such that $\eta > 0$. \newline
+Find $\eta$ and compare it with nextfloat(0.0) and $MIN_{sub}$ \newline
+Tests should be made for \textbf{Float16}, \textbf{Float32}, \textbf{Float64}
+\subsubsection*{Solution can be found in}
+\begin{verbatim}
+    ./zad1/find_eta.jl
+\end{verbatim}
+\subsubsection*{Method and results}
+It was calculated by setting $\eta:= 1$ and then dividing by $2$ until $\frac{\eta}{2} > 0$
+$MIN_{sub}$ values are taken from \emph{W. Kahan's} book
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{|l|l|l|l|}
+    \hline
+        Exercise 1.2 & $\eta$ & nextfloat & $MIN_{sub}$ \\ \hline
+        Float16 & 6.0e-8 & 6.0e-8 & ~ \\ \hline
+        Float32 & 1.0e-45 & 1.0e-45 & 1.3e-45 \\ \hline
+        Float64 & 5.0e-324 & 5.0e-324 & 4.9e-324 \\ \hline
+    \end{tabular}
+\end{table}
+\subsubsection*{Conclusion}
+nextfloat(0.0) and my method of calculating $\eta$ provide the same values. \newline
+Values are almost the same as $MIN_{sub}$
+\subsection{Questions}
+\textbf{Q:} What is difference between \emph{macheps} and arithmetic precision ($\epsilon$)? \newline
+\textbf{A:} Macheps is the smallest number that meets condition: $1+macheps > 1$ and $rd(1+macheps) = 1+macheps$. We can also say that $macheps=\beta^{1-t}$.  
+$\epsilon$ on the other hand is biggest relative error that can happen due to rounding 
+in arithmetic. So it is the smallest number $\epsilon$, 
+that meets condition  $ \epsilon \geq \delta = \frac{|rd(x) - x|}{x}$ for some number $x$. It was calculated in the lecture that $\epsilon = \frac{1}{2}\beta^{1-t}$ 
+\newline It follows from here that $\epsilon = \frac{macheps}{2}$
+\newline
+\textbf{Q:} What is difference between $\eta$ and ($MIN_{sub}$)? \newline
+\textbf{A:} $MIN_{sub}$ is minimal subnormal number. $\eta$ is defined by minimal number bigger than 0. 
+They should be the same, but there are little differences between them \newline
+\textbf{Q:} What is the returned by \emph{floatmin} and what is it's connection with $MIN_{nor}$ \newline
+\textbf{A:} They are the same value as seen in table below. \newline
+Values of $MIN_{nor}$ are taken from \emph{W. Kahan's} book \newline
+Values of floatmin are calculated in ./zad1/floatmin.jl
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{|l|l|l|}
+    \hline
+        Q3 & floatmin & $MIN_{nor}$ \\ \hline
+        Float16 & 6.104e-5 & ~ \\ \hline
+        Float32 & 1.1755e-38 & 1.2E-38 \\ \hline
+        Float64 & 2.2251e-308 & 2.2E-308 \\ \hline
+    \end{tabular}
+\end{table}
+\subsection{FloatMax}
+Calculate maximum possible number for Float16, Float32, Float64. 
+Compare values with the ones returned by function \emph{floatmax} and with data 
+\subsubsection*{Solution can be found in}
+\begin{verbatim}
+    ./zad1/floatmax.jl
+\end{verbatim}
+\subsubsection*{Method and results}
+It was calculated by $max1 := 4$, $max2 := 2$ and $max3:=1$. 
+Variables are doubled until $max1 == max2$. It means that they are infinity. 
+Then I am returning $max3$ 
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{|l|l|l|l|}
+    \hline
+        Exercise 1.4 & my max & floatmax & W. Kahan's MAX \\ \hline
+        Float16 & 3.277e4 & 6.55e4 & ~ \\ \hline
+        Float32 & 1.701e38 & 3.403e38 & 3.4 E38 \\ \hline
+        Float64 & 8.988e307 & 1.798e308 & 1.8 E308 \\ \hline
+    \end{tabular}
+\end{table}
+\subsubsection*{Conclusion}
+We can see that \emph{floatmax} is the same as \emph{W. Kahan's} Max \newline
+My method of calculating maximum gets me wrong because doubling number reaches infinity. 
+So $my max = \frac{1}{2} \cdot floatmax$
+\section{Exercise - Tricky Macheps Calculation}
+Check in \emph{Julia} if $3\cdot(4/3-1)-1$ is Machine Epsilon. Conduct experiments for Float16, Float32 and Float64
+\subsubsection*{Solution can be found in}
+\begin{verbatim}
+    ./zad2/calculate_macheps.jl
+\end{verbatim}
+\subsubsection*{Method and results}
+Macheps was calculated by \emph{nextfloat}(1.0) and W Kahan's Macheps is calculated by specified above.
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{|l|l|l|}
+    \hline
+        Exercise 2 & Macheps & Kahan Macheps \\ \hline
+        Float16 & 0.000977 & -0.000977 \\ \hline
+        Float32 & 1.1920e-7 & 1.1920e-7 \\ \hline
+        Float64 & 2.2204e-16 & -2.2204e-16 \\ \hline
+    \end{tabular}
+\end{table}
+\subsubsection*{Conclusion}
+We can see that $macheps = 3\cdot(4/3-1)-1$ with an accuracy of up to sign
+\section{Exercise - Number Distribution}
+Check experimentally that every number $ x \in [1, 2) $ is distributed evenly with step $\delta = 2^{-52}$
+It also means it can be represented by $ x = 1 + k\delta $ for $\delta = 2^{-52}$ and $k=1,2,...,2^{52}-1$
+\subsubsection*{Solution can be found in}
+\begin{verbatim}
+    ./zad3/experiment.jl
+\end{verbatim}
+\subsubsection*{Method and results}
+Experiment description: 
+\begin{enumerate}
+\item Pick random number $x \in [1,2)$. 
+\item Make $next := nextfloat(x)$ 
+\item Print their bitstrings
+\end{enumerate}
+Example results below:
+\begin{verbatim}
+num      : 1.3881779261232619
+next(num): 1.388177926123262
+num:       0011111111110110001101011111101000001110100110111010011111111110
+next(num): 0011111111110110001101011111101000001110100110111010011111111111
+\end{verbatim}
+\subsubsection*{Conclusion}
+We can see that mantissa of next(num) is $\beta^{1-t}$ bigger than mantissa of num and
+exponent stays the same. Here $t = 53$ and $c = 0$ so difference is $\beta^{1-t} = \beta^{-52}$ \newline
+We can say that $num = 2^{c} \cdot M$. Then $next(num) = 2^c \cdot (M + \beta^{1-t})$ \newline
+Then difference is $next(num) - num = 2^c \cdot B^{1-t}$ \newline
+\textbf{Q:} What is the distribution of floats in range $[\frac{1}{2}, 1)$? How can they be represented?\newline
+\textbf{A:} Distribution is with step $\delta=\beta^{-53}$ and they can be represented as $ x = 1 + k\delta $ where $k=1,2,...,2^{52}-1$ \newline
+\textbf{Q:} What is it in range $[2, 4)$? How can they be represented? \newline
+\textbf{A:} Distribution is with step $\delta=\beta^{-51}$ and they can be represented as $ x = 1 + k\delta $ where $k=1,2,...,2^{52}-1$ \newline
+\section{Exercise Reciprocal of a number}
+Find smallest number $x$ such that $x \cdot 1/x \neq 1$
+\subsubsection*{Solution can be found in}
+\begin{verbatim}
+    ./zad4/taskB.jl
+\end{verbatim}
+\subsubsection*{Method and results}
+We start with $x := 1$ and we do $x := nextfloat(x)$ until $x \cdot 1/x = 1$
+\begin{verbatim}
+    Found: 1.000000057228997, 
+    bitstring: 0011111111110000000000000000000000001111010111001011111100101010
+\end{verbatim}
+\section{Exercise - Scalar Product}
+Calculate scalar product of x and y in float32 and float64\newline
+$x = [2.718281828, -3.141592654, 1.414213562, 0.5772156649, 0.3010299957]$ \newline
+$y = [1486.2497, 878366.9879, -22.37492, 4773714.647, 0.000185049]$ \newline
+Add products of $x_i$ and $y_i$ in 4 ways.
+\begin{enumerate}
+    \item $\sum_{i=0}^{4}x_i \cdot y_i$
+    \item $\sum_{i=0}^{4}x_{4-i} \cdot y_{4-i}$
+    \item Add sorted by absolute value of $x_i \cdot y_i$ decreasing
+    \item Add sorted by absolute value of $x_i \cdot y_i$ ascending
+\end{enumerate}
+\subsubsection*{Solution can be found in}
+\begin{verbatim}
+    ./zad5/solution.jl
+\end{verbatim}
+\subsubsection*{Results}
+Real value:  1.0066e-11
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{|l|l|l|}
+    \hline
+        ~ & Float32 & Float64 \\ \hline
+        Front & -0.4999443 & 1.0252e-10 \\ \hline
+        Back & -0.4543457 & -1.5643e-10 \\ \hline
+        BigToSmall & -0.5 & 0.0 \\ \hline
+        SmallToBig & -0.5 & 0.0 \\ \hline
+    \end{tabular}
+\end{table}
+\subsubsection*{Conclusion}
+Summation order matters and can change result by a lot
+\section{Exercise - Equivalent functions}
+Calculate in \textbf{Julia} in \textbf{Float64} following functions 
+$$f(x) = \sqrt{x^2 + 1} - 1$$
+$$g(x) = x^2 / (\sqrt{x^2 + 1} + 1)$$
+for $x = 8^{-k}$ for $k=1,2,3,...$ \newline
+Why is computer giving different results even though $f==g$ ?  \newline
+Which one is giving better results?
+\subsubsection*{Solution can be found in}
+\begin{verbatim}
+    ./zad6/tests.jl
+\end{verbatim}
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{|l|l|l|}
+    \hline
+    $x$ & $f(x)$ & $g(x)$ \\ \hline
+    $8^{-1}$ & 0.0077822185373186414 & 0.0077822185373187065 \\ \hline
+    $8^{-2}$ & 0.00012206286282867573 & 0.00012206286282875901 \\ \hline
+    $8^{-3}$ & 1.9073468138230965e-6 & 1.907346813826566e-6 \\ \hline
+    $8^{-4}$ & 2.9802321943606103e-8 & 2.9802321943606116e-8 \\ \hline
+    $8^{-5}$ & 4.656612873077393e-10 & 4.6566128719931904e-10 \\ \hline
+    $8^{-6}$ & 7.275957614183426e-12 & 7.275957614156956e-12 \\ \hline
+    $8^{-7}$ & 1.1368683772161603e-13 & 1.1368683772160957e-13 \\ \hline
+    $8^{-8}$ & 1.7763568394002505e-15 & 1.7763568394002489e-15 \\ \hline
+    $8^{-9}$ & 0.0 & 2.7755575615628914e-17 \\ \hline
+    $8^{-10}$ & 0.0 & 4.336808689942018e-19 \\ \hline
+    $8^{-11}$ & 0.0 & 6.776263578034403e-21 \\ \hline
+    $8^{-12}$ & 0.0 & 1.0587911840678754e-22 \\ \hline
+    \end{tabular}
+\end{table}
+\subsubsection*{Conclusion}
+$f(x)$ and $g(x)$ are giving different results due to rounding errors. \newline
+$\sqrt{x^2 + 1}$ cannot be calculated as accurate as we would like because step in range $[1,2)$ is $\delta=2^{-52}$. 
+Because of it, we cannot rely on this value. As accuracy in range $[0, 1)$ is much bigger, $g(x)$ conserves it's  accuracy for longer by making division with $x^2$
+\section{Exercise - Derivative}
+Compare approximations errors of function $f(x) = sin(x) + cos(3x)$ for approximation $f'(x_0) \approx \overline{f'}(x_0) = \frac{f(x_0 + h) - f(x_0)}{h}$ in point $x_0 = 1$ for $ h = 2^{-n}$, for $n=1,2,3...,54$\newline
+Why at some point decreasing $h$ doesn't improve approximation of derivative?\newline
+How does behave $1+h$?\newline
+
+\subsubsection*{Solution can be found in}
+\begin{verbatim}
+    ./zad7/calculations.jl
+\end{verbatim}
+$f'(x) = 0.11694228168853815$
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{|l|l|l|l|}
+    \hline
+$n$ & approx derivative & error & 1+h \\ \hline
+0 & 2.0179892252685967 & 1.9010469435800585 & 2.0 \\ \hline
+1 & 1.8704413979316472 & 1.753499116243109 & 1.5 \\ \hline
+2 & 1.1077870952342974 & 0.9908448135457593 & 1.25 \\ \hline
+3 & 0.6232412792975817 & 0.5062989976090435 & 1.125 \\ \hline
+... & ... & ... & ... \\ \hline
+... & ... & ... & ... \\ \hline
+24 & 0.11694252118468285 & 2.394961446938737e-7 & 1.0000000596046448 \\ \hline
+25 & 0.116942398250103 & 1.1656156484463054e-7 & 1.0000000298023224 \\ \hline
+26 & 0.11694233864545822 & 5.6956920069239914e-8 & 1.0000000149011612 \\ \hline
+27 & 0.11694231629371643 & 3.460517827846843e-8 & 1.0000000074505806 \\ \hline
+28 & 0.11694228649139404 & 4.802855890773117e-9 & 1.0000000037252903 \\ \hline
+29 & 0.11694222688674927 & 5.480178888461751e-8 & 1.0000000018626451 \\ \hline
+30 & 0.11694216728210449 & 1.1440643366000813e-7 & 1.0000000009313226 \\ \hline
+31 & 0.11694216728210449 & 1.1440643366000813e-7 & 1.0000000004656613 \\ \hline
+... & ... & ... & ... \\ \hline
+... & ... & ... & ... \\ \hline
+51 & 0.0 & 0.11694228168853815 & 1.0000000000000004 \\ \hline
+52 & -0.5 & 0.6169422816885382 & 1.0000000000000002 \\ \hline
+53 & 0.0 & 0.11694228168853815 & 1.0 \\ \hline
+54 & 0.0 & 0.11694228168853815 & 1.0 \\ \hline
+    \end{tabular}
+\end{table}
+\subsubsection*{Conclusion}
+We see that best accuracy is achieved for $n=28$
+Accuracy of approximation decreases after that because as we are decreasing $h$, there is bigger rounding error for $1+h$.
+It makes $f(1+h)$ calculate with error
+\end{document}
