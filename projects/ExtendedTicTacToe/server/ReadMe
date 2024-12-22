@@ -1,0 +1,22 @@
+Maciej Gębala
+2023-03-30
+
+Pliki:
+
+Makefile
+board.h		// zasady i obsługa gry
+game_server.c	// serwer gry 
+game_client.c	// klient dla gry
+
+Kompilator: gcc version 11.3.0
+
+Wywołanie serwera:
+
+./game_server <numer ip> <numer portu>
+
+Wywołanie klienta:
+
+./game_client <numer ip> <numer portu> <gracz>
+
+gracz: 1 dla X lub 2 dla O.
+

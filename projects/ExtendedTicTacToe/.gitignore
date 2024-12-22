@@ -1,0 +1,10 @@
+**/run_logs
+**/test_data.json
+**/__pycache__/
+*.zip
+**/.bloop
+**/.bsp
+**/project/project
+**/project/.bloop
+**/project/target
+**/*.jar
