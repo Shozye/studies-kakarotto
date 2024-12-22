@@ -1,0 +1,30 @@
+GET 2 [ Wczytanie zmiennych ]
+GET 3
+LOAD 2 [ a_copy := a ]
+STORE 5
+LOAD 3 [ IF b == 0 GOTO E_ENDWHILE ] [ IF a_copy < b GOTO E_ENDWHILE ]
+JZERO 26
+SUB 5
+JPOS 26
+LOAD 3 [ b_copy := b ] [ E_WHILE_BODY: 8 ]
+STORE 6
+SUB 5
+JPOS 17 [ IF b_copy - a_copy > 0 GOTO E_INNER_ENDWHILE ]
+LOAD 6 [ b_copy *= 2 ] [ E_INNER_WHILE_BODY: 12 ]
+ADD 0
+STORE 6
+SUB 5 [ IF b_copy - a_copy = 0 GOTO E_INNER_WHILE_BODY ]
+JZERO 12
+LOAD 6 [ b_copy /= 2 ] [ E_INNER_ENDWHILE: 17 ]
+HALF
+STORE 6
+LOAD 5 [ a_copy := a_copy - b_copy ]
+SUB 6
+STORE 5
+LOAD 3 [ IF a_copy >= b GOTO E_WHILE_BODY ]
+SUB 5
+JZERO 8
+LOAD 5 [E_ENDWHILE: 26 ]
+STORE 4
+PUT 4
+HALT

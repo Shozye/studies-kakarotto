@@ -1,0 +1,7 @@
+[ Creating one variable and reading to it ]
+PROGRAM IS
+VAR a
+BEGIN
+    READ a;
+    WRITE a;
+END

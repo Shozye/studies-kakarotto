@@ -1,0 +1,17 @@
+[błąd:  użycie nie zainicjowanej zmiennej b w linii 13]
+PROCEDURE pa(a,b) IS
+VAR c,d
+BEGIN
+  c:=a;
+  d:=b+c;
+  b:=c+d;
+END
+
+PROGRAM IS
+VAR a,b
+BEGIN
+  READ a;
+  WRITE b;
+  pa(a,b);
+END
+

@@ -1,0 +1,3 @@
+Błąd: za mała liczba argumentów
+(pusta linia po poprzednym)
+(brak odpowiedzi|Błąd: za mała liczba argumentów)

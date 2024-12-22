@@ -1,0 +1,16 @@
+[błąd: nie zadeklarowana zmienna d w linii 6]
+PROCEDURE pa(a,b) IS
+VAR c
+BEGIN
+  c:=a;
+  a:=c+d;
+END
+
+PROGRAM IS
+VAR a,b
+BEGIN
+  READ a;
+  pa(a,b);
+  WRITE b;
+END
+

@@ -1,0 +1,22 @@
+[ Program Reads and multiplies two numbers like a true Russian citizen ]
+
+PROCEDURE mul(a, b, c) IS
+VAR a_copy
+BEGIN
+    a_copy := a;
+    p := 0;
+    WHILE a_copy != 0
+    DO
+        p := p + b;
+        decrement(a_copy);
+    ENDWHILE
+END
+
+PROGRAM IS
+VAR a, b, p
+BEGIN
+    READ a;
+    READ b;
+    mul(a,b,p);
+    WRITE p;
+END

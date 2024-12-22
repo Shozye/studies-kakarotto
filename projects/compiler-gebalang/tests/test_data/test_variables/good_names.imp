@@ -1,0 +1,5 @@
+[ Creating variables with bad names - Special Characters ]
+PROGRAM IS
+VAR a_ok, b_ok, xdbeka, hofhofohfwohfehfowdfd_gwris
+BEGIN
+END

@@ -1,0 +1,16 @@
+[błąd: druga deklaracja zmiennej a w linii 3]
+PROCEDURE pa(a,b) IS
+VAR a,d
+BEGIN
+  c:=a;
+  a:=c+d;
+END
+
+PROGRAM IS
+VAR a,b
+BEGIN
+  READ a;
+  pa(a,b);
+  WRITE b;
+END
+

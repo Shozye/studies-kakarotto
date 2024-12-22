@@ -1,0 +1,58 @@
+[
+    {
+        "filename": "if.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "25\n5",
+        "stdout": "1",
+        "description": "Testing positive a >= b condition"
+    },
+    {
+        "filename": "if.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "5\n25",
+        "stdout": "",
+        "description": "Testing negative a >= b condition"
+    },
+    {
+        "filename": "linear.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "10\n5\n10\n20",
+        "stdout": "0",
+        "description": "Executing THEN branch of if-else"
+    },
+    {
+        "filename": "linear.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "10\n5\n11\n20",
+        "stdout": "1",
+        "description": "Executing ELSE branch of if-else"
+    },
+    {
+        "filename": "pythagorean.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "3\n4\n5",
+        "stdout": "1",
+        "description": "Nesting if-else"
+    },
+    {
+        "filename": "pythagorean.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "4\n5\n3",
+        "stdout": "1",
+        "description": "Nesting if-else"
+    },
+    {
+        "filename": "pythagorean.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "4\n7\n5",
+        "stdout": "0",
+        "description": "Nesting if-else"
+    }
+]

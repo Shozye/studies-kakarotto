@@ -1,0 +1,25 @@
+LOAD b [ IF b == 0 GOTO E_ENDWHILE ] [ IF a < b GOTO E_ENDWHILE ]
+JZERO E_ENDWHILE
+SUB a
+JPOS E_ENDWHILE
+E_WHILE_BODY : LOAD b [ b_copy := b ] [ IF b_copy - a_copy > 0 GOTO E_INNER_ENDWHILE ]
+STORE b_copy
+SUB a
+JPOS E_INNER_ENDWHILE
+E_INNER_WHILE_BODY : LOAD b_copy [ b_copy *= 2 ]
+ADD *storage_0*
+STORE b_copy
+SUB a [ IF b_copy - a = 0 GOTO E_INNER_WHILE_BODY ]
+JZERO E_INNER_WHILE_BODY
+E_INNER_ENDWHILE : LOAD b_copy [ b_copy /= 2 ]
+HALF
+STORE b_copy
+LOAD a [ a := a - b_copy ]
+SUB b_copy
+STORE a
+LOAD b [ IF a >= b GOTO E_WHILE_BODY ]
+SUB a
+JZERO E_WHILE_BODY
+E_ENDWHILE : LOAD a
+STOREI p
+JUMPI $ret

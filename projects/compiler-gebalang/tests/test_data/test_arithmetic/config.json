@@ -1,0 +1,171 @@
+[
+    {
+        "filename": "add.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "10\n5",
+        "stdout": "15",
+        "description": "Simple addition of numbers"
+    },
+    {
+        "filename": "add.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "900\n45",
+        "stdout": "945",
+        "description": "Simple addition of numbers 2"
+    },
+    {
+        "filename": "add.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "0\n0",
+        "stdout": "0",
+        "description": "Neutral element of addition"
+    },
+    {
+        "filename": "add.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "0\n1",
+        "stdout": "1",
+        "description": "Neutral element of addition"
+    },
+    {
+        "filename": "add.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "20\n0",
+        "stdout": "20",
+        "description": "Neutral element of addition"
+    },
+    {
+        "filename": "sub.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "394\n62",
+        "stdout": "332",
+        "description": "Substracting smaller number from bigger"
+    },
+    {
+        "filename": "sub.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "5423\n5423",
+        "stdout": "0",
+        "description": "Substracting the same numbers"
+    },
+    {
+        "filename": "sub.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "10\n4905",
+        "stdout": "0",
+        "description": "Substracting bigger number from smaller"
+    },
+    {
+        "filename": "mul.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "0\n4905",
+        "stdout": "0",
+        "description": "Multiplication by 0"
+    },
+    {
+        "filename": "mul.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "230\n17",
+        "stdout": "3910",
+        "description": "Simple multiplication"
+    },
+    {
+        "filename": "div.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "230\n17",
+        "stdout": "13",
+        "description": "Division of elements that do not fully divide each other"
+    },
+    {
+        "filename": "div.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "230\n0",
+        "stdout": "0",
+        "description": "Division by 0"
+    },
+    {
+        "filename": "div.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "340\n17",
+        "stdout": "20",
+        "description": "Simple division of elements that divide each other"
+    },
+    {
+        "filename": "div.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "0\n6234",
+        "stdout": "0",
+        "description": "Division of 0"
+    },
+    {
+        "filename": "rem.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "314\n2000",
+        "stdout": "314",
+        "description": "calculate small_number mod big_number"
+    },
+    {
+        "filename": "rem.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "120\n120",
+        "stdout": "0",
+        "description": "calculate number mod number"
+    },
+    {
+        "filename": "rem.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "930\n31",
+        "stdout": "0",
+        "description": "calculate a mod b where b divides a fully"
+    },
+    {
+        "filename": "rem.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "625\n31",
+        "stdout": "5",
+        "description": "calculate a mod b where a is bigger and do not divide fully"
+    },
+    {
+        "filename": "constants.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "",
+        "stdout": "94",
+        "description": "Using constants to calculate number"
+    },
+    {
+        "filename": "raw.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "",
+        "stdout": "94",
+        "description": "Using raw numbers to calculate number"
+    },
+    {
+        "filename": "swap.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "340\n169",
+        "stdout": "169\n340",
+        "description": "Swapping two numbers"
+    }
+
+]

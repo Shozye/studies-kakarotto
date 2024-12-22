@@ -1,0 +1,22 @@
+[ Program Reads and increments number ]
+
+PROCEDURE increment_two(a) IS
+BEGIN
+    a:= a + 1;
+END
+
+PROCEDURE increment(a) IS
+BEGIN
+    a:= a+1;
+    increment_two(a);
+    a:= a + 1;
+END
+
+PROGRAM IS
+VAR a, b, p
+BEGIN
+    READ a;
+    WRITE a;
+    increment(a);
+    WRITE a;
+END

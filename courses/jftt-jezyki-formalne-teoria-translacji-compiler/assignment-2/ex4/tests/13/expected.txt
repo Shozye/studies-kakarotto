@@ -1,0 +1,1 @@
+Błąd: dzielenie przez 0

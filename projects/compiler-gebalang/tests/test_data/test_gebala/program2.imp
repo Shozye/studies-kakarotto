@@ -1,0 +1,33 @@
+[Rozkład na czynniki pierwsze]
+PROCEDURE check(n,d,p) IS
+VAR r
+BEGIN
+    p:=0;
+    r:=n%d;
+    WHILE r=0 DO
+        n:=n/d;
+        p:=p+1;
+        r:=n%d;
+    ENDWHILE
+END
+
+PROGRAM IS
+VAR n,m,exp,div
+BEGIN
+    READ n;
+    div:=2;
+    m:=div*div;
+    WHILE n>=m DO
+        check(n,div,exp);
+        IF exp>0 THEN [jest podzielna przez div]
+            WRITE div;
+            WRITE exp;
+        ENDIF
+        div:=div+1;
+        m:=div*div;
+    ENDWHILE
+    IF n!=1 THEN [ostatni div różny od 1]
+        WRITE n;
+        WRITE 1;
+    ENDIF
+END

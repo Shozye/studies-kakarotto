@@ -1,0 +1,2 @@
+Notation: 2 3 4 - ^ 2 * 
+Result: 1

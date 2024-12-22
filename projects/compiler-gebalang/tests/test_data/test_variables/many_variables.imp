@@ -1,0 +1,7 @@
+[ Creating many variables and not even using them ]
+PROGRAM IS
+VAR a, b, c, d, e, f, g, h, j, i, k
+BEGIN
+    READ a;
+    WRITE a;
+END

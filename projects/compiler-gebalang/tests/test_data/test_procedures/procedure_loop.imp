@@ -1,0 +1,21 @@
+PROCEDURE increment(a) IS 
+VAR trash
+BEGIN
+    trash := a * 2;
+    a := a + 1;
+END
+
+[ Program calculates 2 * b - a ]
+PROGRAM IS
+VAR a, b
+BEGIN
+    READ a;
+    READ b;
+    WHILE a < b DO
+        increment(a);
+        increment(a);
+        increment(b);
+    ENDWHILE
+    WRITE b; 
+END
+

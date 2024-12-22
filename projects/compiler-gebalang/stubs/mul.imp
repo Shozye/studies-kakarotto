@@ -1,0 +1,57 @@
+=========================== PSEUDOKOD ==================================
+
+mul(a, b, p)
+VAR temp
+BEGIN
+    p := 0;
+    while b > 0
+        temp := b % 2;
+        if temp = 0
+            p := p + a;
+        a := a + a;
+        b := b / 2
+    endwhile
+end
+
+Kod trójadresowy:
+Nie wzialem tutaj pod uwage tego że potrzebne są kopie
+
+p := 0
+IF b = 0 GOTO E_ENDWHILE
+IF b % 2 = 1 GOTO E_ENDIF [ E_WHILE_BODY ]
+p := p + a
+a := a + a; [ E_ENDIF]
+b := b/ 2
+IF b > 0 GOTO E_WHILE_BODY
+WRITE p [E_ENDWHILE]
+
+
+ASSEMBLER z etykietami
+[ Pamięć:
+0 - zajęte
+1 - one
+2 - a
+3 - b
+4 - p
+
+SET 0 [ Ustawienie p na 0 ]
+STORE p
+LOAD b_copy
+JZERO E_ENDWHILE
+HALF [ E_WHILE_BODY ]
+ADD 0
+ADD one
+SUB b_copy
+JPOS E_ENDIF
+LOAD p
+ADD a_copy
+STORE p
+LOAD a_copy [ E_ENDIF ]
+ADD 0
+STORE a_copy
+LOAD b_copy
+HALF
+STORE b_copy
+JPOS E_WHILE_BODY
+PUT p [E_ENDWHILE]
+HALT

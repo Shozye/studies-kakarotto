@@ -1,0 +1,13 @@
+[ Using raw numbers to compute number ]
+PROGRAM IS
+VAR expr
+BEGIN
+    expr = 142 + 12; [ 154 ]
+    expr := expr - 135; [ 19 ]
+    expr := expr - 12; [ 7 ]
+    expr := expr * 56; [ 392 ]
+    expr := expr + 1; [ 393 ]
+    expr := expr - 300; [ 93 ]
+    expr := expr + 1; [ 94 ]
+    WRITE expr;
+END

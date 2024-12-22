@@ -1,0 +1,5 @@
+[ Creating variables with bad names - Special Characters ]
+PROGRAM IS
+VAR XD$XD
+BEGIN
+END

@@ -1,0 +1,8 @@
+.vscode/
+**/.idea
+**/__pycache__
+**/flex
+**/examples/*
+**/ex.c
+**/ex.out
+**/last_run.txt

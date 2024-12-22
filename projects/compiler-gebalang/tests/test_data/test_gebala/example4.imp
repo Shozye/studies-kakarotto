@@ -1,0 +1,41 @@
+[ Kombinacje
+? 20
+? 9
+> 167960
+]
+
+PROCEDURE s(n,m) IS
+VAR i,o
+BEGIN
+    m:=1;
+    i:=n;
+    WHILE i>0 DO
+        o:=i%2;
+        IF o=1 THEN
+            m:=m*i;
+        ELSE
+            m:=i*m;
+        ENDIF
+        i:=i-1;
+    ENDWHILE
+END
+
+PROCEDURE bc(n,k,m) IS
+VAR p,a,b,c
+BEGIN
+   s(n,a);
+   p:=n-k;
+   s(p,b);
+   s(k,c);
+   m:=a/b;
+   m:=m/c;
+END
+
+PROGRAM IS
+VAR n,k,w
+BEGIN
+    READ n;
+    READ k;
+    bc(n,k,w);
+    WRITE w;
+END

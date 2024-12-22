@@ -1,0 +1,16 @@
+PROCEDURE swap(a, b) IS BEGIN
+    a := a + b;
+    b := a - b;
+    a := a - b;
+END
+
+[ Program tests if swapping works ]
+PROGRAM IS
+VAR a, b
+BEGIN
+    READ a;
+    READ b;
+    swap(a, b);
+    WRITE a;
+    WRITE b;
+END

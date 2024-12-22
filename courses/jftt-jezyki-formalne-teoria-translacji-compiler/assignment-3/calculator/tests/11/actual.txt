@@ -1,0 +1,2 @@
+Notation: 2 123 ^ 
+Result: 594706

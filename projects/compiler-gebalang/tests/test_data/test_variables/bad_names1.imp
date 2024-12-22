@@ -1,0 +1,5 @@
+[ Creating variables with bad names - Big letters ]
+PROGRAM IS
+VAR A
+BEGIN
+END

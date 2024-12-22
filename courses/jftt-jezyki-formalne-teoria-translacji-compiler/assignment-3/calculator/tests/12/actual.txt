@@ -1,0 +1,2 @@
+Notation: 2 1234574 ^ 
+Result: 925933

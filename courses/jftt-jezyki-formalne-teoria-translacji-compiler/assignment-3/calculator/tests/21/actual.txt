@@ -1,0 +1,2 @@
+Notation: 2 1 3 / ^ 3 ^ 
+Result: 2

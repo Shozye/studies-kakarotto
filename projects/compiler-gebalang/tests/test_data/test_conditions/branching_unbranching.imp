@@ -1,0 +1,17 @@
+[ Branching and unbranching ]
+PROGRAM IS
+VAR a, b, p
+BEGIN
+    READ p;
+    IF p THEN
+        READ a;
+    ELSE
+        READ b;
+    ENDIF
+
+    IF p THEN
+        WRITE a;
+    ELSE
+        WRITE b;
+    ENDIF
+END

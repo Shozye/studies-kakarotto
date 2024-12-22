@@ -1,0 +1,11 @@
+[ Program finds length of number ]
+PROGRAM IS
+VAR num
+BEGIN
+    READ num;
+    WHILE num != 0 DO
+        WRITE num;
+        num := num - 1;
+    ENDWHILE
+    WRITE num;
+END

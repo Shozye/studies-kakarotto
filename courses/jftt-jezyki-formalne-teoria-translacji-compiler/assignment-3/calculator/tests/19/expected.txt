@@ -1,0 +1,1 @@
+> 0 nie jest odwracalne modulo 1234577

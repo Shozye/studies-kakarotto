@@ -1,0 +1,21 @@
+[ Write three sides of a triangle and check if it is pythagorean ]
+PROGRAM IS
+VAR a, b, c
+BEGIN
+    a := a*a;
+    b := b*b;
+    c := c*c;
+    IF a + b = c THEN
+        WRITE 1
+    ELSE
+        IF a + c = b THEN
+            WRITE 1;
+        ELSE
+            if b + c = a THEN
+                WRITE 1;
+            ELSE 
+                WRITE 0;
+            ENDIF
+        ENDIF;
+    ENDIF
+END

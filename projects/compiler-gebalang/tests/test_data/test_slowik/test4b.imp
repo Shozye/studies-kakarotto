@@ -1,0 +1,131 @@
+[
+ * Dodawanie punktów na krzywej eliptycznej (P musi być pierwsze).
+ * Punkt neutralny (0) podać jako punkt o obu współrzędnych równych P
+
+ * Ex.
+ * (parametry krzywej: y^2 = x^3 - x + b nad F_71 (dowolne b))
+ ? 71  (P)
+ ? 70  (a)
+ * (punkt A:)
+ ? 5
+ ? 7
+ * (punkt B:)
+ ? 32
+ ? 17
+ * (wynik:)
+ > 43
+ > 21
+]
+
+PROCEDURE modinv(a [in], ainv [out], mod [in]) IS
+VAR
+    tmp, pow, test
+BEGIN
+    tmp := a % mod;
+    ainv := 1;
+    pow := mod - 2;
+    WHILE pow > 0 DO
+        test := pow % 2;
+        IF test = 1 THEN
+            ainv := ainv * tmp;
+            ainv := ainv % mod;
+        ENDIF
+        pow := pow / 2;
+        tmp := tmp * tmp;
+        tmp := tmp % mod;
+    ENDWHILE
+END
+
+PROCEDURE point_add(par_p [in], par_a [in],
+                    ax [in], ay [in],
+                    bx [in], by [in],
+                    cx [out], cy [out]) IS
+VAR
+    par_pp, zerotest_a, zerotest_b,
+    dzielna, dzielnik, dzielnik_inv,
+    s
+BEGIN
+    par_pp := 2 * par_p;
+
+    zerotest_a := ax + ay;
+    zerotest_b := bx + by;
+    zerotest_a := par_pp - zerotest_a; [ Point a is (0) iff zerotest_a is 0 ]
+    zerotest_b := par_pp - zerotest_b; [ Point b is (0) iff zerotest_b is 0 ]
+
+    [ Prosty przypadek - przynajmniej jeden z punktów jest 0 - zwróć drugi ]
+    IF zerotest_a = 0 THEN
+        cx := bx;
+        cy := by;
+    ELSE IF zerotest_b = 0 THEN
+        cx := ax;
+        cy := ay;
+    ELSE
+        dzielna := 0;
+        dzielnik := 0;
+
+        IF ax = bx THEN
+            [ dodawanie punktów przeciwnych ]
+            IF ay != by THEN
+                cx := par_p;
+                cy := par_p;
+            [ podwojenie punktu ]
+            ELSE
+                dzielna  := ax * ax;         [ ax^2 ]
+                dzielna  := dzielna * 3;     [ 3 * ax^2 ]
+                dzielna  := dzielna + par_a; [ 3 * ax^2 + A ]
+                dzielnik := ay * 2;          [ 2 * ay]
+                [ Redukcja modulo ]
+                dzielna  := dzielna  % par_p;
+                dzielnik := dzielnik % par_p;
+            ENDIF
+        ELSE
+            dzielna  := par_p + ay; dzielna  := dzielna  - by; [ay - by]
+            dzielnik := par_p + ax; dzielnik := dzielnik - bx; [ax - bx]
+            [ Redukcja modulo ]
+            dzielna  := dzielna  % par_p;
+            dzielnik := dzielnik % par_p;
+        ENDIF
+
+        IF dzielnik != 0 THEN
+            modinv(dzielnik, dzielnik_inv, par_p);
+            s := dzielna * dzielnik_inv;
+            cx := s * s;        [s^2]
+            cx := par_pp + cx;  [s^2; > 2p]
+            cx := cx - ax;      [s^2 - ax; >p]
+            cx := cx - bx;      [s^2 - ax - bx]
+
+            cy := par_p + cx;   [cx; > p]
+            cy := cy - ax;      [cx - ax]
+            cy := cy * s;       [s(cx-ax)]
+            cy := cy + ay;      [ay + s(cx-ax)]
+
+            [ Redukcja modulo ]
+            cx := cx % par_p;
+            cy := cy % par_p;
+            cy := par_p - cy;
+            cy := cy % par_p;
+        ENDIF
+    ENDIF ENDIF [if else if else]
+END
+
+PROGRAM IS
+VAR
+    a_x, a_y, b_x, b_y, c_x, c_y,
+    cur_p, cur_a [ , cur_b ]
+BEGIN
+    READ cur_p;
+    READ cur_a;
+    [ Parametr B nie jest wymagany ]
+    [ READ cur_b; ]
+
+    READ a_x;
+    READ a_y;
+    READ b_x;
+    READ b_y;
+
+    point_add(cur_p, cur_a, a_x, a_y, b_x, b_y, c_x, c_y);
+
+    WRITE c_x;
+    WRITE c_y;
+END
+

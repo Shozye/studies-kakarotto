@@ -1,0 +1,53 @@
+[ Rozklad liczby 340282367713220089251654026161790386200 na czynniki pierwsze ]
+[
+  Oczekiwany wynik:
+  2^3
+  3
+  5^2
+  7
+  13
+  41
+  61
+  641
+  1321
+  6700417
+  613566757
+  715827883
+]
+PROGRAM IS
+VAR
+    a, b, c, d,
+    n, m, reszta, potega, dzielnik
+BEGIN
+    a := 4294967297;
+    b := 4294967298;
+    c := 4294967299;
+    d := 4294967300;
+
+    n := a * b;
+    n := n * c;
+    n := n * d;
+
+    dzielnik := 2;
+    m := dzielnik * dzielnik;
+    WHILE n >= m DO
+        potega := 0;
+        reszta := n % dzielnik;
+        WHILE reszta = 0 DO
+            n := n / dzielnik;
+            potega := potega + 1;
+            reszta := n % dzielnik;
+        ENDWHILE
+        IF potega > 0 THEN [ czy znaleziono dzielnik ]
+            WRITE dzielnik;
+            WRITE potega;
+        ELSE
+            dzielnik := dzielnik + 1;
+            m := dzielnik * dzielnik;
+        ENDIF
+    ENDWHILE
+    IF n != 1 THEN [ ostatni dzielnik ]
+        WRITE n;
+        WRITE 1;
+    ENDIF
+END

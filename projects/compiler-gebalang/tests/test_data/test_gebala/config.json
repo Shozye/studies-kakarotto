@@ -1,0 +1,98 @@
+[
+    {
+        "filename": "error-0.imp",
+        "description": "Double declaration of variables in procedure arguments"
+    },
+    {
+        "filename": "error-1.imp",
+        "description": "Double declaration of variables in variable initialization"
+    },
+    {
+        "filename": "error-2.imp",
+        "description": "Double declaration of variables in variable initialization"
+    },
+    {
+        "filename": "error-3.imp",
+        "description": "Usage of not declared variable 'd'"
+    },
+    {
+        "filename": "error-4.imp",
+        "description": "Usage of not initialised variable 'd'"
+    },
+    {
+        "filename": "error-5.imp",
+        "description": "Usage of not initiated variable b "
+    },
+    {
+        "filename": "error-6.imp",
+        "description": "Usage of not declared variable d"
+    },
+    {
+        "filename": "error-7.imp",
+        "description": "Usage of not declared procedure pb"
+    },
+    {
+        "filename": "program0.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "127",
+        "stdout": "1111111",
+        "description": "Algorithm to get reversed binary from number"
+    }, 
+    {
+        "filename": "program0.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "70",
+        "stdout": "0110001",
+        "description": "Algorithm to get reversed binary string from number"
+    }, 
+    {
+        "filename": "program1.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "36\n4200\n624\n402",
+        "stdout": "6",
+        "description": "Algorithm to calculate gcd of 4 numbers"
+    },
+    {
+        "filename": "program1.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "1\n13135\n626412464\n13442663",
+        "stdout": "1",
+        "description": "Algorithm to calculate gcd of 4 numbers"
+    },
+    {
+        "filename": "program2.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "1",
+        "stdout": "",
+        "description": "Factorization algorithm"
+    },
+    {
+        "filename": "program2.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "6",
+        "stdout": "2\n1\n3\n1",
+        "description": "Factorization algorithm"
+    },
+    {
+        "filename": "program2.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "128",
+        "stdout": "2\n7",
+        "description": "Factorization algorithm"
+    },
+    {
+        "filename": "program2.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "320",
+        "stdout": "2\n6\n5\n1",
+        "description": "Factorization algorithm"
+    }
+]

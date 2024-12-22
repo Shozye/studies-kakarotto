@@ -1,0 +1,21 @@
+[ Using constants to compute number ]
+PROGRAM IS
+VAR a, b, c, d, e, f, g, h, expr
+BEGIN
+    a := 142;
+    b := 12;
+    c := 135;
+    d := 12;
+    e := 56;
+    f := 1;
+    g := 300;
+    h := 1;
+    expr := a + b;
+    expr := expr - c;
+    expr := expr - d;
+    expr := expr * e;
+    expr := expr + f;
+    expr := expr - g;
+    expr := expr + h; [ 94 ]
+    WRITE expr;
+END

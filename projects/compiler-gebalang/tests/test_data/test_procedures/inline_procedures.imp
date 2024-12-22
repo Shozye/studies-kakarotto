@@ -1,0 +1,39 @@
+PROCEDURE increment(a) IS 
+VAR x
+BEGIN
+    x := a + 1;
+    a := a + 1;
+END
+
+PROCEDURE change_to_one(a) IS 
+VAR x
+BEGIN
+    a := 1;
+END
+
+PROCEDURE assign(a, b) IS
+BEGIN
+    a := b;
+END
+
+PROCEDURE decrement(a) IS
+VAR x, d
+BEGIN 
+    x := a;
+    d := a;
+    a := a - 1;
+END
+
+PROCEDURE 
+
+[ Program calculates 2 * b - a ]
+PROGRAM IS
+VAR a, b
+BEGIN
+    READ a;
+    change_to_one(a);
+    assign(b, a);
+    decrement(a);
+    increment(a);
+END
+

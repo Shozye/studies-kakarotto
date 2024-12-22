@@ -1,0 +1,9 @@
+[ Substraction of two numbers ]
+PROGRAM IS
+VAR a, b, sum
+BEGIN
+    READ a;
+    READ b;
+    sum := a - b;
+    WRITE sum;
+END

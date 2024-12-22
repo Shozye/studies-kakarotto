@@ -1,0 +1,12 @@
+**/maszyna-wirtualna
+**/maszyna-wirtualna-cln
+**/*.o
+**/vm
+**/vm-cln
+**/venv/
+**/test_runs/*
+**/output/*
+**/lexer.cc
+**/parser.cc
+**/parser.hh
+**/parser.y

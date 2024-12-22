@@ -1,0 +1,18 @@
+[ Program writes 1 if two points lay on linear function. 0 otherwise ]
+PROGRAM IS
+VAR xone, yone, xtwo, ytwo
+BEGIN
+    READ xone;
+    READ yone;
+    READ xtwo;
+    READ ytwo;
+    IF xone = xtwo THEN
+        IF yone = ytwo THEN
+            WRITE 1;
+        ELSE
+            WRITE 0;
+        ENDIF
+    ELSE
+        WRITE 1;
+    ENDIF
+END

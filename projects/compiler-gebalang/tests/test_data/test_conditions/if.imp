@@ -1,0 +1,10 @@
+[ Program writes 1 if a >= b ]
+PROGRAM IS
+VAR a, b
+BEGIN
+    READ a;
+    READ b;
+    IF a >= b THEN 
+        WRITE 1;
+    ENDIF
+END

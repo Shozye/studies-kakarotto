@@ -1,0 +1,38 @@
+GET 2
+GET 3
+SET 0 [ p := 0 ]
+STORE 4
+LOAD 3 [ IF b == 0 GOTO E_ENDPROGRAM ]
+JZERO 36
+SET 1 [ temp := 1 ]
+STORE 5
+LOAD 3 [ IF a < b GOTO E_ENDWHILE1 ]
+SUB 2
+JPOS 20
+LOAD 3 [ b := b * 2 ] [ E_WHILE1_BODY : 11 ]
+ADD 0
+STORE 3
+LOAD 5 [ temp := temp * 2 ]
+ADD 0
+STORE 5
+LOAD 3 [ IF a >= b GOTO E_WHILE1_BODY ]
+SUB 2
+JZERO 11
+LOAD 3 [ IF b > a GOTO E_ENDIF ] [ E_WHILE2_BODY: 20 ]
+SUB 2
+JPOS 29
+LOAD 4 [ p := p + temp; ]
+ADD 5
+STORE 4
+LOAD 2 [ a := a - b; ]
+SUB 3
+STORE 2
+LOAD 3 [ b := b / 2; ] [ E_ENDIF: 29 ]
+HALF
+STORE 3
+LOAD 5 [ temp := temp / 2; ]
+HALF
+STORE 5
+JPOS 20 [ IF temp > 0 GOTO E_WHILE2_BODY ]
+PUT 4 [ PUT p ] [ E_ENDPROGRAM: 36 ]
+HALT

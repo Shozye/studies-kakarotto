@@ -1,0 +1,43 @@
+program_all  -> procedures main
+
+procedures   -> procedures PROCEDURE proc_head IS VAR declarations BEGIN commands END
+             | procedures PROCEDURE proc_head IS BEGIN commands END
+             | 
+
+main         -> PROGRAM IS VAR declarations BEGIN commands END
+             | PROGRAM IS BEGIN commands END
+
+commands     -> commands command
+             | command
+
+command      -> identifier := expression;
+             | IF condition THEN commands ELSE commands ENDIF
+             | IF condition THEN commands ENDIF
+             | WHILE condition DO commands ENDWHILE
+             | REPEAT commands UNTIL condition;
+             | proc_head;
+             | READ identifier;
+             | WRITE value;
+
+proc_head    -> identifier ( declarations )
+
+declarations -> declarations, identifier
+             | identifier
+
+expression   -> value
+             | value + value
+             | value - value
+             | value * value
+             | value / value
+             | value % value
+
+condition    -> value = value
+             | value != value
+             | value > value
+             | value < value
+             | value >= value
+             | value <= value
+
+value        -> num
+             | identifier
+

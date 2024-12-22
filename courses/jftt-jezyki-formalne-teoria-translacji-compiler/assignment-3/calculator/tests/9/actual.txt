@@ -1,0 +1,2 @@
+Notation: 10 
+Result: 10

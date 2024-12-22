@@ -1,0 +1,35 @@
+PROCEDURE swap(a,b) IS
+VAR c
+BEGIN
+  c:=a;
+  a:=b;
+  b:=c;
+END
+
+PROCEDURE gcd(a,b,c) IS
+VAR x,y
+BEGIN
+  x:=a;
+  y:=b;
+  WHILE y!=0 DO
+    IF x>=y THEN 
+      x:=x-y;
+    ELSE 
+      swap(x,y);
+    ENDIF
+  ENDWHILE
+  c:=x;
+END
+
+PROGRAM IS
+VAR a,b,c,d,x,y,z
+BEGIN
+  READ a;
+  READ b;
+  READ c;
+  READ d;
+  gcd(a,b,x);
+  gcd(c,d,y);
+  gcd(x,y,z);
+  WRITE z;
+END

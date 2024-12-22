@@ -1,0 +1,7 @@
+PROGRAM IS
+VAR
+    n
+BEGIN
+    n := 4294967297 * 4294967298;
+    WRITE n;
+END

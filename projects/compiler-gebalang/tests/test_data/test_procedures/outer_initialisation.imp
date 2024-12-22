@@ -1,0 +1,14 @@
+[ Program takes a problem of initialising value in other function ]
+
+PROCEDURE assign(x, y) IS
+BEGIN
+    y := x;
+END
+
+PROGRAM IS
+VAR a, b
+BEGIN
+    READ a;
+    assign(a,b);
+    WRITE b;
+END

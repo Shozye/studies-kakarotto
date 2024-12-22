@@ -1,0 +1,26 @@
+[ Program writes 1 if number provided is prime. 0 otherwise. ]
+PROGRAM IS
+VAR num, i, powi, is_prime, expr
+BEGIN
+
+    READ num;
+    i := 2;
+
+    powi := i*i;
+    is_prime := 1;
+    WHILE powi <= num DO
+        expr := num % i;
+        IF expr = 0 THEN
+            is_prime := 0;
+            i := num;
+        ENDIF
+        i := i + 1;
+        powi := i*i;
+    ENDWHILE
+
+    IF is_prime = 1 THEN
+        WRITE 1;
+    ELSE
+        WRITE 0;
+    ENDIF
+END

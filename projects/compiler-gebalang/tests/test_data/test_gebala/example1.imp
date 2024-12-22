@@ -1,0 +1,50 @@
+[Równanie diofantyczne mx-ny=nwd(m,n) (z)]
+PROCEDURE de(m,n,x,y,z) IS
+VAR a,b,r,s,reszta,iloraz,rr,ss,tmp
+BEGIN
+  a:=m;
+  b:=n;
+  x:=1;
+  y:=0;
+  r:=n;
+  s:=m-1;
+  WHILE b>0 DO
+    [niezmiennik: NWD(m,n)=NWD(a,b) i a=mx-ny i b=mr-ns]
+    reszta:=a%b;
+    iloraz:=a/b;
+    a:=b;
+    b:=reszta;
+    rr:=r;
+    tmp:=iloraz*r;
+    IF x<tmp THEN
+      r:=n*iloraz;
+    ELSE
+      r:=0;
+    ENDIF
+    r:=r+x;
+    r:=r-tmp;
+    ss:=s;
+    tmp:=iloraz*s;
+    IF y<tmp THEN
+      s:=m*iloraz;
+    ELSE
+      s:=0;
+    ENDIF
+    s:=s+y;
+    s:=s-tmp;
+    x:=rr;
+    y:=ss;
+  ENDWHILE
+  z:=a;
+END
+
+PROGRAM IS
+VAR m,n,x,y,nwd
+BEGIN
+  READ m;
+  READ n;
+  de(m,n,x,y,nwd);
+  WRITE x;
+  WRITE y;
+  WRITE nwd;
+END

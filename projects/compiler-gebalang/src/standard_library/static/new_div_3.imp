@@ -1,0 +1,36 @@
+SET 0 [ p := 0 ]
+STOREI p
+LOAD b [ IF b == 0 GOTO E_DIV_ENDPROGRAM ]
+JZERO E_DIV_ENDPROGRAM
+SET 1 [ temp := 1 ]
+STORE temp
+LOAD b [ IF a < b GOTO E_DIV_WHILE2_BODY ]
+SUB a
+JPOS E_DIV_WHILE2_BODY
+E_DIV_WHILE1_BODY : LOAD temp [ temp := temp * 2 ]
+ADD *storage_0*
+ADD *storage_0*
+STORE temp
+LOAD b [ b := b * 2 ]
+ADD *storage_0*
+ADD *storage_0*
+STORE b
+SUB a [ IF a >= b GOTO E_DIV_WHILE1_BODY ]
+JZERO E_DIV_WHILE1_BODY
+E_DIV_WHILE2_BODY : LOAD b [ IF b > a GOTO E_DIV_ENDIF ]
+SUB a
+JPOS E_DIV_ENDIF
+LOADI p [ p := p + temp; ]
+ADD temp
+STOREI p
+LOAD a [ a := a - b; ]
+SUB b
+STORE a
+E_DIV_ENDIF : LOAD b [ b := b / 2; ]
+HALF
+STORE b
+LOAD temp [ temp := temp / 2; ]
+HALF
+STORE temp
+JPOS E_DIV_WHILE2_BODY [ IF temp > 0 GOTO E_DIV_WHILE2_BODY ]
+E_DIV_ENDPROGRAM : JUMPI $ret [ return ]

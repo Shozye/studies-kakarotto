@@ -1,0 +1,2 @@
+Notation: 2 1234574 ^ 2 2 ^ * 
+Result: 1

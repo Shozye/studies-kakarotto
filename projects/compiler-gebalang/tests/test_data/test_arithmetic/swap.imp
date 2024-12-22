@@ -1,0 +1,12 @@
+[ Creating two variables and swapping them in-place ]
+PROGRAM IS
+VAR a, b
+BEGIN
+    READ a;
+    READ b;
+    a := a + b;
+    b := a - b;
+    a := a - b;
+    WRITE a;
+    WRITE b;
+END

@@ -1,0 +1,43 @@
+[
+? 0
+? 1
+> 46368
+> 28657
+]
+
+PROCEDURE pa(a,b) IS
+BEGIN
+  a:=a+b;
+  b:=a-b;
+END
+
+PROCEDURE pb(a,b) IS
+BEGIN
+  pa(a,b);
+  pa(a,b);
+END
+
+PROCEDURE pc(a,b) IS
+BEGIN
+  pb(a,b);
+  pb(a,b);
+  pb(a,b);
+END
+
+PROCEDURE pd(a,b) IS
+BEGIN
+  pc(a,b);
+  pc(a,b);
+  pc(a,b);
+  pc(a,b);
+END
+
+PROGRAM IS
+VAR a,b
+BEGIN
+  READ a;
+  READ b;
+  pd(a,b);
+  WRITE a;
+  WRITE b;
+END

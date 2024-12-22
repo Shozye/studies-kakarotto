@@ -1,0 +1,34 @@
+[
+    {
+        "filename": "read_until.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "25\n3\n5\n8\n10\n20\n1\n30",
+        "stdout": "30",
+        "description": "Reading number until we get big enough."
+    },
+    {
+        "filename": "length.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "232309000",
+        "stdout": "9",
+        "description": "while loop to check length of number"
+    },
+    {
+        "filename": "prime.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "23",
+        "stdout": "1",
+        "description": "Checking if number is prime positive"
+    },
+    {
+        "filename": "prime.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "143",
+        "stdout": "0",
+        "description": "Checking if number is prime negative"
+    }
+]

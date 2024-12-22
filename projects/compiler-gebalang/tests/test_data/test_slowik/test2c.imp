@@ -1,0 +1,29 @@
+[
+  Przyklad / test uzycia zmiennej po przypisaniu 
+  Wszystkie przypadki (a, b, c, d) sa semantycznie identycznie
+  i dzialaja w identyczny sposob, przez co *wszystkie* powinny
+  skompilowac sie bez bledow
+]
+
+PROCEDURE test(a) IS
+VAR b, c
+BEGIN
+  c := 0;
+  WHILE c < 5 DO
+    IF c = 0 THEN
+      b := 5;
+    ENDIF
+    IF c > 0 THEN
+      b := b + 5;
+    ENDIF
+    c := c + 1;
+  ENDWHILE
+  a := b;
+END
+
+PROGRAM IS
+VAR a
+BEGIN
+  test(a);
+  WRITE a;
+END

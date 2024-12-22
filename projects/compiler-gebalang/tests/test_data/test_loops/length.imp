@@ -1,0 +1,13 @@
+[ Program finds length of number ]
+PROGRAM IS
+VAR num, check, length
+BEGIN
+    READ num;
+    check := 10;
+    length := 1;
+    WHILE check <= num DO
+        length := length + 1;
+        check := check * 10;
+    ENDWHILE
+    WRITE length;
+END

@@ -1,0 +1,20 @@
+SET 0 [ p := 0 ]
+STOREI p
+LOAD b [ IF b = 0 GOTO E_MUL_ENDWHILE ] [ IF b % 2 = 1 GOTO E_MUL_ENDIF ]
+JZERO E_MUL_ENDWHILE
+E_MUL_WHILE_BODY : HALF
+ADD *storage_0*
+ADD *const_1*
+SUB b
+JPOS E_MUL_ENDIF
+LOADI p [ p := p + a ]
+ADD a
+STOREI p
+E_MUL_ENDIF : LOAD a  [ a := a + a; ]
+ADD *storage_0*
+STORE a
+LOAD b [ b := b / 2 ]
+HALF
+STORE b
+JPOS E_MUL_WHILE_BODY [ IF b > 0 GOTO E_MUL_WHILE_BODY ]
+E_MUL_ENDWHILE : JUMPI $ret

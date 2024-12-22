@@ -1,0 +1,9 @@
+[ Program that reads numbers until read number bigger than the first one ]
+PROGRAM IS
+VAR check_num, a
+BEGIN
+    READ check_num
+    REPEAT
+        READ a;
+    UNTIL a > check_num;
+END

@@ -1,0 +1,35 @@
+[
+    {
+        "filename": "one_variable.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "625",
+        "stdout": "625",
+        "description": "Creating one variable"
+    },
+    {
+        "filename": "many_variables.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "stdin": "625",
+        "stdout": "5",
+        "description": "Creating many variables and using only one"
+    },
+    {
+        "filename": "good_names.imp",
+        "compilation": "PASS",
+        "runtime": "PASS",
+        "description": "Creating a lot of variables with different lengths and _ "
+    },
+    {
+        "filename": "bad_names1.imp",
+        "compilation": "ERROR",
+        "description": "Creating big letter variable"
+    },
+    {
+        "filename": "bad_names2.imp",
+        "compilation": "ERROR",
+        "description": "Creating variable with special characters"
+    }
+
+]
